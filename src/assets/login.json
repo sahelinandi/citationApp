@@ -1,0 +1,14 @@
+{
+    "responsecode": "SUCCESS",
+    "responsemessage": "",
+    "data": {
+    "user_id": 1,
+    "login_id": "abera0001",
+    "password": "P@ssw0rd",
+    "first_name": "Abhijit",
+    "middle_name": "",
+    "last_name": "Bera",
+    "skip_2_factor_auth": "Yes",
+    "authentication_type": "OTP"
+    }
+    }

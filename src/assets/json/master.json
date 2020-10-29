@@ -1,0 +1,25 @@
+{
+    "responsecode": "SUCCESS",
+    "responsemessage": "",
+    "transactiontype": "READ",
+    "data": [
+    {
+    "key_id": 2,
+    "value_short_name": "THIS QUESTION SERVES AS THE 2 LEVEL OF AUTHENTICATION.",
+    "value_desc": "THIS QUESTION SERVES AS THE 2 LEVEL OF AUTHENTICATION.",
+    "active_flag":true
+    },
+    {
+        "key_id": 3,
+        "value_short_name": "HAN",
+        "value_desc": "HANOVER",
+        "active_flag":true
+    },
+    {
+        "key_id": 4,
+        "value_short_name": "SEL",
+        "value_desc": "SAINT ELIZABETH",
+        "active_flag":false
+    }
+    ]
+    }

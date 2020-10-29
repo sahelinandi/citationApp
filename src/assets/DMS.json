@@ -1,0 +1,10 @@
+[{
+    "DMSRootFolderName": "PEPAS",
+   "DMSAtomPubURL": "http://10.31.101.30:8001/alfresco/cmisatom",
+   "DMSUserName": "admin",
+   "DMSPassword": "admin",
+   "DMSFolderFormat": "HourWise",
+   "FileSizeLimit": "5242880"
+    
+}
+]

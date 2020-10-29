@@ -1,0 +1,41 @@
+
+
+
+   {
+    "responsecode": "SUCCESS",
+    "responsemessage": "",
+    "data": [
+    {
+    "sys_config_parameter_id": 1,
+    "sys_config_parameter_name": "Skip 2 Factor Authentication",
+    "sys_config_parameter_code": "SKIP_2_FACTOR_AUTH",
+    "parameter_value": "No",
+    "parameter_options": [
+    {
+    "value_id": 1,
+    "value_desc": "Yes"
+    },
+    {
+    "value_id": 2,
+    "value_desc": "No"
+    }
+    ]
+    },
+    {
+    "sys_config_parameter_id": 2,
+    "sys_config_parameter_name": "Authentication Type",
+    "sys_config_parameter_code": "AUTHENTICATION_TYPE",
+    "parameter_value": "QA",
+    "parameter_options": [
+    {
+    "value_id": 3,
+    "value_desc": "QA"
+    },
+    {
+    "value_id": 4,
+    "value_desc": "OTP"
+    }
+    ]
+    }
+    ]
+    }

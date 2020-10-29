@@ -1,0 +1,1906 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+                                                                Change Request Control
+   Index                 Date                        Developer Name                       Defect#                         Description    
+=============================================================================================================================================================================================
+  0001             2017-03-15                Ghazi Farhad Amin                    #32,#42                      Added new message for File type Validation in PopUp areas 
+  0002             2017-03-16                Saheli Nandi                         #127                         Information and acknowledgement message change in Add Category master page
+  0003             2017-03-17                Saheli Nandi                         #128                         Information and acknowledgement message change in Modify Category master page
+  0004             2017-03-20                Saheli Nandi                         #132                         Acknowledgement message change in Modify Sub-Category master page
+  0005             2017-03-20                Abhijit Bera                         174       
+  0006             2017-03-21                Abhijit Bera                         204                          LODValidation key value changed.                       
+  0007             2017-03-20                Ghazi Farhad Amin                    #208                         Email Body Change 
+  0008             2017-03-22                Ghazi Farhad Amin                228,#229                     Email Body Change
+  0009             2017-03-22                Abhijit Bera                         237                          Message changed.
+  0010             2017-03-22                Saheli Nandi                         225                          Message changed.
+  0011             2017-03-22               Ghazi Farhad Amin                 #247                      Added new Message
+  0012             2017-03-23               Saheli Nandi                         #254                          Message updated.
+  0013             2017-03-27               Ghazi Farhad Amin                #268                       Message for New Validation
+  0014             2017-03-28               Ghazi Farhad Amin                #268                       Message for New Validation
+  0015             2017-04-05               Abhijit Bera                      287                              Message updated.
+  0016             2017-04-11               Ghazi Farhad Amin                  #296                      Message Change
+  0017             2017-04-11               Abhijit Bera                    297        
+  0018             2017-04-17               Abhijit Bera                    307                      
+  0019             2017-04-17               Abhijit Bera                    317                      
+  0020             2017-04-19               Saheli Nandi                    328                              NP/DFP  - Trace tab - Glossary- Spelling mistake                      
+  0021             2017-04-19               Saheli Nandi                    329                              Annualized to be updated to Annualised  in Glossary: Np / DFP
+  0022             2017-05-04               Abhijit Bera                     348        
+  0023             2017-05-08               Abhijit Bera                     383 
+  0024             2017-05-10               Abhijit Bera                     394
+  0025             2017-05-10               Abhijit Bera                     395 
+  0026             2017-05-16               Abhijit Bera                     403                            Bulk message changed.
+  0027             2017-06-01              Abhijit Bera                     446                            
+  0028             2017-06-01              Abhijit Bera                      452 
+  0029             2017-06-08              Abhijit Bera                      489 
+  0030             2017-06-14              Abhijit Bera                      502 
+  0031             2017-06-29              Abhijit Bera                       
+  0032             2017-07-05              Abhijit Bera                     549  
+  0033             2017-07-19              Abhijit Bera                     555  
+  0034             2017-08-08              Abhijit Bera                     586  
+  0035             2017-08-22              Abhijit Bera                     615  
+  0036             2017-08-23              Abhijit Bera                     619  
+  0037             2017-09-12              Abhijit Bera                     643 
+  0038             2017-09-12              Abhijit Bera                     643 
+  0039             2017-10-11              Abhijit Bera                     646 
+  0040             2017-10-26              Abhijit Bera                     643
+  0041             2017-10-27              Biswanath                        671
+  0042             2017-12-21              Abhijit Bera                        682
+  0043             2018-03-26              Abhijit Bera                        345
+  0044             2018-03-26              Abhijit Bera                        346
+  0045             2018-03-27              Abhijit Bera                        446
+  0046             2018-05-08              Abhijit Bera                      715  
+  0047             2018-05-31              Abhijit Bera                      713  
+  0048             2018-06-12              Abhijit Bera                      719  
+  0049             2018-07-16              Abhijit Bera                      586 
+  0050             2018-08-08              Abhijit Bera                      759  
+  0051             2018-11-19              Abhijit Bera                      760 
+  0052             2018-12-13              Abhijit Bera                      777 
+  0053             2019-01-11              Abhijit Bera                      786 
+  0054             2019-02-12              Abhijit Bera                      806 
+  0055             2019-03-19              Abhijit Bera                      820                        Message introduced for Retroactive Segment Adjustmnet screen
+  0056             2019-04-17              Abhijit Bera                      836                        Message introduced for Add Update Parish screen
+  0057             2019-05-24              Abhijit Bera                      856                        
+  0058             2019-06-21              Abhijit Bera                      875
+  0059             2019-06-25              Pritam sahu                       883                        Employer Validation message for segment add/modify
+  0060             2019-07-10              Pritam sahu                       891                        EDIT option will be provided in registered disability screen to edit any existing disability for an employee by HR
+  0061             2019-07-15              Pritam sahu                       903                        Error Message modification. New message,
+                                                                                                          "Must be greater than start date of existing mapping"
+  0062             2019-07-15              Pritam sahu                       904                        Salary Point -> Salary Scale
+  0063             2019-07-15              Pritam sahu                       898                        Only PAU Computation Manager & PAU Computation Supervisor will be able to start the Re-Computation of any workflow
+  0064             2019-07-16              Abhijit Bera                      905                        Message introduced for last segment start date validation
+  0065             2019-07-18              Pritam sahu                       907                       Pension Election Option in My Service (Update Primary Details) notification Text
+  0066             2019-07-22              Pritan sahu                       913               When HR sends application to PAU Computation, the attachment type "Verified Banking Information Form" (i.e., currently "Bank Account Details") will be set as mandatory and attachment must be present. Same applicable for external applications.
+  0067             2019-07-30              Pritan sahu                       891               disability validation when HR forword to PAU computation
+  0068             2019-08-05              Abhijit Bera                       916                        Trace tab Abbreviation
+  0071             2019-08-12              Saheli Nandi                      931                        Added messages for Workflow Approval Notification
+  
+  0069            2019-08-06              Pritan sahu                       916                        Validation Messge for to stopm LOD  if LOD Option is check
+  0070           2019-08-07               Pritam Sahu                       937                 Department with their own paying responsibility           
+  0072           2019-08-07               Saheli Nandi                       942                 Added Secondment update messages
+  0073           2019-09-06               Saheli Nandi                       931                 Restrict removing PAU Supervisor/Manager roles if any approval is pending with the user
+  0074            2019-09-13              Abhijit Bera                       938                        Messages related to CR#42
+  0075            2019-09-17              Abhijit Bera                       939                        Messages related to CR#43
+-->
+<Messages>
+  <Message key="MissingErrorCode">The error code entered is incorrect. Please provide a valid error code.</Message>
+  <Message key="InvalidErrorCode">The error code entered is incorrect. Please provide a valid error code.</Message>
+  <Message key="MetadataRefreshed">All metadata values have been refreshed successfully.</Message>
+  <Message key="MasterDataCodeExists">The master data code entered already exists for the selected master data type. Please provide a unique master data code.</Message>
+  <Message key="MasterDataCodeValuePairExists">Master data code already exists for selected master data type.</Message>
+  <Message key="MasterDataSaved">The master data values entered  have been saved successfully.</Message>
+  <!--SD 0012-->
+  <!--<Message key="MasterDataUpdated">The master data values have been updated successfully.</Message>-->
+  <!--ED 0012-->
+  <!--SA 0012-->
+  <Message key="MasterDataUpdated">Selected active master data have been updated successfully.</Message>
+  <!--EA 0012-->
+  <Message key="MasterDataUpdateFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="MasterDataRemoved">The selected master data values have been removed successfully.</Message>
+  <Message key="MasterDataBlankCode">Master data code cannot be blank.</Message>
+  <Message key="MasterDataBlankCodeValue">Master data code and value cannot be blank.</Message>
+  <!--Abhijit 170-->
+  <Message key="MasterDataBlankValue">Master data value cannot be blank.</Message>
+  <!--Abhijit 170-->
+  <Message key="MasterDataValueExists">Master data value already exists for selected master data type.</Message>
+  <!--Abhijit 170-->
+  <Message key="GParaUpdated">Global parameters have been saved successfully.</Message>
+  <Message key="GParaUpdateFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="MDAParaUpdated">MDA parameters have been saved successfully.</Message>
+  <Message key="MDAParaUpdateFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="InvalidUser">The user id entered is invalid.</Message>
+  <Message key="RegisterExisting">This operation will register the employee under the selected employer. Do you want to continue ? </Message>
+  <Message key="WrongSAns">The answer to the security question entered is incorrect.</Message>
+  <Message key="PwdNotSame">The passwords provided do not match.</Message>
+  <Message key="PwdUpdated">Your password has been updated successfully.</Message>
+  <Message key="SAnsUpdated">Your answer to the security question has been updated successfully.</Message>
+  <Message key="SAnsBlank">The answer to the security question cannot be blank.</Message>
+  <Message key="WrongSAns">The answer to the security question entered by you is incorrect.</Message>
+  <Message key="EmailLogin">Your email address has now been verified. Please set up your credentials to activate your user account.</Message>
+  <Message key="LinkExpired">This link has expired. Please contact your system administrator for further assistance.</Message>
+  <Message key="NotRegistered">You are not a registered user.</Message>
+  <Message key="InvalidCredential">The credentials provided are incorrect.</Message>
+  <Message key="PasswordExpired">Your password has expired. Please set a new password for your account from the Manage Password screen.</Message>
+  <Message key="LoginAttemptsCrossed">You have exceeded your limit for invalid login attempts. Please contact your system administrator for further assistance.</Message>
+  <Message key="AccountLocked">Your user account has been locked. Please contact your system administrator for further assistance.</Message>
+  <Message key="NotificationConfigurationSave">Your configuration has been saved successfully.</Message>
+  <Message key="RoleCodeExists">The role code entered already exists. Please provide a unique role code.</Message>
+  <Message key="RoleNameExists">The role name entered already exists. Please provide a unique role name.</Message>
+  <Message key="RoleSaved">Role has been saved successfully.</Message>
+  <Message key="RoleUpdated">Role has been updated successfully.</Message>
+  <Message key="RoleUpdateFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="RoleRemoved">Role has been removed successfully.</Message>
+  <Message key="RoleBlankCode">Role code cannot be blank.</Message>
+  <Message key="HistPwdFailed">This password has been used earlier for your account. Please choose a different password.</Message>
+  <Message key="OldNewSamePwd">Your new password is same as your current password. Please choose a different password.</Message>
+  <Message key="CorruptSCR">The Service Record file you uploaded is corrupt. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="WrongSCRFormat">The uploaded Service Record file is not in the prescribed format.</Message>
+  <!--Saheli 20161020-->
+  <Message key="EmployeeCountMismatch">The number of line items in the Service Record file does not match with the number of employees specified. Please verify the Service Record data and re-upload.</Message>
+  <!--Saheli 20161020-->
+  <Message key="MonthCountMismatch">The number of line items in the Service Record file does not match the number of months specified.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRLastUploadedMsg">Your last submitted Service Record was for the month(s) of {0}, {1} and were uploaded on {2}.</Message>
+  <!--Saheli 20161020-->
+  <Message key="WrongSCRMonth">Service Record can be uploaded only if the Service Record for the previous month has been submitted.</Message>
+  <Message key="UserCreatedwithNotification">The user has been created successfully. A verification email has been sent to the specified email address for email verification and user account activation.</Message>
+  <Message key="TRNValidationTrue">Your details have been successfully validated with the TRN service.</Message>
+  <Message key="TRNValidationFalse">System could not verify your details with TRN service. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="PEPASRecordFoundTrue">A matching record has been found. Please provide the additional information to continue with the registration.</Message>
+  <Message key="PEPASRecordFoundFalse">No matching record found.</Message>
+  <Message key="ExEmployeeNotFound">Record for this Ex-Employee is not available. Please continue registration process with New Employee, fill up the data and click on submit to make an entry for this employee.</Message>
+  <Message key="InvalidClassification">Selected classification is invalid.</Message>
+  <Message key="InvalidClassifiationMap">Selected classification is not applicable for the selected MDA.</Message>
+  <Message key="InvalidSegmentEndDate">End date of segment cannot be future date for the provided Reason For Segment Closure.</Message>
+  <Message key="EmployeeUserCreated">The employee has been registered successfully. A verification email has been sent to the specified email address for email verification and user account activation.</Message>
+  <Message key="RoleTransactionSaved">Role transaction mapping has been saved successfully.</Message>
+  <Message key="RoleTransactionError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="RoleTransactionInformation">Please specify at least one transaction to add to the selected role.</Message>
+  <!--Saheli 20161020-->
+  <Message key="IncompleteSCRUpload">A Service Record upload is in progress for this month for this employer by user {0} on {1}. Current Service Record will discard the previous upload.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRSubmissionDatePassed">The Service Record submission link has been closed for the current month. Please get in touch with your system administrator for any assistance.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRAdjustmentSubmissionDatePassed">The Service Record adjustment submission link has been closed for the current month. Please get in touch with your system administrator for any assistance.</Message>
+  <!--SU 0039-->
+  <!--<Message key="UserDeleted">User has been deleted successfully.</Message>-->
+  <Message key="UserDeleted">User has been deactivated successfully.</Message>
+  <!--EU 0039-->
+  <Message key="LinkNotApplicable">This link has expired. Please contact your system administrator for further assistance.</Message>
+  <Message key="UserUpdated">User has been updated successfully.</Message>
+  <!--SU 0036-->
+  <!--<Message key="AlreadyRegistered">This employee specified is already registered.</Message>-->
+  <Message key="AlreadyRegistered">This employee is already registered.</Message>
+  <!--EU 0036-->
+  <Message key="InvalidPwd">The password entered is incorrect.</Message>
+  <Message key="AllCredentialsUpdated">Thank you for completing the registration process. Your account has now been activated. Please click on the Sign In button to access the system.</Message>
+  <!--Saheli 20161020-->
+  <Message key="NoDataInSCR">There is no data to update for the uploaded Service Record.</Message>
+  <Message key="UserRoleMapSave">User role mapping has been saved successfully.</Message>
+  <Message key="UserRoleMapError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="UserCreatedwithoutNotification">User has been created successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="EmployeeCreatedNoEmail">The employee has been registered successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="InvalidDateEntry">The start date and end date combination specified is invalid.</Message>
+  <Message key="EmployeeBeneficiaryUpdated">Beneficiary details have been successfully updated. An acknowledgement email has been sent from the system to the registered email address.</Message>
+  <Message key="EmployeeBeneficiaryUpdatedNoEmail">Beneficiary details have been successfully updated.However, an email acknowledgement could not be sent because an email address has not been specified or the specified email address is incorrect.</Message>
+  <Message key="EmployerCreationError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployerCreationSuccess">The employer has been registered successfully.</Message>
+  <Message key="FileTypeNotSupported">The uploaded Service Record file is not in the prescribed format recognized by PEPAS.</Message>
+  <Message key="EmployeeContactUpdated">Contact details have been successfully updated. An acknowledgement email has been sent from the system to the registered email address.</Message>
+  <Message key="EmployeeContactUpdatedNoEmail">Contact details have been successfully updated. Email acknowledgement could not be sent as email address has not been specified or is incorrect.</Message>
+  <Message key="EmployerUpdationError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployerUpdationSuccess">Employer record has been updated successfully.</Message>
+  <Message key="EmployerDeActivationError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployerDeleteError">The data entered could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployerDeactivateSuccess">Employer record has been deactivated successfully.</Message>
+  <Message key="EmployerDeleteSuccess">Employer record has been deleted successfully.</Message>
+  <Message key="SubmitGrievanceSuccessEmail">Your query has been submitted successfully. An acknowledgement email has been sent to the specified email address.</Message>
+  <Message key="SubmitGrievanceSuccessNoEmail">Your query has been submitted successfully.</Message>
+  <Message key="SubmitGrievanceError">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <!--Saheli 20161020-->
+  <Message key="BlankSCR">The Service Record file uploaded does not contain any records for processing.</Message>
+  <!--Saheli 20161020-->
+  <Message key="MonthlySCRSubmitted">Service Record has been successfully submitted for the month of {0}. Please click on the link below to download the acknowledgement receipt.</Message>
+  <!--Saheli 20161020-->
+  <Message key="AdjustmentSCRSubmitted">Adjustment to Service Record has been successfully submitted for the month of {0}.</Message>
+  <!--Saheli 20161020-->
+  <Message key="HistoricalSCRSubmitted">Historical adjustment to Service Record has been successfully submitted.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRDiscarded">Service Record upload has been discarded for the month of {0}.</Message>
+  <!--Saheli 20161020-->
+  <Message key="HistoricalSCRDiscarded">Service Record upload has been discarded.</Message>
+  <Message key="ShowNotificationAlert">Please select at least one notification.</Message>
+  <Message key="SelectEmployerRolePage">Please select at least one employer.</Message>
+  <Message key="ShowRoleAlert">Please select at least one role.</Message>
+  <Message key="ShowRoleUserMapMessage">You must deactivate or decouple all the users mapped with this role before deleting this role.</Message>
+  <Message key="ShowExternalUserSelectionMessage">Please select at least one user.</Message>
+  <Message key="GrievanceRejectedSuccesswithEmail">The query has been rejected. An email notification has been sent to specified email address.</Message>
+  <Message key="GrievanceRejectedSuccesswithoutEmail">The query has been rejected.</Message>
+  <Message key="GrievanceRejectedSuccess">The query has been rejected successfully.</Message>
+  <Message key="GreivanceRejectedFail">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="GrievanceAssignSuccess">The query has been successfully assigned to the designated officer.</Message>
+  <Message key="GreivanceAssignFail">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="GrievanceResolveSuccess">The query has been successfully resolved by the designated officer.</Message>
+  <Message key="GreivanceResolveFail">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="GrievanceCloseSuccesswithEmail">Query has been successfully closed by the PAU officer. An email notification has been sent to applicant email address as specified.</Message>
+  <Message key="GrievanceCloseSuccesswithoutEmail">The query has been successfully closed by the designated officer.</Message>
+  <Message key="GreivanceCloseFail">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRSubmitConfirmation">
+    This will save the Service Record data into the database. This operation cannot be undone.<br/>
+    Are you sure you wish to continue?<br />
+  </Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRDiscardConfirmation">
+    This will discard the Service Record currently being uploaded. This operation cannot be undone.<br/>
+    Are you sure you wish to continue?<br />
+  </Message>
+  <Message key="SCRBackConfirmation">
+    This will redirect you to the Service Record submission screen. Are you sure you wish to continue?<br />
+  </Message>
+  <Message key="MinistryCreated">The ministry has been created successfully.</Message>
+  <Message key="MinistryCreationFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ShowMinistryAlert">Please select one ministry to get all the officials details.</Message>
+  <Message key="MinistryCodeExists">The ministry code provided already exists.</Message>
+  <Message key="MinistryNameExists">The ministry name provided already exists.</Message>
+  <Message key="MinistryUpdated">The ministry has been updated successfully.</Message>
+  <Message key="MinistryUpdationFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ActiveEmployerPresent">This ministry cannot be deactivated as there are one or more active employers associated with it.</Message>
+  <Message key="MinistryDeActivated">The ministry has been deactivated successfully.</Message>
+  <Message key="MinistryDeActivationFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ShowLoginTrailAlert">Please select at least one user.</Message>
+  <Message key="InvalidEmployer">Please select a valid employer.</Message>
+  <Message key="InvalidEmploymentStartDate">Please select a valid employment start date.</Message>
+  <Message key="InvalidEmploymentType">Please select a valid employment type.</Message>
+  <Message key="InvalidSalaryAmount">Please select a valid salary amount.</Message>
+  <Message key="InvalidSalaryCurrency">Please select a valid salary currency.</Message>
+  <Message key="InvalidSalaryFrequency">Please select a valid salary frequency.</Message>
+  <Message key="InvalidLeaveType">Please select a valid leave type.</Message>
+  <Message key="InvalidLeaveStartDate">Please select a valid leave start date.</Message>
+  <Message key="InvalidLeaveEndtDate">Please select a valid leave end date.</Message>
+  <Message key="InvalidIndebtednessType">Please select a valid indebtedness type.</Message>
+  <Message key="InvalidIndebtednessType">Please select a valid indebtedness type.</Message>
+  <Message key="InvalidIndebtednessCurrency">Please select a valid indebtedness currency.</Message>
+  <Message key="InvalidPensionableAllowanceType">Please select a valid pensionable allowance type.</Message>
+  <Message key="InvalidPensionableAllowanceCurrency">Please select a valid pensionable allowance currency.</Message>
+  <Message key="AccountRecoverwithoutNotification">User account has been re-activated successfully. An email notification could not be sent because the target email address is either invalid or not provided.</Message>
+  <Message key="AccountRecoverwithNotification">User account has been re-activated successfully. A notification email has been sent to specified email address.</Message>
+  <Message key="ShowAccountRecoveryAlert">Please select at least one user.</Message>
+  <Message key="ShowMedicalRetirement">You must upload at least one medical report as you have opted for early retirement on medical grounds.</Message>
+  <Message key="NoApprovalLetterUploaded">Please upload the relevant approval letter(s).</Message>
+  <Message key="PrimaryDetailsUpdated">Primary details have been successfully updated. An email notification has been sent to specified email address.</Message>
+  <Message key="PrimaryDetailsUpdatedNoEmail">Primary details have been successfully updated. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="EarlyRetirementDone">The retirement date has been successfully updated. An email notification has been sent to specified email address.</Message>
+  <Message key="RetirementDateError">Please ensure that selected retirement date is above the limit set at MDA/global level parameter.</Message>
+  <!--SU 0033-->
+  <!--<Message key="EarlyRetirementForJDF">Please ensure service period criteria is met for soldier/officer.</Message>-->
+  <Message key="EarlyRetirementForJDF">Selected soldier/officer is not eligible for early retirement.</Message>
+  <!--EU 0033-->
+  <Message key="InvalidEarlyRetirementReason">Selected retirement reason is not applicable for chosen MDA.</Message>
+  <Message key="ExistingRetirementDateError">Please update current retirement date of employee in system and ensure that selected retirement date is less than previous retirement date.</Message>
+  <Message key="RetirementStatusError">Selected employee is not eligible for early retirement.</Message>
+  <Message key="EarlyRetirementDoneNoEmail">The retirement date has been successfully updated. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="IndividualTaskReleaseSuccess">The task has been released successfully.</Message>
+  <Message key="IndividualTaskReleaseError">The task selected could not be released. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="AllTaskReleaseSuccess">All tasks have been released successfully.</Message>
+  <Message key="AllTaskReleaseError">The tasks selected could not be released. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ExtensionDone">The retirement date has been successfully updated. An email notification has been sent to specified email address.</Message>
+  <Message key="ExtensionDoneNoEmail">The retirement date has been successfully updated. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="NoExtensionLetterUploaded">Please upload the relevant approval letter(s).</Message>
+  <Message key="ExtensionDateError">Please update current retirement date of employee and ensure extended retirement date is greater than current retirement date.</Message>
+  <Message key="ExtensionStatusError">Selected employee is not eligible for service extension.</Message>
+  <Message key="EmployeeDependentUpdated">Dependent details have been successfully updated. An email notification has been sent to specified email address.</Message>
+  <Message key="EmployeeDependentUpdatedNoEmail">Dependent details have been successfully updated. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="NISContributionReportNoMatch">No matching records found. Please modify the search criteria and try again.</Message>
+  <Message key="EmployeeDependentsSubmitted">Updates to your dependent details have been successfully recorded and sent for verification. An email notification has been sent to specified email address.</Message>
+  <Message key="EmployeeDependentsSubmittedNoEmail">Updates to your dependent details have been successfully recorded and sent for verification. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="SCRNonComplianceReportNoMatch">No matching records found. Please modify the search criteria and try again.</Message>
+  <Message key="SCRNonComplianceReportError">The Service Record non compliance report could not be generated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="DependentWFRejected">The workflow has been rejected successfully. Changes to the dependent details have been reverted. An email notification has been sent to specified email address.</Message>
+  <Message key="DependentWFRejectedNoEmail">The workflow has been rejected successfully. Changes to the dependent details have been reverted. An email notification could not be sent because the target email address is either invalid or not provided.</Message>
+  <Message key="DependentWFCancelDone">Your dependent verification request has been cancelled successfully. An email notification has been sent to specified email address.</Message>
+  <Message key="DependentWFCancelDoneNoEmail">Your dependent verification request has been cancelled successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <!--Saheli 20161020-->
+  <Message key="SCRExistsInEmploymentChange">Service Records exist for the deleted/updated employment history segment.</Message>
+  <Message key="DeleteEmploymentHistory">Are you sure you want to delete the employment history?</Message>
+  <Message key="UpdateEmploymentHistory">Are you sure you want to update the employment history?</Message>
+  <Message key="ShowClaimedTaskAlert">Please select at least one user.</Message>
+  <Message key="IndividualMetadataRefreshed">Meta data has been refreshed successfully.</Message>
+  <Message key="InvalidEmploymentEndReason">Please enter employment end date or reason for change.</Message>
+  <Message key="FromDateToDateValidation">Please provide both from date and to date.</Message>
+  <Message key="ApplicationCodeFromDateToDateValidation">Please provide at least one search criteria.</Message>
+  <Message key="ShowGrievanceListSelectionMessage">Please select at least one record.</Message>
+  <Message key="SCRAdjustmentRequestSubmitted">Service Record adjustment request has been successfully sent for verification.</Message>
+  <Message key="SCRAdjustmentRequestConfirmation">
+    This will save the Service Record adjustment request into the database. This operation cannot be undone. <br/> Are you sure you wish to continue?
+  </Message>
+  <Message key="SCRAdjustmentResetConfirmation">This will discard the unsaved changes. Are you sure you wish to continue? </Message>
+  <Message key="SCRAdjustmentClearConfirmation">This will reset the search filter and discard unsaved changes. Are you sure you wish to continue? </Message>
+  <Message key="GenerateSCRAdjustmentClearConfirmation">
+    This will reset the search filter. Are you sure you wish to continue?<br />
+  </Message>
+  <Message key="BulkFileFormatError">The uploaded file does not have a supported file type. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="CorruptBulkFile">The uploaded file is corrupted and could not be processed. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="WrongHEADERFormat">The header row structure of the file is invalid.</Message>
+  <Message key="BERError">The uploaded file does not have any data row.</Message>
+  <Message key="BEREmpCountMismatch">The number of employees specified does not match the record count in the uploaded file.</Message>
+  <Message key="RecordCellMissing">The uploaded file is corrupted and could not be processed. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployeeCountMismatch">The number of employees specified does not match the record count in the uploaded file.</Message>
+  <Message key="EmployeeRecordMismatch">Employee TRN and Date of Birth in database does not match with the TRN and Date of Birth provided in uploaded file.</Message>
+  <Message key="DuplicateBatch3Upload">Historical segment has already been uploaded for this employee.</Message>
+  <Message key="B3EmptyRow">No record found in uploaded file.</Message>
+  <Message key="B3ExcelError">Uploaded excel contains error. Please correct and upload</Message>
+  <Message key="HistoricalSegmentUploadSuccess">Historical segment of employee has been uploaded successfully.</Message>
+  <Message key="HistoricalSegmentUploadError">Error in uploading historical segment. Please refer Batch3 guidelines or contact system administrator for details.</Message>
+  <Message key="GenerateSCRAdjustmentRequestConfirmation">
+    This will generate the consolidated Service Record adjustment requests in spreadsheet format. Are you sure you wish to continue?
+  </Message>
+  <Message key="InvalidEmploymentStartEndDate">Employment start date cannot be greater than employment end date.</Message>
+  <Message key="DeleteCurrentEmployment">Current employment segment cannot be deleted.</Message>
+  <Message key="DeleteOnlyEmployment">The employee has only one employment. This cannot be deleted.</Message>
+  <Message key="AddPastEmployment">Only a past employment segment can be added.</Message>
+  <Message key="OverlappingEmployment">Employment dates cannot be overlap for the same employer.</Message>
+  <Message key="RetirementDateBeforeEndDate">Employment End Date cannot be after Retirement Date.</Message>
+  <Message key="StartDateBeforeEmployment">Employment start date cannot be prior to the start date with Government of Jamaica.</Message>
+  <!--Saheli 20161020-->
+  <Message key="StartDateBeforeEmployer">Employment start date cannot be prior to the date of establishment of the employer.</Message>
+  <Message key="CancelUpdateEmploymentHistory">Are you sure you want to discard the changes?</Message>
+  <Message key="HistoricalSCRUploadSubmission">Are you sure you want to upload the Service Record document? This may take a while. Continue? </Message>
+  <Message key="TransferDone">
+    The selected employees have been transferred successfully. A system notification has been sent to each of the selected employees. <br />
+  </Message>
+  <Message key="EmployeeCreatedNoEmailGiven">
+    Employee registration has been done successfully. Please use the credentials below to login. <br/>
+  </Message>
+  <Message key="DuplicateClassificationError">The specified classification already exists.</Message>
+  <Message key="ClassificationError">The classification could not be created. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificatioCreationSuccess">The classification has been created successfully.</Message>
+  <Message key="ClassificationDeleteSuccess">The classification has been deleted successfully.</Message>
+  <Message key="ClassificationDeleteError">The classification could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationUpdateSuccess">The classification has been updated successfully.</Message>
+  <Message key="ClassificationUpdateError">The classification could not be updated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="SalaryRangeError">Salary upper range should be greater than salary lower range.</Message>
+  <Message key="DuplicateClassificationEmployerMappingError">The mapping specified already exists.</Message>
+  <Message key="ClassificationEmployerMappingSuccess">The classification-employer mapping has been created successfully.</Message>
+  <Message key="ClassificationEmployerMappingError">The classification could not be mapped with the selected employer. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingDeleteSuccess">Classification-employer mapping has been deleted successfully.</Message>
+  <Message key="ClassificationEmployerMappingDeleteError">Classification-employer mapping could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingSuccess">The classification-employer mapping has been created successfully.</Message>
+  <Message key="ClassificationEmployerMappingError">The classification-employer mapping could not be created. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingDeleteError">The classification-employer mapping could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="CountryISDCodeSaved">The data entered have been saved successfully.</Message>
+  <Message key="CountryISDCodeUpdated">The data have been updated successfully.</Message>
+  <Message key="CountryISDCodeUpdateFailed">The data entered could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="IndebtednessMandatoryDetails">The indebtedness component and the amount that is to be added or deducted must be specified. Also the indebtedness component cannot be duplicated in the grid.</Message>
+  <Message key="MasterDataNotDeletedInvolvedInTransaction">Master data could not be deleted as they are already involved in transaction.</Message>
+  <Message key="ClassificationDeleted">Classification have been deleted successfully.</Message>
+  <Message key="ClassificationDeletedFailed">Classification could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationNotDeletedMappedToEmployer">Classification could not be deleted as they are already mapped to employer(s).</Message>
+  <Message key="ClassificationNotDeactivatedMappedToEmployer">Classification could not be deactivated as they are already mapped to employer(s).</Message>
+  <Message key="ClassificationDeactivated">Classification have been deactivated successfully.</Message>
+  <Message key="ClassificationActivated">Classification have been activated successfully.</Message>
+  <Message key="ClassificationActivationFailed">Classification could not be activated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationDeactivationFailed">Classification could not be deactivated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingNotDeletedMappedToEmployee">Classification-employer mapping could not be deleted as they are already mapped to employee(s).</Message>
+  <Message key="ClassificationEmployerMappingDeactivated">Classification-employer mapping have been deactivated successfully.</Message>
+  <Message key="ClassificationEmployerMappingDeactivationFailed">Classification-employer mapping could not be deactivated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingActivated">Classification-employer mapping have been activated successfully.</Message>
+  <Message key="ClassificationEmployerMappingActivationFailed">Classification-employer mapping could not be activated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingNotActivatedParentInactive">Classification-employer mapping could not be activated as they are in inactive status in master classification.</Message>
+  <!--D#728-->
+
+
+  <Message key="ClassificationEmployerMappingNotDeletedMappedToEmployer">The classification-employer mapping could not be deleted as this is already used in transaction.</Message>
+  <Message key="ClassificationEmployerMappingDeleteSuccess">Classification-employer mapping have been deleted successfully.</Message>
+  <Message key="ClassificationEmployerMappingDeleteError">Classification-employer mapping could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ClassificationEmployerMappingSuccess">The classification-employer mapping has been created successfully.</Message>
+  <Message key="WarningChangeRequestConfirmation">
+    This will remove the selected warning(s) from the employee record. This operation cannot be undone.<br/> Are you sure you wish to continue?
+  </Message>
+  <Message key="WarningChangeResetConfirmation">This will discard the unsaved changes. Are you sure you wish to continue? </Message>
+  <Message key="WarningReasonValidation">Please specify an appropriate reason.</Message>
+  <Message key="WarningRemarkValidation">Please provide a suitable remark.</Message>
+  <Message key="WarningIgnored">The selected warnings have been successfully removed from the employee's record.</Message>
+  <Message key="WarningIgnoredValidation">Please check at least one warning that is to be ignored.</Message>
+  <Message key="SalaryRangevalidationMessage">Salary values should be specified up to two places of decimal.</Message>
+  <Message key="FAQDone">The list of FAQ has been updated successfully.</Message>
+  <Message key="EmployeeEmploymentConfirmation">
+    This employee currently has an active employment record. If you wish to record a dual employment, kindly specify the primary employer of this employee.
+  </Message>
+  <Message key="DependentPending">A dependent verification process in progress. You may update dependent details after the verification process has been completed.</Message>
+  <Message key="FileTypeError">This file-type is not supported.</Message>
+  <Message key="DependentPending">A dependent verification process in in progress. You may update dependent details after the verification process has been completed. </Message>
+  <Message key="DependentPendingHR">A dependent verification process in in progress. You may update dependent details after the verification process has been completed.</Message>
+  <Message key="FileTypeError">This file-type is not supported. Please try again. </Message>
+  <Message key="SCRUploadConfirmation">
+    Are you sure you want to upload the Service Record document, this may take a while?
+  </Message>
+  <Message key="SCRClearConfirmation">
+    Are you sure you want to clear the details entered ?
+  </Message>
+  <Message key="ExistingExStep1">
+    The details of the employee (Name, DOB, Gender and TRN) will be validated against the TRN database. Hence you need not specify these information at this step.
+  </Message>
+  <Message key="ABSDone">
+    About Us content has been updated successfully.
+  </Message>
+  <Message key="ExistingEmpDone">
+    The employee registration process has been completed successfully. An email notification has been sent to specified email address.
+  </Message>
+  <Message key="ExistingEmpDoneNoEmail">
+    The employee registration process has been completed successfully. However, we are unable to send an email notification due to an invalid email address.
+  </Message>
+  <Message key="SameMDATransfer">The destination employer cannot be same as the source employer.</Message>
+  <Message key="DateMisMatch">The employment start date for the employee must be later or equal to GOJ start date.</Message>
+  <Message key="TransferDateMisMatch">This employee has a transfer history. The employment start date for the employee must be later than the date of transfer.</Message>
+  <Message key="WrongMDAStartDate">The employment start date for the employee must be later than establishment date of the employer.</Message>
+  <Message key="DateBirthMisMatch">The employment start date for the employee must be later than the date of birth of the employee.</Message>
+  <Message key="DateBirthMisMatch_GOJ">The GOJ start date for the employee must be later than the date of birth of the employee.</Message>
+  <Message key="EmployerExists">This employer already exists in the database.</Message>
+  <Message key="EmployeeCritereaMisMatch">The selected mode of employment is not applicable for this employee.</Message>
+  <Message key="ApplySBError">There has been an error in submitting the application. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ApplySBSuccessEmail">Your application has been submitted successfully. An email notification has been sent to specified email address.</Message>
+  <Message key="ApplySBSuccessNoEmail">Your application has been submitted successfully.</Message>
+  <Message key="EndDateInvalid">The End-Date should be greater than the Start Date.</Message>
+  <Message key="NoEmploymentData">Please provide employment data.</Message>
+  <!--SD 0010-->
+  <!--<Message key="UploadMandatoryDoc">Please upload at Least 1 mandatory document</Message>-->
+  <!--ED 0010-->
+  <!--SA 0010-->
+  <Message key="UploadMandatoryDoc">Please upload at least 1 mandatory document</Message>
+  <!--EA 0010-->
+  <Message key="UploadDeathCertificate">Please upload order of burial after registration or death certificate</Message>
+  <Message key="UploadMandatoryDocDependent">Please upload at Least 1 mandatory document for each dependent</Message>
+  <Message key="UploadMandatoryDocbeneficiary">Please upload at Least 1 mandatory document for each beneficiary</Message>
+  <!--SD 0010-->
+  <!--<Message key="UploadMandatoryWorkRecord">Please upload at Least 1 mandatory document for each work record</Message>-->
+  <!--ED 0010-->
+  <!--SA 0010-->
+  <Message key="UploadMandatoryWorkRecord">Please upload at least 1 mandatory document for each work record</Message>
+  <!--EA 0010-->
+  <Message key="ApplyFBRSuccessEmail">Your application has been submitted successfully. An email notification has been sent to your email address as specified.</Message>
+  <Message key="ApplyFBRSuccessNoEmail">Your application has been submitted successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="RegisterDeath">Death of employee has been registered successfully.</Message>
+  <Message key="RegisterDeath">Death registration completed successfully. Notification mail has been sent to HR.</Message>
+  <Message key="RegisterDeathError">Error occurred while registering death of employee. Please contact system administrator.</Message>
+  <Message key="BERDone">Bulk register process is now complete. Email notification will be sent to the employee(s). Please generate the credential list for the newly registered employee(s).</Message>
+  <Message key="EmployeeCeased">Currently these details cannot be modified since a workflow is in process and the data has been locked.</Message>
+  <Message key="TRNPepasNoSync">The information you provided is NOT as recorded in the TRN database. Please click on the UPDATE button below for the system to automatically synchronise your data.</Message>
+  <Message key="TRNPepasSync">Your details are as per the TRN database.</Message>
+  <Message key="TRNServiceNoUse">TRN Service functionality is currently disabled .</Message>
+  <Message key="InvalidCaptcha">The captcha text is wrong. Please enter the captcha again.</Message>
+  <Message key="DuplicateLPR">There cannot be more than one Legal Person Representative (LPR).</Message>
+  <Message key="ExEmpProfileDone">The profile for the Ex-Employee has been created successfully.</Message>
+  <Message key="ShowFBRApplicationAlert">Your family benefit refund application has already been submitted.</Message>
+  <Message key="EmployeeFBRsubmissionSuccessNoEmail">Your family benefit refund application has been submitted successfully.</Message>
+  <Message key="EmployeeFBRsubmissionSuccessWithEmail">Your family benefit refund application has been submitted successfully. An email notification  has been sent to your email address as specified.</Message>
+  <Message key="FBRSubmissionError">Problem in your family benefit refund application submission.</Message>
+  <Message key="ShowGridValidation">Please provide spouse details in dependent list.</Message>
+  <Message key="ApplySBDuplicateError">There is already an active application with the TRN provided.</Message>
+  <Message key="RegisterDeathDuplicateError">A death registration was found for this employee. You cannot create a duplicate record.</Message>
+  <Message key="FBRRejected">The Family Benefit Refund application has been rejected successfully. An email notification has been sent to the applicant.</Message>
+  <!--Ref#185-->
+  <Message key="FBCRejected">Your Child Pension Continuation application has been rejected. An email notification has been sent to the applicant.</Message>
+  <Message key="SBExRejected">The Survivor's Benefit application has been rejected successfully.</Message>
+  <Message key="SBRejected">The Survivor's Pension application has been rejected successfully.</Message>
+  <Message key="NPRejected">The Normal Pension application has been rejected successfully.</Message>
+  <Message key="DFPRejected">The Deferred Pension application has been rejected successfully.</Message>
+  <Message key="MinimumDependentCountValidation">At least one dependent should be added.</Message>
+  <Message key="DeathBenefitSelectionValidation">At least one death benefit(pension/gratuity) must be selected.</Message>
+  <Message key="DeathGuaruitySelectionValidation">Death gratuity is only applicable to an employee who dies in the line of duty.</Message>
+  <Message key="WFNextStep">Workflow has been successfully moved to the specified step</Message>
+  <Message key="FBRAlreadySubmitted">A Family Benefit Refund application is already submitted and is currently active with the given TRN.  You cannot create/duplicate the application.</Message>
+  <Message key="UpdateExistingProfile">This action will update the employee record in PEPAS. Are you sure you wish to continue ?</Message>
+  <Message key="WorkFlowDataSaveSuccess">Data has been saved successfully.</Message>
+  <Message key="WorkFlowDataSaveError">Data could not be saved. Please ensure data cleansing has been done and contact system admin for other assistance.</Message>
+  <Message key="UnavailableComputationDataError">Data cleansing has not been done for deceased. Please complete data cleansing and proceed.</Message>
+  <Message key="DualEmploymentSelectionError">Deceased had dual employment. Please override and choose the employer from which pension will be processed.</Message>
+  <Message key="SBEmploymentSelectionError">Please select employer</Message>
+  <Message key="SBActSelectionError">Please select act</Message>
+  <Message key="BankruptcySelectionError">Please select bankruptcy status</Message>
+  <Message key="SBApplicationClosed">Survivor's Pension application has been closed.</Message>
+  <Message key="SBApplicationExClosed">Survivor's Benefit application has been closed.</Message>
+  <Message key="DeathGratuityApplicationClosed">Death Gratuity application has been closed.</Message>
+  <Message key="BAApplicationClosed">Burial Advance application has been closed.</Message>
+  <Message key="LODApplicationClosed">Line of Duty application has been closed.</Message>
+  <Message key="BurialAdvanceInitiated">Burial advance workflow has been initiated successfully.</Message>
+  <Message key="BurialAdvanceValidationError">Burial advance is mandatory field.</Message>
+  <Message key="BurialAdvanceForwardValidation">Burial advance has to be initiated before proceeding with this workflow.</Message>
+  <Message key="ShowRecomputationAlert">Please select one application to re-compute.</Message>
+  <Message key="LODApplicationInitiated">Line of Duty workflow has been initiated.</Message>
+  <Message key="LODApplicationInitiationError">Error in initiating Line of Duty application. Please contact system administrator.</Message>
+  <Message key="LODApplicationDeleteSuccess">Line of Duty registration has been removed.</Message>
+  <!--SU 0006-->
+  <!--<Message key="LODValidation">Please select at least one application.</Message>-->
+  <Message key="LODValidation">Please select at least one employee from the register.</Message>
+  <!--EU 0006-->
+  <Message key="ReformUpdated">Act Reform Mapping is saved successfully.</Message>
+  <Message key="VestingUpdated">Act Vesting Period Mapping is saved successfully.</Message>
+  <Message key="VestingError">Error in saving Act Vesting Period Mapping. Please contact system administrator.</Message>
+  <Message key="LODRejected">Line of Duty application has been rejected successfully.</Message>
+  <Message key="DeathGratuityRejected">Death Gratuity application has been rejected successfully.</Message>
+  <Message key="BARejected">Burial Advance application has been rejected successfully.</Message>
+  <Message key="LODApplicationDeleteError">Error in removing Line of Duty registration. Please contact system administrator.</Message>
+  <Message key="RecomputationStarted">Application re-computation initiated successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="FBRAlreadyProcessed">A Family Benefit Refund is already completed with the given TRN. So a duplicate application cannot be submitted.</Message>
+  <Message key="LODApprovedAmountValidation">Please enter valid approved amount</Message>
+  <Message key="LODProportionValidation">Total of proportion should be 100</Message>
+  <Message key="DeadEmpProfileDone">The profile for the Deceased Employee has been created successfully.</Message>
+  <Message key="WorkFlowDataSaveError">Error in saving data. Please contact system administrator.</Message>
+  <!--Ref#185-->
+  <Message key="FBCAlreadySubmitted">Your Child Pension Continuation application was already submitted you cannot create/duplicate the application.</Message>
+  <Message key="FBCNoMatch">No matching record is found.</Message>
+  <!--SU 0063-->
+  <!--<Message key="ShowUserRecomputationAlert">You are not authorized to perform this operation.</Message>-->
+  <Message key="ShowUserRecomputationAlert">Only PAU Computation Manager and PAU Computation Supervisor will be able to start the Re-Computation of any workflow.</Message>
+  <!--EU 0063-->
+  
+  <Message key="FBCMatchYes">Please link the application with the matching record in the database. Please refer to the Application Comparison utility for further clarifications.</Message>
+  <Message key="PAURegistryDeclarationValidation">Declaration checkbox must be checked before proceeding.</Message>
+  <Message key="VestingCompleted">Based on the employment record, you have completed your Vesting Period as set by your employer.</Message>
+  <Message key="AttorneyGeneralCommentValidation">Please provide comments from Attorney General before proceeding.</Message>
+  <!--SU 0009-->
+  <!--<Message key="LastEmployerNotInGrid">The last employer/MDA is missing in the employemnt detials. Please provide that data.</Message>-->
+  <Message key="LastEmployerNotInGrid">
+    The form could not be submitted for one of following reasons:
+    <br /> 1. The Last Employer is missing in the Employment Record. Please provide that data.
+    <br /> 2. The Last Employer does not match with Employment Record.
+  </Message>
+  <!--EU 0009-->
+  <!--SU 0015-->
+  <!--<Message key="DeathDateInvalid">The date of death as specified  is wrong. It cannot be less than the Date of Birth, Ministry/Employer Start Date, or Service End Date.</Message>-->
+  <Message key="DeathDateInvalid">The date of death as specified is wrong. It cannot be less than the Date of Birth, Employer Start Date, or Service End Date.</Message>
+  <!--EU 0015-->
+  <Message key="ServiceEndDateInvalid">The service end date as specified is wrong. The service end date cannot be less than the Date of Birth, Ministry/Employer Start Date or Death Date.</Message>
+  <Message key="PensionInitiationConfirmation">
+    This will initiate the pension calculation process for the selected employee(s), thus generating a task in your dashboard for further processing. Are you sure you wish to continue?
+  </Message>
+  <Message key="DeferredPensionInitiationConfirmation">
+    This will initiate the pension calculation process for the selected employee(s), thus generating a task in your dashboard for further processing. Are you sure you wish to continue?
+  </Message>
+  <Message key="AdjustmentMandatoryDetails">The adjustment component and the amount must be specified.</Message>
+  <Message key="PensionDeletionConfirmation">The selected record(s) will be deleted from Pension Register. Are you sure you wish to continue?</Message>
+  <Message key="VestingPeriodComplete">This employee has completed his Vesting Period. You may choose to ignore this and continue to process the workflow.</Message>
+  <Message key="VestingPeriodNotComplete">This employee has not completed his Vesting Period. You may continue to process the workflow.</Message>
+  <Message key="ShowTaskResolutionAlert">Please select at least one application to generate the report.</Message>
+  <Message key="MatchFoundInDB">The following matching record(s) found.</Message>
+  <Message key="NoMatchFoundInDB">Based on the TRN provided while submitting the Application, no matching employee record is found in PEPAS DB.</Message>
+  <Message key="EmployeeActiveFBR">You are not eligible for a Family benefit refund.</Message>
+  <Message key="FBRNoMatch">You can proceed by creating a new profile to process the application.</Message>
+  <Message key="FBRMatchYes">You can link the application with the matching record in the database.</Message>
+  <Message key="InvalidApplicantTRN">Applicant TRN is not matching with given applicant details.</Message>
+  <Message key="InvalidDeceasedTRN">Deceased TRN is not matching with given deceased details.</Message>
+  <Message key="InactiveEmployer">Selected last employer is inactive in system. Please select any active employer.</Message>
+  <Message key="IntersectionWF">
+    Currently the following workflow(s) have been found active for this employee. <br />
+    {0} <br /> You may choose to reject either of the workflows to proceed further.
+
+  </Message>
+  <Message key="ManualRegisterDone">The selected employee(s) have been added to the specified register successfully.</Message>
+  <Message key="NormalPensionInitiated">Normal Pension calculation initiated for the selected employee(s).</Message>
+  <Message key="NormalPensionRemoved">Selected employee(s) have been removed from Normal Pension Register.</Message>
+  <Message key="DeferredPensionInitiated">Deferred Pension calculation initiated for the selected employee.</Message>
+  <Message key="DeferredPensionRemoved">The selected employee(s) have been removed from Deferred Pension Register.</Message>
+  <Message key="FBRApplicationClosed">Family Benefit Refund application has been closed successfully. Also a notification email has been sent to the applicant regarding the same.</Message>
+  <Message key="FBRApplicationClosedNoEmail">Family Benefit Refund application has been closed successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <!--Saheli 20160927 - Ref#185-->
+  <Message key="FBCApplicationClosed">Child Pension Continuation application has been closed successfully. Also a notification email has been sent to the applicant regarding the same.</Message>
+  <!--Saheli 20160927 - Ref#185-->
+  <Message key="FBCApplicationClosedNoEmail">Child Pension Continuation application has been closed successfully. System was unable to send notification email to the applicant.</Message>
+  <Message key="NPHR1DeclarationValidation">Please check the declaration.</Message>
+  <Message key="FBCBack">You are about to {0} . Are you sure ?</Message>
+  <Message key="FBCCeasedStage">
+    Please ensure employment record has been updated with latest data.
+    <br /> Also, this will prevent further modification of employee data<br />.Please notify the relevant department about this in case any other workflow  is active for this employee.<br /><br /><br />You are about to {0} . Are you sure ?
+  </Message>
+  <Message key="NoDeclaration">Declaration checkbox must be checked before proceeding.</Message>
+  <Message key="NoAmount">Final amount must be provided. Please press the calculate button.</Message>
+  <Message key="NPForwardConfirmation">
+    You are about to {0}. Are you sure
+    you wish to proceed?
+  </Message>
+  <Message key="ApplyDFPSuccessEmail">Your application has been submitted successfully. An email notification has been sent to your email address as specified. </Message>
+  <Message key="ApplyDFPSuccessNoEmail">Your application has been submitted successfully. Unable to send notification email.</Message>
+  <Message key="ExEmpProfileDoneDFP">The profile for the Ex-Employee has been created successfully. The employee record has been inserted to Deferred Pension Register.</Message>
+  <!--SU 0047-->
+  <!--<Message key="ApplicationRecomputationAltreadyStarted">This application has already been started for Re-computation by another PAU-Computation Officer.</Message>-->
+  <Message key="ApplicationRecomputationAltreadyStarted">Re-Computation workflow has already been initiated for this application.</Message>
+  <!--EU 0047-->
+  <Message key="NPPAUL1Validation">Please check that at least one employment segment is added and benefit is calculated before proceeding.</Message>
+  <Message key="NPHRL2Validation">Please check that the pension election is done.</Message>
+  <Message key="NormalPensionClosed">Normal Pension Application closed successfully.</Message>
+  <Message key="DeferredPensionInternalClosed">Deferred Pension Application closed successfully.</Message>
+  <Message key="DeferredPensionExternalClosed">Deferred Pension Application closed successfully.</Message>
+  <Message key="HRFBRsubmissionSuccessNoEmail">The family benefit refund application has been submitted successfully. Unable to send notification email.</Message>
+  <Message key="HRFBRsubmissionSuccessWithEmail">The family benefit refund application has been submitted successfully. An email notification has been sent to the employee's registered email address.</Message>
+  <Message key="ShowFBRApplicationAlertHR">A Family benefit refund application has already been submitted for this employee and is in active status.</Message>
+  <Message key="CheckSelectedEmployee">Please select at least one employee from the register.</Message>
+  <Message key="DateRangesMissing">Please enter all start and end dates.</Message>
+  <Message key="TrackGrievanceAlert_New">Invalid applicant TRN. Please enter correct applicant TRN.</Message>
+  <!--SA 0011-->
+  <Message key="LastEmpNotPresent">
+    The form could not be submitted for one of following reasons:    
+    1. The Last Employer is missing in the Employment Record. Please provide that data.
+    2. The Last Employer does not match with Employment Record.
+  </Message>
+  <!--EA 0011-->
+  <Message key="EmploymentSegmentMissing">Please add at least one employment segment.</Message>
+  <Message key="DateRangeValidation">At least one date range is required for calculation.</Message>
+  <Message key="ClosedIntersectionWF">
+    The following application(s) have already been processed for this employee:
+    {0} The system therefore cannot process this application any further. You may need to reject the current application.
+  </Message>
+  <Message key="ClosedIntersectionWF2">
+    The following application(s) have already been processed for this employee:
+    {0} You may go ahead and process this application at your own discretion or you may reject the current application.
+  </Message>
+  <Message key="EmployerUpdateSelection">Please select one Employer details to update.</Message>
+  <Message key="FBROverrideNo">Calculation override facility is currently disabled. If required, please contact system administrator to enable it.</Message>
+  <Message key="FBREditNo">Currently this section is disabled for modification.</Message>
+  <Message key="FBREditYes">This section is now enabled for modification.</Message>
+  <Message key="TaskAlreadyProcessed">This task has already been processed in other session. Please go to dashboard to work on other task.</Message>
+  <Message key="TrackGrievanceAlert">Invalid application number. Please enter correct application number.</Message>
+  <Message key="SMSDisabled">Please note that currently SMS functionality is not active, hence any changes made to the SMS setting will not take effect.</Message>
+  <!--SD 0002-->
+  <!--<Message key="CategorySuccess">The Query Category name has been added successfully.</Message>-->
+  <!--ED 0002-->
+  <!--SA 0002-->
+  <Message key="CategorySuccess">The Query Category has been added successfully.</Message>
+  <!--EA 0002-->
+  <Message key="CategoryAlreadyExists">This Query Category name is already present. Please use a different name.</Message>
+  <Message key="CategoryDeleteSuccess">The Query Category has been removed successfully.</Message>
+  <!--SD 0003-->
+  <!--<Message key="CategoryUpdateSuccess">The Query Category item has been updated successfully.</Message>-->
+  <!--ED 0003-->
+  <!--SA 0003-->
+  <Message key="CategoryUpdateSuccess">The Query Category has been updated successfully.</Message>
+  <!--EA 0003-->
+  <Message key="SubCategoryAlreadyExists">This Query Sub-Category name is already present. Please use a different name.</Message>
+  <Message key="SubCategorySuccess">The Query Sub-Category name has been added successfully.</Message>
+  <Message key="SubCategoryDeleteSuccess">The Query Sub-Category has been removed successfully.</Message>
+  <!--SD 0004-->
+  <!--<Message key="SubCategoryUpdateSuccess">The Query Sub-Category item has been updated successfully.</Message>-->
+  <!--ED 0004-->
+  <!--SA 0004-->
+  <Message key="SubCategoryUpdateSuccess">The Query Sub-Category has been updated successfully.</Message>
+  <!--EA 0004-->
+  <Message key="MDAParameterNotify">Please note where an employer specific parameter is not specified, the global parameter value shall prevail.</Message>
+  <!--SD 0002-->
+  <!--<Message key="MaxQueryCategoryInfo">Please limit the Query Category name to a maximum of 100 characters (including white space).</Message>-->
+  <!--ED 0002-->
+  <!--SA 0002-->
+  <Message key="MaxQueryCategoryInfo">Please limit the Query Category Name to a maximum of 100 characters (including white space).</Message>
+  <!--EA 0002-->
+  <Message key="MaxQuerySubCategoryInfo">Please limit the Query Sub-Category name to a maximum of 100 characters (including white space).</Message>
+  <Message key="JobTitleMandatoryValidation">Please enter job title.</Message>
+  <Message key="MaleDaughterError">The relation-gender combination is incorrect. For example, if your relation to the applicant is a daughter, it is assumed that you are a female.</Message>
+  <Message key="FemaleSonError">The relation-gender combination is incorrect. For example, if your relation to the applicant is a daughter, it is assumed that you are a female.</Message>
+  <!--Saheli 20160926 - Ref#122-->
+  <Message key="ClassificationComponentValidation">Classification Component should not contain hyphen(-).</Message>
+  <!--Saheli 20160926 - Ref#151-->
+  <Message key="PensionElectionHelpText">
+    Full Pension: 100% of the annual pension to be paid in monthly amounts over the lifetime of the pensioner.
+    Reduced Pension: 75% of the annual pension to be paid in monthly amounts over the lifetime of the pensioner; together with a one-time lump-sum payment of 12.5 (twelve and one-half) of the remaining 25% of the annual pension.
+    Please refer to help for further details.
+  </Message>
+  <!--SA 0065-->
+  <Message key="PensionElectionHelpHRText">
+    Persons whose positions are JDF Officers, JDF Soldiers (less than 18 years service), Part-time, Casual Daily or Temporary, should not be eligible for pension election.
+  </Message>
+  <!--EA 0065-->
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="AuthorityBodyNameExists">The authority body name entered already exists.</Message>
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="SelectEmployerAuthorityBodyPage">Please select at least one employer.</Message>
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="AuthorityBodySaved">Authority Body has been saved successfully.</Message>
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="AuthorityBodyUpdated">Authority Body has been updated successfully.</Message>
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="ShowAuthorityBodyAlert">Please select at least one authority body.</Message>
+  <!--Saheli 20161021 - Ref#286-->
+  <Message key="AuthorityBodyRemoved">Authority Body has been removed successfully.</Message>
+  <!--SA 0059-->
+  <Message key="ValidateEmployerSegmentAddEdit">Employer is not active for selected date range.</Message> 
+  <Message key="EmployerActivateSuccess">Employer record has been activated successfully.</Message>
+  <!--SE 0059-->
+  <!--SA Ref #298-->
+  <Message key="UpdateContactEmail" Subject="Contact Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Contact Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdatePrimaryEmail" Subject="Primary Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Primary Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateBeneficiaryEmail" Subject="Beneficiary Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Beneficiary Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateDependentEmail" Subject="Dependent Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Dependent Details are sent to HR for verification.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="CancelDependentEmail" Subject="Cancelation of Dependents Details Modification Request">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your request to cancel a dependent was successful.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdatePrimaryHREmail" Subject="Primary Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Primary Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateHistoricalSegmentHREmail" Subject="Historical Segment Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Historical Employment Segment are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateContactHREmail" Subject="Contact Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Contact Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateBeneficiaryHREmail" Subject="Beneficiary Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Beneficiary Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateDependentHREmail" Subject="Dependent Details Modification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Dependent Details are now updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateSEEmail" Subject="Service Extension Registration Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">You  are now Registered for Service Extension. Your Retirement date is Updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="UpdateEREmail" Subject="Early Retirement Registration Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">You  are now Registered for Early Retirement. Your Retirement date is Updated.</BodyLine2>
+    <BodyLine3 skiplines="1">If you did not make this request please contact your HR department.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="ApplyDFPEmail" Subject="Deferred Pension Application Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your Deferred Pension application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="ApplySBEmail" Subject="Survivors Benefit Application Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your Survivor's Benefit application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="ApplyFBCEmail" Subject="Child Pension Continuation Application Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your Child Pension Continuation application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="ApplyFBREmail" Subject="Family Benefit Refund Application Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your application for Family Benefit Refund.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="ApplyInternalFBREmail" Subject="Family Benefit Refund Request Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your application for Family Benefit Refund.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="1">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="1">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">If you did not make this request please contact the HR Administrator</BodyLine5>
+    <BodyLine6 skiplines="2">This is a system generated mail and hence please do not reply.</BodyLine6>
+    <BodyLine7 skiplines="2">Regards,</BodyLine7>
+    <BodyLine8 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine8>
+  </Message>
+  <Message key="ApplyInternalFBRHREmail" Subject="Family Benefit Refund Request Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting your application for Family Benefit Refund. This application has been submitted by HR Department on your behalf.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="1">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="1">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">If you did not make this request please contact the HR Administrator</BodyLine5>
+    <BodyLine6 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine6>
+    <BodyLine7 skiplines="2">Regards,</BodyLine7>
+    <BodyLine8 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine8>
+  </Message>
+  <Message key="ApplyGRVEmail" Subject="Query Application Submitted Successfully">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for your application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectGRVEmail" Subject="Query Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your query application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="RejectDPNDEmail" Subject="Dependent Verification Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Dependent Verification application has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectFBREmail" Subject="Family Benefit Refund Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Family Benefit Refund application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectFBRInternalEmail" Subject="Family Benefit Refund Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Family Benefit Refund application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectFBCEmail" Subject="Child Pension Continuation Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Child Pension Continuation application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectNPREmail" Subject="Pension Refund Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Pension Refund application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectSBEmail" Subject="Survivor's Benefit Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Survivor's Benefit application {0} submitted by you has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectSBInternalEmail" Subject="Survivor's Benefit Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Survivor's Pension application {0} submitted by you has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectDFPEmail" Subject="Deferred Pension Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Deferred Pension application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectDFPInternalEmail" Subject="Deferred Pension Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Deferred Pension application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectNPEmail" Subject="Normal Pension Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Pension application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectNPREmail" Subject="Normal Pension Refund Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your  Normal Pension Refund application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectBAEmail" Subject="Burial Advance Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Burial Advance application {0} submitted by you has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectDGEmail" Subject="Death Gratuity Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Death Gratuity application {0} submitted by you has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectLODEmail" Subject="Line Of Duty Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Line of Duty application {0} submitted by you is has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="RejectDFPExternalEmail" Subject="Deferred Pension Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your  Deferred Pension application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="PensionNotification" Subject="Pension Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">I am directed to inform you that the Financial Secretary, in accordance with the powers delegated to him by His Excellency, the Governor General, has given approval for you to be retired from the Service on the {0} </BodyLine2>
+    <BodyLine3 DC="1">with effect from {0}, in accordance to the provision of </BodyLine3>
+    <!--SU 0016-->
+    <!--<BodyLine4>section 6(1)(i) of the [Act Name - To be Implemented]</BodyLine4>-->
+    <BodyLine4>section 6(1)(i) of the relevant act.</BodyLine4>
+    <!--EU 0016-->
+    <BodyLine5 skiplines="2">In view of the foregoing, please note the following:-</BodyLine5>
+    <BodyLine6 skiplines="2">1. You will be granted pre-retirement leave for which you may be eligible prior to the effective date of your retirement.</BodyLine6>
+    <BodyLine7 DC="1" skiplines="2">2. The quantum of this leave will be determined in consultation with the {0} and communicated to you.</BodyLine7>
+    <BodyLine8 DC="1" skiplines="2">Your date of birth which is the {0}, </BodyLine8>
+    <BodyLine9 DC="1">has been verified by Birth Registration Certificate No. {0}</BodyLine9>
+    <BodyLine10 skiplines="2">On behalf of the management and staff of the Ministry, I wish to express sincere gratitude for the contributions that you have made over the years. You have been one of the strong pillars of the organization as evidence by your dedication, unwavering loyalty and commitment to excellence.</BodyLine10>
+    <BodyLine11 skiplines="1">The Human Resource Management and Development Unit will be available for further discussions regarding plans for retirement.</BodyLine11>
+    <BodyLine12 skiplines="2">Note: This is a system generated email. Please do not reply</BodyLine12>
+    <BodyLine13 skiplines="2">Regards,</BodyLine13>
+    <BodyLine14 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine14>
+  </Message>
+  <Message key="CreateEU" Subject="Confirm User Creation">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>    
+    <!--SU 0039-->
+    <!--<BodyLine2 skiplines="1">Please see below your login credentials:</BodyLine2>-->
+    <BodyLine2 skiplines="2">Please see below your login credentials:</BodyLine2>
+    <!--EU 0039-->
+    <BodyLine3 DC="1" skiplines="1">Your Login Username : {0}</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">Your Login Password : {0}</BodyLine4>
+    <BodyLine5 skiplines="2">Kindly click the link below  and login using your credentials provided</BodyLine5>
+    <BodyLine6 skiplines="1">**This link will be valid up to 24 hours.</BodyLine6>
+    <BodyLine7 DC="1" skiplines="1">{0}</BodyLine7>
+    <BodyLine8 skiplines="2">Note: If you did not make this request please contact the System Administrator.</BodyLine8>
+    <BodyLine9 skiplines="2">Regards,</BodyLine9>
+    <BodyLine10 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine10>
+  </Message>
+  <Message key="AccountRecoveryEmail" Subject="Account Recovery">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <!--SU 0039-->
+    <!--<BodyLine2 skiplines="1">Please see below your login credentials:</BodyLine2>-->
+    <BodyLine2 skiplines="2">Please see below your login credentials:</BodyLine2>
+    <!--EU 0039-->
+    <BodyLine3 DC="1" skiplines="1">Your Login Username : {0}</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">Your Login Password : {0}</BodyLine4>
+    <BodyLine5 skiplines="2">Kindly click the link below  and login using your credentials provided</BodyLine5>
+    <BodyLine6 skiplines="1">**This link will be valid up to 24 hours.</BodyLine6>
+    <BodyLine7 DC="1" skiplines="1">{0}</BodyLine7>
+    <BodyLine8 skiplines="2">Note: If you did not make this request please contact the System Administrator.</BodyLine8>
+    <BodyLine9 skiplines="2">Regards,</BodyLine9>
+    <BodyLine10 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine10>
+  </Message>
+  <Message key="CreateEmp" Subject="Confirm Employee Registration">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <!--SU 0008-->
+    <!--<BodyLine2 skiplines="1">Please see below your login credentials:</BodyLine2>-->
+    <BodyLine2 skiplines="2">Please see below your login credentials:</BodyLine2>
+    <!--EU 0008-->
+    <BodyLine3 DC="1" skiplines="1">Your Login Username : {0}</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">Your Login Password : {0}</BodyLine4>
+    <BodyLine5 skiplines="2">Kindly click the link below and login using your credentials provided</BodyLine5>
+    <BodyLine6 skiplines="1">**This link will be valid up to 24 hours.</BodyLine6>
+    <BodyLine7 DC="1" skiplines="1">{0}</BodyLine7>
+    <BodyLine8 skiplines="2">Note: If you did not make this request please contact the HR Administrator.</BodyLine8>
+    <BodyLine9 skiplines="2">Regards,</BodyLine9>
+    <BodyLine10 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine10>
+  </Message>
+  <Message key="SCRUploadEmail" Subject="Monthly SCR Uploaded">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Service Record for the month of {0} has been uploaded.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="SCRAdjUploadEmail" Subject="Adjustment SCR Uploaded">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Service Record for the month of {0} has been adjusted.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="SCRHistUploadEmail" Subject="Historical SCR Uploaded">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your historical Service Record has been uploaded.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DPNDComplete" Subject="Dependent Verification Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your dependent details are now updated in PEPAS.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="BAComplete" Subject="Burial Advance Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Burial Advance application {0} submitted by you is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DGComplete" Subject="Death Gratuity Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Death Gratuity application {0} submitted by you is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="LODComplete" Subject="Line Of Duty Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Line of duty application {0} submitted by you is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="FBCComplete" Subject="Child Pension Continuation Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <!--SU 0007-->
+    <!--<BodyLine2 skiplines="2">Your Child Pension Continuation application is now completed.</BodyLine2>-->
+    <BodyLine2 DC="1" skiplines="2">Your Child Pension Continuation application {0} is now completed.</BodyLine2>
+    <!--EU 0007-->
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="NPRComplete" Subject="Normal Pension Refund Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Normal Pension Refund application {0} is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="FBRInternalComplete" Subject="Family Benefit Refund Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Family Benefit Refund application is now complete.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="FBRComplete" Subject="Family Benefit Refund Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Family Benefit Refund application is now complete.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="GRVComplete" Subject="Query Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Your Query application is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="SBComplete" Subject="Survivor Benefit Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Survivor Benefit application {0} submitted by you is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="SBInternalComplete" Subject="Survivor Benefit Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Survivor Pension application {0} submitted by you is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DFPComplete" Subject="Deferred Pension Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Deferred Pension {0} application is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DFPInternalComplete" Subject="Deferred Pension Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Deferred Pension {0} application is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="NPComplete" Subject="Pension Application Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Pension application {0} is now completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <!--Ghazi-->
+  <Message key="SCRUploaded" Subject="Monthly Service Record Uploaded">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Service Record for the month of {0}</BodyLine2>
+    <BodyLine3 DC="1"> {0} has been uploaded.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="SCRAdjusted" Subject="Monthly Service Record Adjusted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">This mail is sent as a notification mail. Your Service Record for {0}</BodyLine2>
+    <BodyLine3 DC="1"> {0} has been adjusted in PEPAS.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="SCRHistorical" Subject="Historical Service Record Adjusted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">This mail is sent as a notification mail. Your Historical Service Record has been uploaded in PEPAS.</BodyLine2>
+    <BodyLine3 skiplines="2">Regards,</BodyLine3>
+    <BodyLine4 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine4>
+  </Message>
+  <Message key="NPRegisterHR" Subject="Pension Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">This mail is sent as a notification mail. Retirement Notification Register has been generated.</BodyLine2>
+    <BodyLine3 skiplines="1">Please log into PEPAS and initiate pension calculation.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DFPRegisterHR" Subject="Pension Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">This mail is sent as a notification mail. Retirement Notification Register has been generated.</BodyLine2>
+    <BodyLine3 skiplines="1">Please log into PEPAS and initiate pension calculation.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="DFPPensionNotification" Subject="Pension Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">I am directed to inform you that the Financial Secretary, in accordance with the powers delegated to him by His Excellency, the Governor General, has given approval for you to be retired from the Service on the {0} </BodyLine2>
+    <BodyLine3 DC="1">with effect from {0}, in accordance to the provision of </BodyLine3>
+    <!--SU 0016-->
+    <!--<BodyLine4>section 6(1)(i) of the [Act Name - To be Implemented]</BodyLine4>-->
+    <BodyLine4>section 6(1)(i) of the relevant act.</BodyLine4>
+    <!--EU 0016-->
+    <BodyLine5 skiplines="2">In view of the foregoing, please note the following:-</BodyLine5>
+    <BodyLine6 skiplines="2">1. You will be granted pre-retirement leave for which you may be eligible prior to the effective date of your retirement.</BodyLine6>
+    <BodyLine7 DC="1" skiplines="2">2. The quantum of this leave will be determined in consultation with the {0} and communicated to you.</BodyLine7>
+    <BodyLine8 DC="1" skiplines="2">Your date of birth which is the {0}, </BodyLine8>
+    <BodyLine9 DC="1">has been verified by Birth Registration Certificate No. {0}</BodyLine9>
+    <BodyLine10 skiplines="2">On behalf of the management and staff of the Ministry, I wish to express sincere gratitude for the contributions that you have made over the years. You have been one of the strong pillars of the organisation as evidence by your dedication, unwavering loyalty and commitment to excellence.</BodyLine10>
+    <BodyLine11 skiplines="1">The Human Resource Management and Development Unit will be available for further discussions regarding plans for retirement.</BodyLine11>
+    <BodyLine12 skiplines="2">Note: This is a system generated email. Please do not reply</BodyLine12>
+    <BodyLine13 skiplines="2">Regards,</BodyLine13>
+    <BodyLine14 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine14>
+  </Message>
+  <!--EA Ref #298-->
+  <Message key="GDisabilityParaUpdated">Global disability parameters have been saved successfully.</Message>
+  <Message key="SalaryScaleMappingSuccess">Salary scale mapping has been saved successfully.</Message>
+  <!--SU 0037-->
+  <!--<Message key="SalaryScaleMappingDateError">Start date can be any of the following:</Message>-->
+  <Message key="SalaryScaleMappingDateError">Start date can be any of the following</Message>
+  <!--EU 0037-->
+  <Message key="SalaryScaleMappingDateError1">1.Should be greater than go-live date.</Message>
+  <Message key="SalaryScaleMappingDateError2">2.Should be greater than go-live date but less than start date of first segment(if applicable).</Message>
+  <Message key="SalaryScaleMappingDateError3">3.Should be greater than start date of latest segment.</Message>
+  <Message key="SalaryScaleMappingDateError4">4.Should be greater or equal to employer establishment date</Message>
+  <Message key="SalaryScaleMappingClassificationError">Invalid classification selected.</Message>
+  <Message key="SalaryScaleMappingError">Salary scale mapping could not be saved. Please contact system administrator.</Message>
+  <!--SU 0062-->
+  <!--<Message key="SalaryScaleMappingValidationError">Please enter values for all salary points.</Message>-->
+  <Message key="SalaryScaleMappingValidationError">Please enter values for all salary Scale.</Message>
+  <!--SU 0062-->
+  <!--SU 0040-->
+  <!--<Message key="SalaryScaleMappingDateValidationError">Segments having start date or end date less than current day cannot be updated. Please select any segment having future start date.</Message>-->
+  <Message key="SalaryScaleMappingDateValidationError">Segments having start date or end date less than current day cannot be updated.</Message>
+  <!--SU 0040-->
+  <Message key="SalaryScaleMappingDisplayError">Unable to fetch salary scale mapping. Please contact system administrator.</Message>
+  <Message key="SalaryScaleMappingMismatchWarning">Total number of allowable points saved previously is different from allowable points set at global level currently.</Message>
+  <Message key="SalaryScaleMappingSegmentSelectionValidation">Please select a segment to update mapping.</Message>
+  <Message key="PAMandatory">Pensionable Allowance Component and either fixed amount or percentage value must be supplied to add the mapping.</Message>
+  <Message key="PASelection">No Pensionable Allowance is added to grid. Hence cannot save data.</Message>
+  <Message key="PA_ED">
+    Given Effective date is invalid. Please change it.
+  </Message>
+  <Message key="PAAddSuccess">Pensionable Allowance data has been saved successfully.</Message>
+  <Message key="PADuplicate">Pensionable Allowance Component cannot be duplicated in the grid.</Message>
+  <Message key="SalaryScaleMappingSegmentSelectionValidation">Please select a segment to update mapping.</Message>
+  <!--SA Ref #218-->
+  <Message key="GFBRParaUpdated">Global Family Benefit Refund parameters have been saved successfully.</Message>
+  <!--EA Ref #218-->
+  <Message key="PASelectionInvalid">Selected Pensionable Allowance Mapping is not eligible for modification.</Message>
+  <Message key="PAModifySuccess">Pensionable Allowance data has been saved successfully.</Message>
+  <Message key="TransferError">Please select at least one employee from source employer before initiating transfer.</Message>
+  <Message key="TransferRule1">Please note that only those employees will be shown in the grid who satisfy the following criteria : </Message>
+  <Message key="TransferRule2">1. Employment status must be ACTIVE under the selected Employer/MDA.</Message>
+  <Message key="TransferRule3">2. Employee must not have any pending applications in PEPAS such as Family Benefit or Deferred Pension Application,etc.</Message>
+  <Message key="TransferRule4">3. Current month's Service Record must not be uploaded in PEPAS.</Message>
+  <Message key="PA_ED1">Given effective date is invalid. A valid effective date for Pensionable Allowance mapping must satisfy the following criteria :</Message>
+  <Message key="PA_ED2">1. Must be greater than PEPAS Go-Live Date.</Message>
+  <!--SU 0061-->
+  <!--<Message key="PA_ED3">2. Must be greater than start date of any existing future mapping.</Message>-->
+  <Message key="PA_ED3">2. Must be greater than start date of existing mapping.</Message>
+  <!--EU 0061-->
+  <Message key="PA_ED4">3. Start date must not lie within any existing Pensionable Allowance mapping segment.</Message>
+  <Message key="PA_ED5">4. Should be greater or equal to employer establishment date</Message>
+  <!--EA Ref #263 Disability-->
+  <Message key="ShowDisabilityAlert">Please select at least one employee to register disability.</Message>
+  <!--Abhijit SA 98,164-->
+  <!--SU 0062-->
+  <!--<Message key="InvalidSalaryPoint">Invalid Salary Point.</Message>-->
+  <Message key="InvalidSalaryPoint">Invalid Salary Scale.</Message>
+  <!--EU 0062-->
+  <Message key="PAMandatoryRegisterEmployee">Pensionable Allowance Component and amount must be supplied.</Message>
+  <Message key="EmployeeDisabilityUpdated">Disability details have been registered successfully. An email notification has been sent to specified email address.</Message>
+  <Message key="EmployeeDisabilityUpdatedNoEmail">Disability details have been registered successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="InValidDisabilityRegistrationInjuryDate">Date of injury should be after the service start date and before the service end date for the specified employer.</Message>
+  <Message key="SameInjuryDatePresent">Same date of injury for the disability is already present in the system.</Message>
+  <Message key="MandatoryAttachmentNotUploaded">Upload mandatory attachments.</Message>
+  <!--SA 0066-->
+  <Message key="MandatoryAttachmentNotUploadedNP">Upload {0} as  attachments.</Message>
+  <!--EA 0066-->
+  <Message key="EmployeeDisabilityAlreadyRegistered">One disability has already been register for this employee. Please check employee view profile section.</Message>
+  <Message key="EmployerClassificationSalaryMismatch">Please reselect Ministry, Employer and Classification to proceed.</Message>
+  <Message key="EmployerPAMismatch">Please reselect Ministry, Employer and Classification to proceed.</Message>
+  <Message key="DuplicatePANotAllowed">Duplicate pensionable allowance is not allowed.</Message>
+  <Message key="PANotSpecified">Please specify Pensionable Allowance.</Message>
+  <Message key="PANotMapped">Classification to Pensionable Allowance Mapping does not exist for the employer.</Message>
+  <!--Abhijit EA 98,164-->
+  <!--Abhijit SA 170-->
+  <Message key="MasterDataDeactivated">The selected master data have been deactivated successfully.</Message>
+  <Message key="MasterDataDeactivatedFailed">The selected master data could not be deactivated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="MasterDataActivated">The selected master data have been activated successfully.</Message>
+  <Message key="MasterDataActivatedFailed">The selected master data could not be activated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="MasterDataDeleted">Master data have been deleted successfully.</Message>
+  <Message key="MasterDataDeletedFailed">Master data could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <!--Abhijit 170-->
+  <Message key="ClassificationNotDeletedMappedToEmployer">This classification could not be deleted as this is already mapped to the following employer(s).</Message>
+  <!--Abhijit 170-->
+  <!--Abhijit 20161201-->
+  <Message key="ClassificationNotActivatedMasterInactive">This classification could not be activated before activating parent.</Message>
+  <!--Abhijit 20161201-->
+  <!--Abhijit 170-->
+  <!--Abhijit 20161201-->
+  <!--Abhijit EA 170-->
+  <Message key="NoScalePresent">The specified destination classification has no corresponding salary scale values. Please specify the same in order to complete the Transfer Operation.</Message>
+  <Message key="NoPAPresent">The specified destination classification has no corresponding Pensionable Allowance mapping values. Please specify the same in order to complete the Transfer Operation.</Message>
+  <Message key="PANotGiven">In order to complete the Transfer Operation, Pensionable Allowance must be specified.</Message>
+  <Message key="PATypeMismatch">In order to complete the Transfer Operation, all Pensionable Allowance data must be specified.</Message>
+  <Message key="PADuplicate">Pensionable Allowance data cannot be duplicated.</Message>
+  <Message key="SalaryBeyondLimit">The salary provided does not match with the salary scale specified in PEPAS. This irregularity may generate a warning in the employee's record in PEPAS.</Message>
+  <Message key="PAAmountMismatch">The Pensionable Allowance amount provided does not match with the mapping data specified in PEPAS. This irregularity may generate a warning in the employee's record in PEPAS.</Message>
+  <Message key="PAWrong">The Pensionable Allowance provided does not match with the mapping data specified in PEPAS.</Message>
+  <Message key="TransferMutipleDone">Transfer Employee(s) operation is now complete. The selected employee(s) will be transferred subject to the execution of the Offline Batch Process.</Message>
+  <Message key="TransferConfirm">You are about to transfer the selected employee(s) to {0}. Only those employee(s) will be transferred whose status is COMPLETE. Do you want to continue ?</Message>
+  <Message key="TransferBulk" Subject="Transfer Processing Complete">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">This mail is sent as a notification mail. Your transfer process is now complete.</BodyLine2>
+    <BodyLine3 skiplines="1">Please log into PEPAS and access the data for new MDA.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="BERProductError">The uploaded file contains some error. Please correct the errors and re-upload it.</Message>
+  <Message key="EmployeeDisabilityRegistration" Subject="Employee Disability Registration">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <!--SU 0005-->
+    <!--<BodyLine2 skiplines="2">Your disability details has been registered in the system.</BodyLine2>-->
+    <BodyLine2 skiplines="2">Your disability details have been registered in the system.</BodyLine2>
+    <!--<BodyLine3 skiplines="1">You can check the details from View Profile section under My Service menu.</BodyLine3>-->
+    <BodyLine3 skiplines="1">You can check the details from View Profile section under My Services menu.</BodyLine3>
+    <!--EU 0005-->
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <!--SA 0067-->
+  <Message key="EmployeeDisabilityRegistrationEdit" Subject="Employee Disability Update Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <!--SU 0005-->
+    <!--<BodyLine2 skiplines="2">Your disability details has been registered in the system.</BodyLine2>-->
+    <BodyLine2 skiplines="2">Your disability details have been updated in the system.</BodyLine2>
+    <!--<BodyLine3 skiplines="1">You can check the details from View Profile section under My Service menu.</BodyLine3>-->
+    <BodyLine3 skiplines="1">You can check the details from View Profile section under My Services menu.</BodyLine3>
+    <!--EU 0005-->
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <!--EA 0067-->
+  <Message key="FBCRejectedWFI">The Child Pension Continuation application has been successfully sent for rejection approval.</Message>
+  <Message key="FBCRejected_SendBack">The Child Pension Continuation application has been successfully sent back to PAU officer.</Message>
+  <Message key="IndebtednessMandatoryDetails">The indebtedness component and the amount that is to be added or deducted must be specified. Also the indebtedness component cannot be duplicated in the grid.</Message>
+  <!--Saheli 20161130 Profile Maintenance-->
+  <Message key="LeaveMandatoryRegisterEmployee">Leave Type, dates and count must be supplied.</Message>
+  <Message key="LeaveStartDate">Leave Start date should be greater than or same as employment start date.</Message>
+  <Message key="LeaveEndDate">Leave End date should be less than or same as employment end date.</Message>
+  <Message key="LeaveStartEndDate">Leave Start date should be less than Leave End date.</Message>
+  <Message key="LeaveCount">Leave count is greater than the days between leave start and end date.</Message>
+  <Message key="LeaveCountNonZero">Leave count cannot be zero.</Message>
+  <Message key="UpdateOnlyNonPrimaryEmployment">Please mark an employment as primary and proceed to update the employment.</Message>
+  <Message key="DeleteOnlyNonPrimaryEmployment">Please mark an employment as primary and proceed to delete the employment.</Message>
+  <Message key="InactivePrimaryEmployment">Inactive employer cannot be marked as primary employer.</Message>
+  <Message key="InvalidNoOfDaysWorked">Please enter the number of days worked.</Message>
+  <Message key="EmploymentNoOfDaysWorked">Number of days worked is greater than the days between employment start and end date.</Message>
+
+  <Message key="NoScalePresent_Linkage">Profile Linkage operation cannot be done as no Salary Scale was found in PEPAS for the specified classification</Message>
+  <Message key="NoPAPresent_Linkage">Profile Linkage operation cannot be done as no Pensionable Allowance data was found in PEPAS for the specified classification.</Message>
+  <Message key="PANotGiven_Linkage">Profile Linkage operation cannot be done as no Pensionable Allowance has been provided for the current classification.</Message>
+  <Message key="PATypeMismatch_Linkage">Profile Linkage operation cannot be done because all the mapped Pensionable Allowance(s) are not provided.</Message>
+  <Message key="PADuplicate_Linkage">Profile Linkage operation cannot be done because duplicate Pensionable Allowance is present in the grid.</Message>
+  <Message key="PAWrong_Linkage">Profile Linkage operation cannot be done because the Pensionable Allowance provided does not match with the mapping data specified in PEPAS.</Message>
+  <Message key="NoPAYOUTETTERUploaded">Please upload signed PAYOUT LETTER.</Message>
+  <Message key="FBRRejectedWFI">The Family Benefit Refund application has been successfully sent for rejection approval.</Message>
+  <Message key="FBRRejected_SendBack">The Family Benefit Refund application has been successfully sent back to PAU Officer.</Message>
+  <Message key="RoleTransactionInformationForRevoke">No transaction has been present for the selected role.</Message>
+  <Message key="RoleTransactionRevoked">Role transaction mapping has been revoked successfully.</Message>
+  <Message key="RoleTransactionRevokeError">Role transaction mapping could not be revoked. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="AllPAComponentsMandatory">All pensionable allowance components are mandatory.</Message>
+  <Message key="ActClassificationMappingSaved">Act classification mapping has been saved successfully.</Message>
+  <Message key="ActClassificationMappingError">Act classification mapping could not be saved. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="NoRankSelectedForActClassificationMapping">Please specify at least one rank.</Message>
+  <Message key="ActClassificationMappingRevoked">Act classification mapping has been deleted successfully.</Message>
+  <Message key="ActClassificationMappingRevokeError">Act classification mapping could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="EmployeeFBRsubmissionHRSuccessNoEmail">The family benefit refund application has been submitted successfully.</Message>
+  <Message key="EmployeeFBRsubmissionHRSuccessWithEmail">The family benefit refund application has been submitted successfully. An email notification has been sent to employee's email address as specified.</Message>
+  <Message key="PressCalculateButton">Please press on calculate button to get final refund amount.</Message>
+  <Message key="RegisterNPREmail" Subject="Normal Pension Refund Application">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="1">Your Normal Pension Refund application has been submitted.</BodyLine2>
+    <BodyLine3 skiplines="2" DC="1">Your application number is {0}.</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="NoAttachmentFound">At least one document must be uploaded before submitting Normal Pension Refund.</Message>
+  <Message key="NPRDone">Normal Pension Refund application has been submitted successfully. Also a notification has been sent to the employee's registered email address.</Message>
+  <Message key="NPRDoneNoEmail">Normal Pension Refund application has been submitted successfully. </Message>
+  <Message key="NPRAlreadyExists">A Normal Pension Refund application has already been submitted for this employee. </Message>
+  <Message key="InActiveEmployerReComputation">Primary Employer is currently deactivated. Please update the employment section to proceed.</Message>
+  <Message key="ActClassificationMappingNotSavedMapingExists">Act classification mapping could not be saved as the following mapping exists.</Message>
+  <Message key="ActClassificationMappingDeactivated">Act classification mapping has been deactivated successfully.</Message>
+  <Message key="ActClassificationMappingNotDeactivatedMapingExists">This act classification mapping cannot be deactivated as it does not exist.</Message>
+  <Message key="ActClassificationMappingNotDeletedMapingExists">This act classification mapping cannot be deleted as it does not exist.</Message>
+  <!--SU 0029-->
+  <!--<Message key="EmptyRetirementDate">Retirementdate for last employment has not been updated for this employee.</Message>-->
+  <Message key="EmptyRetirementDate">Retirement date for last employment has not been updated for this employee.</Message>
+  <!--EU 0029-->
+  <Message key="PreReformInvalidMapping">Employee has been qualified for pre-reform acts. Please update act-rank-classification mapping for last employment of this employee.</Message>
+  <Message key="PostReformInvalidMapping">Employee has been qualified for post-reform acts. Please update act-rank-classification mapping for last employment of this employee.</Message>
+  <Message key="MissingVestingPeriodActMapping">Vesting period-Act mapping is not present.</Message>
+  <Message key="EmpStartDateSelectionError">Current employment start date must be provided to proceed with salary scale and Pensionable Allowance(s).</Message>
+  <Message key="SalaryScaleMissing">Salary Scale is mandatory incase employment start date is prior to PEPAS GoLive date.</Message>
+  <Message key="SalaryScaleInvalid">Entered Salary Scale is invalid.</Message>
+  <Message key="SalaryScaleMisMatchBeforeGoLive">Salary is not matching with the given Salary Scale. It should be an exact match else a warning will be generated against the employee record.</Message>
+  <Message key="VestingOverNoNPR">Normal Pension Refund application cannot be submitted because this employee has completed his/her vesting period. </Message>
+  <Message key="NoABMappingPresent">The application cannot be forwarded because no Authority Body Mapping is present in PEPAS for the current MDA. </Message>
+  <Message key="ComponentAlreadyAdded">This component has already been added.</Message>
+  <Message key="NoSalaryPointFound">Salary scale to classification mapping does not exist.</Message>
+  <Message key="SystemGeneratedAmountOverided">Please provide system generated amount change reason.</Message>
+  <Message key="PAUVerifiedAmountChanged">As PAU verified amount has been changed, please press calculate button to get final refund amount.</Message>
+  <Message key="SalaryScaleFormat">Salary scale data format is incorrect.</Message>
+  <Message key="SBRejectedWFI">The Survivor's Pension application has been successfully sent for rejection approval.</Message>
+  <!--SU 0026-->
+  <!--<Message key="NPRRejectedWFI">The Normal Pension Refuind application has been successfully sent for rejection approval.</Message>-->
+  <Message key="NPRRejectedWFI">The Normal Pension Refund application has been successfully sent for rejection approval.</Message>
+  <!--EU 0026-->
+  <Message key="SBRejected_SendBack">The Survivor's Pension Refund application has been successfully sent back to PAU officer.</Message>
+  <Message key="Employee_ActVestingPeriodMappingNotExist">Employee does not satisfy any act for vesting period. Please create classification-employer-act map.</Message>
+  <!--Saheli - Normal Pension-->
+  <Message key="VestingPeriodValidation">Vesting period does not satisfy for any benefit.</Message>
+  <Message key="ActNotExists">Act does not exists.</Message>
+  <Message key="DeathGratuityRejectedWFI">The death gratuity application has been successfully sent for rejection approval.</Message>
+  <Message key="DeathGratuityRejected_SendBack">The death gratuity application has been successfully sent back to PAU officer.</Message>
+  <Message key="NoSCRInLastYr">One year Service Record is not found for the employee.</Message>
+  <Message key="NoSDUploaded">Statutory Declaration attachment must be uploaded before forward.</Message>
+  <Message key="NoApprovalUploaded">Approval Letter attachment must be uploaded before forward.</Message>
+  <Message key="Scenario1">The employee already has an employment segment with the selected employer. Hence no new segment will be created.</Message>
+  <Message key="Scenario2">The employee already has an employment segment with the selected employer. Hence no new segment will be created.</Message>
+  <Message key="Scenario3">The employee already has an employment segment with the selected employer. Hence no new segment will be created.</Message>
+  <Message key="ApplicationClosed">Application closed successfully.</Message>
+  <Message key="RankMappingMissing">Rank-Classification mapping does not exists for the complete employment record of the employee.</Message>
+  <Message key="SBCeasedStage">
+    Please ensure dependent and employment record has been updated with latest data.
+    <br /> Also, this will prevent further modification of employee data.
+    <br />Please notify concerned department about this in case any other workflow is active for this employee.
+    <br /><br /><br />You are about to {0} . Are you sure ?
+  </Message>
+  <Message key="SBVerified">
+    It is recommended to use RECALCULATE option to get latest employee data before computation.
+    <br /><br /><br />You are about to {0} . Are you sure ?
+  </Message>
+  <Message key="DFPRejected_SendBack">The Deferred Pension application has been successfully sent back to PAU officer.</Message>
+  <!--gratuity-->
+  <Message key="G1_DG">Max [Last annual salary | Commuted gratuity]</Message>
+  <Message key="G2_DG">Max [PE(Last year Pensionable Allowance+Last annualized salary) | Commuted gratuity]</Message>
+  <Message key="CG_DG">Max [(Total completed years * Annual salary)/13  | Annual salary]</Message>
+  <Message key="CP_DG">Contribution Paid</Message>
+  <Message key="PP_DG">Pension paid from retirement date to present date</Message>
+  <Message key="AP_DG">Allowance Paid Previously</Message>
+  <Message key="AP_DG2">Additional Pension</Message>
+  <!--SD 0021-->
+  <!--<Message key="N_S1">Annualized Salary</Message>-->
+  <!--ED 0021-->
+  <!--SA 0021-->
+  <Message key="N_S1">Annualized Salary</Message>
+  <!--EA 0021-->
+  <Message key="GP_DG">Gratuity Paid Previously</Message>
+  <Message key="N_DG">Min [{Date of completion of 20 years from DOJ of employer - Last employment end date - No pay leave -Break in period} | {Date of death - Age at 60 years}]</Message>
+  <!--common in pension and gratuity-->
+  <!--SD 0020-->
+  <!--<Message key="PE_SB">Pensionable Emoluments(Annulazed Salary+Pensionable Allowances)</Message>-->
+  <!--ED 0020-->
+  <!--SA 0020-->
+  <Message key="PE_SB">Pensionable Emoluments(Annualized Salary + Pensionable Allowances)</Message>
+  <!--EA 0020-->
+  <!--SD 0021-->
+  <!--<Message key="S_SB">Annualized Salary</Message>-->
+  <!--ED 0021-->
+  <!--SA 0021-->
+  <Message key="S_SB">Annualized Salary</Message>
+  <!--EA 0021-->
+  <Message key="M_SB">Net Month of Service For Deceased</Message>
+  <Message key="M_NP">Net Month of Service</Message>
+  <!--pension-->
+  <Message key="C_SP">No of children</Message>
+  <!--SA 0035-->
+  <Message key="SC_SP">No of sibling</Message>
+  <!--EA 0035-->
+  <Message key="N_ARP">Annual Retired Pay</Message>
+  <Message key="N_RA">Retiring Allowance</Message>
+  <!--lod-->
+  <Message key="DODG1_LOD">Max [G1 | Upper set parameter from global]</Message>
+  <Message key="DODG2_LOD">Max [G2 | Upper set parameter from global]</Message>
+  <!--Leave-->
+  <Message key="LeavetUploadError">Error in uploading leave details. Please refer Leave excel guidelines or contact system administrator for details.</Message>
+  <Message key="NPRejectedWFI">The Normal Pension application has been successfully sent for rejection approval.</Message>
+  <Message key="NPRejected_SendBack">The Normal Pension application has been successfully sent back to PAU officer.</Message>
+  <Message key="DFPRejectedWFI">The Deferred Pension application has been successfully sent for rejection approval.</Message>
+  <Message key="DFPRejected_SendBack">The Deferred Pension application has been successfully sent back to PAU officer.</Message>
+
+  <Message key="DateOfDeathAfterDOB">Death of date of deceased should be after date of birth.</Message>
+  <Message key="No_BURIAL_ADVANCE_PAYOUTETTER_Uploaded">Please upload signed Burial Advance Payout Letter.</Message>
+  <Message key="DFPAlreadySubmitted">A Deferred Pension application is already submitted and is currently active with the given TRN.  You cannot create/duplicate the application.</Message>
+  <Message key="UnavailableComputationDataError_SB_EX">Data cleansing has not been done for deceased. Please forward to Client Service Officer.</Message>
+  <Message key="LODRejected_SendBack">The line of duty application has been successfully sent back to PAU Computation Officer.</Message>
+  <Message key="LODRejected">The line of duty application has been rejected successfully.</Message>
+  <Message key="LODRejectedWFI">The line of duty application has been successfully sent for rejection approval.</Message>
+  <Message key="SBExRejectedWFI">The Survivor's Benefit application has been successfully sent for rejection approval.</Message>
+  <Message key="SBExRejected_SendBack">The Survivor's Benefit Refund application has been successfully sent back to PAU officer.</Message>
+  <Message key="N_Y">Completed years of service</Message>
+  <Message key="N_HY">Completed Half years of service</Message>
+  <Message key="N_MPRE">Net months of service in Pre-reform</Message>
+  <Message key="N_MPOST">Net months of service in Post-reform</Message>
+  <!--SD 0021-->
+  <!--<Message key="N_S3">Annualized Salary</Message>-->
+  <!--ED 0021-->
+  <!--SA 0021-->
+  <Message key="N_S3">Annualized Salary</Message>
+  <!--EA 0021-->
+  <Message key="N_PE">Pensionable Emoluments</Message>
+  <!--SD 0020-->
+  <!--<Message key="N_PE5">Pensionable Emoluments(Annualized Salary+Pensionable Allowances)</Message>-->
+  <!--ED 0020-->
+  <!--SA 0020-->
+  <Message key="N_PE5">Pensionable Emoluments(Annualised Salary + Pensionable Allowances)</Message>
+  <!--EA 0020-->
+  <Message key="N_HPE">Highest Pensionable Emoluments</Message>
+  <Message key="N_RS">Reduction in Pension for Soldiers</Message>
+  <Message key="N_RQS">Remaining quarters service for Officers</Message>
+  <Message key="N_RQA">Remaining quarters age for Officers</Message>
+  <Message key="N_RT">Reduction amount in Annual Retired Pay</Message>
+  <Message key="N_PE3">Average 3 years Pensionable Emolument for JDF employee</Message>
+  <Message key="N_PE_3">Average 3 years Pensionable Emolument</Message>
+  <Message key="N_PEAG">Aggregate 3 years Pensionable Emolument for JDF employee</Message>
+  <Message key="N_LY">Leap Year factor for JDF</Message>
+  <Message key="N_RP">Reduction in pension</Message>
+  <Message key="N_P_2">Pension</Message>
+  <Message key="N_G">Difference between the number of years served and 20 years or the years left to attain age 65 whichever comes first</Message>
+  <Message key="RegisterDeathEmail" Subject="Employee Death Registration">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Thank you for submitting the Death Registration application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">The application number is: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="DateBeforeGoJ">Supplied date cannot be prior to employee GoJ.</Message>
+  <Message key="ValidateCeaseDisabilityAlert">Employment record of this employee is currently ceased.</Message>
+  <Message key="EarlyRetirementMinAgeNotSet">Please ensure that early retirement min age is set at global parameter level.</Message>
+  <Message key="MDAMappedToAuthorityBody">The following MDA(s) are mapped to other authority body.</Message>
+  <Message key="LeaveUploadSuccess">Leave details has been uploaded successfully.</Message>
+  <Message key="NPRRejected">The Normal Pension Refund application has been rejected. An email notification has been sent to the applicant.</Message>
+  <Message key="NPRRejected">The Normal Pension Refund application has been rejected successfully. An email notification has been sent to the applicant.</Message>
+  <Message key="NPRRejected_SendBack">The Normal Pension Refund application has been successfully sent back to PAU Officer.</Message>
+  <Message key="ReComputationStarted" Subject="Application Re-Computation Started">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 skiplines="2">Re-computation started for your application.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="1">Application Number : {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine4>
+    <BodyLine5 skiplines="2">Regards,</BodyLine5>
+    <BodyLine6 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine6>
+  </Message>
+  <Message key="RecomputationStartedWithEmail">Application re-computation initiated successfully. An email notification has been sent to the employee.</Message>
+  <Message key="EndDateAfterRetirement">Given employment end date is greater than retirement date.</Message>
+  <!--Saheli 2017-03-02 - Validation for ReductionPercentagePost (if not set)-->
+  <Message key="BlankReductionPercentagePost">Employee has been qualified for post-reform act. Pension reduction percentage for early retirement has not been configured in system parameter section. Please contact System Administrator before process the application.</Message>
+  <Message key="CategoryNotDeletedInvolvedInTransaction">The query category could not be deleted as it is already involved in transaction.</Message>
+  <Message key="SubCategoryNotDeletedInvolvedInTransaction">The query sub-category could not be deleted as it is already involved in transaction.</Message>
+  <!--SA 0001-->
+  <Message key="InvalidFileType">This file format is not allowed. Please select a different file type.</Message>
+  <!--EA 0001-->  
+  <!--SA 0013-->
+  <Message key="PostReformParameterMissing_MDALevel">Maximum retirement age in post reform parameter (Employer specific) is not set in PEPAS. It is required for registration process.</Message>
+  <Message key="PostReformParameterMissing">Maximum retirement age in post reform parameter (Global Level) is not set in PEPAS. It is required for registration process.</Message>
+  <!--EA 0013-->
+  <!--SA 0014-->
+  <Message key="PostReformParameterMissing_MDALevel_Trans">Maximum retirement age in post reform parameter (Employer specific) is not set in PEPAS. It is required for transfer process.</Message>
+  <Message key="PostReformParameterMissing_Trans">Maximum retirement age in post reform parameter (Global Level) is not set in PEPAS. It is required for transfer process.</Message>
+  <!--EA 0014-->
+  <!--SA 0017-->
+  <Message key="GOJStartDateMisMatch_RetirementDate">GOJ start date cannot be after retirement date.</Message>
+  <Message key="StartDateMisMatch_RetirementDate">Employment start date cannot be after retirement date.</Message>
+  <!--EA 0017-->
+  <!--SA 0018-->
+  <Message key="InvalidFileSize">File size greater than specified limit.</Message>
+  <!--EA 0018-->
+  <!--SA 0019-->
+  <Message key="MinistryDeleteSuccess">Ministry record has been deleted successfully.</Message>
+  <Message key="MinistryDeleteError">Ministry could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <!--EA 0019-->
+  <!--SA 0022-->
+  <Message key="ActReformMappingNotUpdated_MappingExist">Act Reform Mapping cannot be saved as Act Employer Classification Reform mapping is present. Please click download button to get the details and deactivate those mappings and proceed again.</Message>
+  <!--EA 0022-->
+  <!--SA 0023-->
+  <Message key="RoleNotSaved_NoEmployer">System should have at least one employer.</Message>
+  <!--EA 0023--> 
+  <!--SA 0024-->
+  <Message key="DuplicateSalaryScale">Salary scale should not be duplicate.</Message>
+  <!--EA 0024-->
+  <!--SA 0025-->
+  <Message key="InvalidOrderSalaryScale">Salary scale should be in ascending order.</Message>
+  <!--EA 0025-->
+  <!--SA 0027-->
+  <Message key="TRNMatchFoundInDB_BulkRegistrationReviewed">The TRN specified in the below grid are already registered in PEPAS DB. So these records will not be processed.</Message>
+  <!--EA 0027-->
+  <!--SA 0028-->
+  <Message key="SCRAdjustmentRequested" Subject="Monthly Service Record Adjustment Requested">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">This mail is sent as a notification mail. Your service record adjustment request for {0}</BodyLine2>
+    <BodyLine3 DC="1"> {0} has been submitted in PEPAS.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <!--EA 0028-->
+  <!--SA 0030-->
+  <Message key="EarlyRetirementBeforeGOJStartDate">The retirement date cannot be before or equal to the GOJ start date.</Message>
+  <!--EA 0030-->
+  <Message key="InvalidSegmentEndReason">Last segment of employee is not updated with proper end reason/end date. Please update employment history with proper data.</Message>
+  <!--SA 0031-->
+  <Message key="MDANotSelected_HRRoleMapToUser">Please select atleast one employer to give the HR privilege for this employee.</Message>
+  <!--EA 0031-->
+  <!--SA 0032-->
+  <Message key="GRVAssigned" Subject="Query Application Assigned">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">The query application no. {0} has been assigned to you.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <!--EA 0032-->
+  <!--SA 0034-->
+  <Message key="ClassificationActRankMappingMissing">Rank-Classification mapping does not exist.</Message>
+  <Message key="WrongClassificationActRankMappingExist">Rank-Classification mapping is incorrect.</Message>
+  <!--EA 0034-->
+  <!--SA 0038-->
+  <Message key="MDANotSelected">Please select atleast one employer.</Message>
+  <!--EA 0038-->
+  <!--SA 0039-->  
+  <Message key="NonPensionableUserAlreadyRegistered">This TRN is present as active Non-Pensionable User. Please contact System Administrator to deactivate this Non-Pensionable User.</Message>
+  <!--SD 0050-->
+  <!--<Message key="MDANotSelected_ABRoleMapToNonPensionableUser">Please select atleast one employer to give the Authority Body privilege for this Non-Pensionable user.</Message>-->
+  <!--ED 0050-->
+  <!--EU 0039-->
+  <!--SA 0041-->
+  <Message key="TriggerDeathBenefitSuccess">Application has been triggered successfully.</Message>
+  <Message key="TriggerDeathBenefitSuccess_Burial">Burial advance has been marked as applicable. Please initiate Death Gratuity workflow.</Message>
+  <Message key="TriggerDeathBenefitSuccess_LOD">Line Of Duty has been marked as applicable. Please initiate Death Gratuity workflow.</Message>
+  <Message key="TriggerDeathBenefitError">Error in triggering workflow.Please contact system administrator.</Message>
+  <!--SA 0041-->
+  <!--SA 0069-->
+  <Message key="TriggerDeathBenefitError_LOD">Line of Duty workflow will be triggered after rejection of Death Gratuity workflow only in case of "Death in the Line of Duty".</Message>
+  <!--EA 0069-->
+  <!--SA 0042-->
+  <Message key="InvalidClassfication_PA_Mapping">Pensionable Allowance segment cannot be modified. Please contact System Administrator.</Message>
+  <Message key="Classfication_PA_Mapping_Same_As_Previous">Mapped components and their values are same as previous ones. Kindly modify.</Message>
+  <Message key="Classfication_SalaryScale_Mapping_Same_As_Previous">Salary scale values are same as previous ones. Kindly modify.</Message>
+  <Message key="PensionableAllowancesModified" Subject="Pensionable Allowances Modified">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">System Administrator has modified Pensionable Allowance configuration for: {0}.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Effective Start Date of that Pensionable Allowance: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please perform retroactive adjustment from monthly adjustment SCRs section for all the effected employees.</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="SalaryScaleModified" Subject="Salary Scale Modified">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">System Administrator has modified Salary Scale configuration for: {0}.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Effective Start Date of that Salary Scale: {0}</BodyLine3>
+    <BodyLine4 skiplines="2">Please perform retroactive adjustment from monthly adjustment SCRs section for all the effected employees.</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <!--EA 0042-->
+  <!--SA 0043-->
+  <Message key="MinistryUpdationFailed_AsDecativated">The data entered could not be saved as this ministry is already deactivated.</Message>
+  <!--EA 0043-->
+  <!--SA 0044-->
+  <Message key="EmployerUpdationFailed_AsDecativated">The data entered could not be saved as this employer is already deactivated.</Message>
+  <!--EA 0044-->
+  <!--SA 0045-->
+  <Message key="MatchingEmployeeFound">Employee record has been found. Please click BACK button to restart the process again.</Message>
+  <!--EA 0045-->
+  <!--SA 0046-->
+  <Message key="DotCMIS_Conflict">Server Busy. This action cannot be completed. Please try again.</Message>
+  <!--EA 0046-->
+  <!--SA 0048-->
+  <Message key="Segment_NotEditable_Employer_Classification_Mapping_Not_Exist">This segment cannot be edited as Employer to Classification Mapping doesn't exist. Please contact System Administrator for further process.</Message>
+  <!--EA 0048-->
+  <!--SA 0049-->
+  <Message key="System_Parameter_Reset_Prevented_Defence">Operation cannot be performed for Jamaica Defence Force as rank-wise retirement age will be affected.</Message>
+  <!--EA 0049-->
+  <!--SA 0050-->
+  <Message key="NoAuthorityBodySelected_UserRoleMap">Please select atleast one Authority Body to give the Authority Body privilege for this user.</Message>
+  <!--SA 0070-->
+  <Message key="NoPayrollOfficerSelected_UserRoleMap">Please select atleast one employer to give the Payroll Officer privilege for this employee.</Message>
+  <!--EA 0070-->
+  <Message key="No_Permanent_Segment_In_Employment">Employment record should contain at least one segment with Permanent employment.</Message>
+  <Message key="InvalidSegmentEmploymentType">Last employment type of employee should be Permanent.</Message>
+  <Message key="Invalid_Act_RankMapping">Act to Rank mapping is not valid.</Message>
+  <!--EA 0050-->
+  <!--SA 0051-->
+  <Message key="AuthorityBody_NotDeleted_MappedToUser">This Authority Body could not be deleted as this is already mapped to the user(s).</Message>
+  <Message key="AuthorityBody_CompassionateGratuity_NotDeleted">This Authority Body could not be deleted.</Message>
+  <!--EA 0051-->
+  <!--SA 0052-->
+  <Message key="M55_NP">Net Month of Service At Age 55</Message>
+  <!--EA 0052-->
+  <!--SA 0053-->
+  <Message key="WorkingDaysCasualDailyValidation_Internal">Please send back the application to HR to get the actual no of working days between {0} to {1}.</Message>
+  <Message key="WorkingDaysCasualDailyValidation_External">Please forward the application to PAU Client Service Officer to get the actual no of working days between {0} to {1}.</Message>
+  <Message key="No_Of_Working_Days_Exceeded_SegmentDayDiff">Number of actual working days cannot be greater than total number of days between Segment Cut-Off Date and Segment End Date.</Message>
+  <Message key="PAU_ToHR_PAU_ToClientService_ForwardConfirmation">
+    You are about to {0}. However any existing value related to actual number of working days of Casual/Daily employee for a spiltted segment will be reset. Are you sure
+    you wish to proceed?
+  </Message>
+  <Message key="WorkingDaysCasualDailyValidation_Temporary_Internal">Please send back the application to HR to get the actual no of working days between segment(s) {0}.</Message>
+  <Message key="WorkingDaysCasualDailyValidation_Temporary_External">Please forward the application to PAU Client Service Officer to get the actual no of working days between segment(s) {0}.</Message>
+  <Message key="No_Of_Actual_Working_Days_Mandatory">Number of actual days worked is mandatory.</Message>
+  <Message key="No_Of_Actual_Working_Days_Exceeded_SegmentDayDiff_WithRange">Number of actual working days cannot be greater than total number of days between {0} to {1}.</Message>
+  <!--EA 0053-->
+  <!--SA 0054-->
+  <Message key="Y3_NP">Y/3</Message>
+  <!--EA 0054-->
+  <!--SA 0055-->
+  <Message key="Invalid_Months_Selection_CopySimilarSCR">Invalid month(s) selected for copy similar SCR.</Message>
+  <Message key="Retroactive_Segment_Adjustment_Month_Before_GoLive">Selected month for adjusting service record cannot be before Go-Live date.</Message>
+  <Message key="Retroactive_Segment_Adjustment_Month_Before_Parameter">Selected month for adjusting service record must be selected within the range of system parameter setting.</Message>
+  <!--EA 0055-->
+  <!--SA 0056-->
+  <Message key="SaveParishConfirmation">
+    This will save the Parish/State/Province under country "{0}". Are you sure you want to proceed?
+  </Message>
+  <Message key="UpdateParishConfirmation">
+    This will update the Parish/State/Province. Are you sure you want to proceed?
+  </Message>
+  <Message key="ParishCodeExists">The Parish/State/Province code entered already exists for the selected country.</Message>
+  <Message key="ParishValueExists">The Parish/State/Province already exists for selected country.</Message>
+  <Message key="ParishSaved">Parish/State/Province have been saved successfully.</Message>
+  <Message key="ParishDeactivated">The selected Parish/State/Province have been deactivated successfully.</Message>
+  <Message key="ParishDeactivationFailed">The selected Parish/State/Province could not be deactivated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ParishActivated">The selected Parish/State/Province have been activated successfully.</Message>
+  <Message key="ParishActivationFailed">The selected Parish/State/Province could not be activated. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ParishNotDeletedInvolvedInTransaction">The selected Parish/State/Province could not be deleted as they are already involved in transaction.</Message>
+  <Message key="ParishDeleted">The selected Parish/State/Province have been deleted successfully.</Message>
+  <Message key="ParishDeletetionFailed">The selected Parish/State/Province could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ParishDeletetionFailed">The selected Parish/State/Province could not be deleted. Please try again or contact your system administrator for further assistance.</Message>
+  <Message key="ParishNotSelected">Please select a Parish/State/Province.</Message>
+  <!--EA 0056-->
+  <!--SA 0057-->
+  <Message key="DependentBenefitValidationFailed">Sum of dependent benefit(s) should be matched with Final Verified Gratuity amount.</Message>
+  <!--EA 0057-->
+  <!--SA 0058-->
+  <Message key="EmployersAlreadyMapped">Following employer(s) is mapped to other ministry: {0}</Message> 
+  <Message key="EmployersMappedToMinistrySuccess">Ministry to Employer Mapping has been saved successfully. This change has huge impact in system. If you wish to perform other operations, please sign out from PEPAS and login again.</Message>
+  <Message key="EmployerDeMappedFromMinistry" Subject="Employer has been de-selected from existing Ministry">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="2" skiplines="2">Mapping of {0} has been removed from </BodyLine2>
+    <BodyLine3 DC="2">{0}. </BodyLine3>
+    <BodyLine4 DC="2">To perform normal work, {0} should be mapped with one ministry.</BodyLine4>
+    <BodyLine5 skiplines="2">If you do not have any information related to this change please contact System Administrator. Please sign out from PEPAS system and login again to get the current configuration.</BodyLine5>
+    <BodyLine6 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine6>
+    <BodyLine7 skiplines="2">Regards,</BodyLine7>
+    <BodyLine8 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine8>
+  </Message>
+  <Message key="EmployerMappedToMinistry" Subject="Employer has been mapped with new Ministry">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="2" skiplines="2">Mapping of {0} has been created with </BodyLine2>
+    <BodyLine3 DC="2">{0}. </BodyLine3>
+    <BodyLine3 DC="2">To perform normal work for this {0}, </BodyLine3>
+    <BodyLine4 DC="2">going forward please select parent ministry as {0}.</BodyLine4>
+    <BodyLine5 skiplines="2">If you do not have any information related to this change please contact System Administrator. Please sign out from PEPAS system and login again to get the current configuration.</BodyLine5>
+    <BodyLine6 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine6>
+    <BodyLine7 skiplines="2">Regards,</BodyLine7>
+    <BodyLine8 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine8>
+  </Message>
+  <!--EA 0058-->
+  <!--SA 0060-->
+  <Message key="EmployeeDisabilityEdited">Disability details have been updated successfully. An email notification has been sent to specified email address.</Message>
+  <Message key="EmployeeDisabilityEditedNoEmail">Disability details have been updated successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <!--EA 0060-->
+  <!--SA 0064-->
+  <Message key="LastSegmentStartDateMismatch">Start Date of Last Segment should be greater or equal to Date of Commencement of Service under current Employer.</Message>
+  <!--EA 0064-->
+  <!--SA 0067-->
+  <Message key="InvalidSegmentEndReasonDisability">Last segment of employee is not updated with proper end date. Please update employment history with proper data.</Message>
+  <!--EA 0067-->
+  <!--EA 0068-->
+  <Message key="CYE">Contribution years while an employee</Message>
+  <Message key="CYP">Contribution years while a pensioner</Message>
+  <Message key="S_CSFB">Salary at date of retirement</Message>
+  <Message key="P_CSFB">Full Pension at date of retirement</Message>
+  <Message key="CSFBApplicationClosed">Pensions (Civil Service Family Benefits) application has been closed successfully. Also a notification email has been sent to the applicant regarding the same.</Message>
+  <Message key="CSFBApplicationClosedNoEmail">Pensions (Civil Service Family Benefits) application has been closed successfully. However, we are unable to send an email notification due to an invalid email address.</Message>
+  <Message key="RejectCSFBEmail" Subject="Pensions (Civil Service Family Benefits) Application Rejected">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Pensions (Civil Service Family Benefits) application {0} has been rejected.</BodyLine2>
+    <BodyLine3 skiplines="1">The reason for the rejection is as follows:</BodyLine3>
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>
+    <BodyLine5 skiplines="2">Note: This is a system generated email.Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="CSFBComplete" Subject="Pensions (Civil Service Family Benefits) Application Completed">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Pensions (Civil Service Family Benefits) application {0} has been completed.</BodyLine2>
+    <BodyLine3 skiplines="2">Note: This is a system generated email. Please do not reply.</BodyLine3>
+    <BodyLine4 skiplines="2">Regards,</BodyLine4>
+    <BodyLine5 skiplines="1">Public Employees Pension Administration System (PEPAS)</BodyLine5>
+  </Message>
+  <Message key="CSFBRejected">The Pensions (Civil Service Family Benefits) application has been rejected successfully. An email notification has been sent to the applicant.</Message>
+  <Message key="CSFBRejectedWFI">The Pensions (Civil Service Family Benefits) application has been successfully sent for rejection approval.</Message>
+  <Message key="CSFBRejected_SendBack">The Pensions (Civil Service Family Benefits) application has been successfully sent back to PAU Officer.</Message>
+  <Message key="CSFBRejected">The Pensions (Civil Service Family Benefits) application has been rejected successfully. An email notification has been sent to the applicant.</Message>
+  <Message key="ApplyCSFBEmail" Subject="Pensions (Civil Service Family Benefits) Submitted">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">Your Survivor's Benefit application {0} has been rejected.</BodyLine2>
+    <BodyLine3 DC="1" skiplines="2">Your Pensions (Civil Service Family Benefits) application {0} has been started.</BodyLine3>
+    <BodyLine4 skiplines="2">Please use this number to track the status of your application.</BodyLine4>
+    <BodyLine5 skiplines="1">Note: This is a system generated email. Please do not reply.</BodyLine5>
+    <BodyLine6 skiplines="2">Regards,</BodyLine6>
+    <BodyLine7 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine7>
+  </Message>
+  <Message key="InvalidDateAsEmployee">Start Date of Contribution Year cannot be greater than End Date of Contribution Year While an Employee.</Message>
+  <Message key="InvalidDateAsPensioner">Start Date of Contribution Year cannot be greater than End Date of Contribution Year While a Pensioner.</Message>
+  <!--SA 0068-->
+  <!--EA 0069-->
+    <Message key="LODselectionError">Please uncheck Line Of Duty Option to process Workflow</Message>
+  <!--SA 0069-->
+  <!--SA 0071-->
+  <Message key="ValidationForWorkflowReview">Workflow is pending for review with PAU Computation Supervisor/Manager.</Message>
+  <Message key="ValidationForWorkflowReviewNoteToComp">The workflow is currently not assigned to any PAU Computation Officer.</Message>
+  <Message key="ConfirmationMessageForSendingApprovalNotification">Notification sent to {0} for workflow review.</Message>
+  <Message key="ConfirmationMessageForSendingApprovalNotificationBack">Notification sent to assigned PAU Computation Officer for next action.</Message>
+  <Message key="ReviewApplicationConfirm">Application is not approved. Are you sure want to continue?</Message>
+  <!--EA 0071-->
+  <!--SA 0072-->
+  <Message key="SecondmentMandatoryRegisterEmployee">Secondment Type and dates must be supplied.</Message>
+  <Message key="SecondmentStartDate">Secondment Start date should be greater than or same as employment start date.</Message>
+  <Message key="SecondmentEndDate">Secondment End date should be less than or same as employment end date.</Message>
+  <Message key="SecondmentStartEndDate">Secondment Start date should be less than Secondment End date.</Message>
+  <Message key="SecondmentStartEndDateAfterGoLiveDate">Secondment Start or End date should not be after the Go Live date.</Message>
+  <!--EA 0072-->
+  <!--SA 0073-->
+  <Message key="NoSupMgrRemoveIfPendingApproval">PAU Supervisor/Manager Role cannot be removed for the user as approval is pending with him/her.</Message>
+  <!--EA 0073-->
+  <!--SA 0074-->
+  <Message key="EmployeeEligibleForDeferredPension">The employee has another employment/eligible for Deferred Pension. Please ignore this warning in case of Dual Employment.</Message>
+  <!--EA 0074-->
+  <!--SA 0075-->
+  <Message key="DualEmploymentNormalPensionEmail" Subject="Concurrent Benefit Notification">
+    <BodyLine1 DC="1">Dear {0}, </BodyLine1>
+    <BodyLine2 DC="1" skiplines="2">{0}</BodyLine2>
+    <BodyLine3 DC="1" skiplines="1">{0}</BodyLine3>    
+    <BodyLine4 DC="1" skiplines="1">{0}</BodyLine4>    
+    <BodyLine5 skiplines="1">In lieu of the above please make an election stating which of the benefits you will accept.</BodyLine5>
+    <BodyLine6 DC="1" skiplines="2">Note: This is not a system generated email. Please do reply as early as possible to {0} as Pensions Administration Unit will not be able to process the benefit without your valuable input.</BodyLine6>
+    <BodyLine7 skiplines="2">Regards,</BodyLine7>
+    <BodyLine8 skiplines="1">Public Employees' Pension Administration System (PEPAS)</BodyLine8>
+  </Message>
+  <Message key="EmployeeDualEmploymentConfirmation">
+    This employee currently has an active employment record. If you wish to record a dual employment, the selected Employer will be considered as primary employer of the new employment.
+  </Message>
+  <Message key="NPNotEligibleForForward1">Another Normal Pension workflow has already been forwarded from Computation step.</Message>
+  <Message key="NPNotEligibleForForward2">Please check one of checkboxes below Email Communication section.</Message>
+  <Message key="NPNotEligibleForForward3">Please uncheck one of checkboxes below Email Communication section.</Message>
+  <Message key="NPNotEligibleForForward4">Please check only second checkbox below Email Communication section.</Message>
+  <Message key="ConcurrentBenefitNotificationSend">Concurent benefit notification has been send successfully.</Message>
+  <!--EA 0075-->
+</Messages>

@@ -1,0 +1,303 @@
+<div class="container margnContain innerpageminheight">
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+            <h3>Register Citation</h3>
+        </li>
+    </ol>
+    <div class="col-md-12">
+        <div class="alert alert-dismissible alert-warning" style="display:none;" id="divMessage">
+            {{message}}
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <form [formGroup]="fgCitation" (submit)="onSubmit()">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Project Name<span class="text-danger">*</span></label>
+                            <input type="text" formControlName="projectName" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Client Name</label>
+                            <input type="text" formControlName="clientName" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.clientName.errors }" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" formControlName="startDate" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.startDate.errors }" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" formControlName="endDate" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.endDate.errors }" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Valuation<span class="text-danger">*</span></label>
+
+                                <input type="number" class="form-control quantity" maxlength="12" id="ContactNumber"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    formControlName="projectValue"
+                                    [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Currency</label>
+                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.currency.errors }"
+                                formControlName="currency">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let c of currencies" [value]="c.valueId">{{c.description}}
+                                </option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Region</label>
+                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.region.errors }"
+                                formControlName="region">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let r of regions" [value]="r.valueId">{{r.description}}
+                                </option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.country.errors }"
+                                formControlName="country">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let c of countries" [value]="c.countryId">{{c.name}} </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Funding Agency</label>
+                            <select class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.fundingAgency.errors }"
+                                formControlName="fundingAgency">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let f of fundingAgencies" [value]="f.fundingAgencyId">{{f.name}}
+                                </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Sub-SBU</label>
+                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.subSbu.errors }"
+                                formControlName="subSbu" (change)="onChangeSubSbu($event)">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let s of subSbus" [value]="s.subSBUId">{{s.name}} </option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Project Type</label>
+                            <select class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.projectType.errors }"
+                                formControlName="projectType">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let p of projectTypes" [value]="p.projectTypeId">{{p.name}} </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label>Is network firm oppotunity?</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="checkbox"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.isNetworkFirmOpportunity.errors }"
+                                        formControlName="isNetworkFirmOpportunity">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Lead Firm Country</label>
+                            <select class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.leadFirmCountry.errors }"
+                                formControlName="leadFirmCountry">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let c of countries" [value]="c.countryId">{{c.name}} </option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="form-group">
+                                <label>PwC India Value<span class="text-danger">*</span></label>
+
+                                <input type="number" class="form-control quantity" maxlength="10" id="ContactNumber"
+                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                    formControlName="pwcIndiaValue"
+                                    [ngClass]="{ 'is-invalid': submitted && cu.pwcIndiaValue.errors }" />
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4 ">
+
+                        <div class="form-group">
+                            <label>Document Type</label>
+                            <select class="form-control" #documentType
+                                [ngClass]="{ 'is-invalid': submitted && cu.documentType.errors }"
+                                formControlName="documentType">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let d of documentTypes; let i=index;" [value]="d.valueId">{{d.description}} </option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+
+                        <div class="form-group">
+                            <label for="file">Choose File</label>
+                            <input type="file" id="file" (change)="handleFileInput($event.target.files)" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" (click)=onUploadClick(documentType.value)>Upload</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row" *ngIf="documents.length > 0">
+
+                    <div class="col-md-12 row-top_margin">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+        
+                                    <th scope="col">Type</th>
+                                    <!-- <th scope="col">Gender</th> -->
+                                    <th scope="col">Name</th>
+                                    <!-- <th scope="col">Relationship</th> -->
+                                    
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table" *ngFor="let d of documents; let i = index">
+        
+                                    <td>{{d.documentType}}</td>
+                                    <td>{{d.name}}</td>
+                                    <td>
+                                        <a href="#" data-toggle="modal" (click)="onDeleteFamilyMember()">
+                                            <i class="fa fa-trash-o text-PWC"></i>
+                                        </a>
+        
+                                        <!-- <button (click)="onDeleteFamilyMember()">Delete</button> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                </div>
+
+
+
+                <div class="col-md-12 ">
+
+                    <div class="form-group">
+                        <label>Download</label>
+                        <button type="button" class="btn btn-primary" (click)="downlaodFile()">Download</button>
+                    </div>
+                </div>
+
+                <div class="col-md-12 ">
+
+                    <div class="form-group pull-right">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+</div>

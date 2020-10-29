@@ -1,0 +1,22 @@
+{
+    "responsecode": "SUCCESS",
+    "responsemessage": "",
+    "transactiontype": "READ",
+    "data": [
+    {
+    "key_id": 2,
+    "key_code": "AUTHENTICATION_TYPE",
+    "key_name": "AUTHENTICATION TYPE"
+    },
+    {
+    "key_id": 3,
+    "key_code": "SECURITY_QUESTION",
+    "key_name": "SECURITY QUESTION"
+    },
+    {
+    "key_id": 1,
+    "key_code": "YES_NO",
+    "key_name": "YES NO"
+    }
+    ]
+    }

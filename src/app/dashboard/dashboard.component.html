@@ -1,0 +1,72 @@
+<div class="container margnContain innerpageminheight">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+            <h3>Dashboard</h3>
+        </li>
+    </ol>
+    <div class="col-md-12">
+        <div class="alert alert-dismissible alert-danger" style="display:none;" id="divMessage">
+{{message}}
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" routerLink="/registercitation">
+                    Create Citation
+                </button>
+
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary" routerLink="/searchcitation">
+                    Search Citation
+                </button>
+
+            </div>
+
+        </div>
+        <!-- <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="count-box">
+                            <a href="#" data-toggle="modal" (click)="showApplicationDetails('')">{{ applicationCount }}</a>
+                            </div>
+                        <div class="count-box-title">Total Application Count</div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-box">
+                            <a href="#" data-toggle="modal" (click)="showApplicationDetails('MALE')">
+                                {{ maleApplicationCount }}
+                            </a>
+                            </div>
+                        <div class="count-box-title">Total Male Application Count</div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-box">
+                            <a href="#" data-toggle="modal" (click)="showApplicationDetails('FEMALE')">
+                                {{ femaleApplicationCount }}
+                            </a>
+                            </div>
+                        <div class="count-box-title">Total Female Application Count</div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-box">
+                            <a href="#" data-toggle="modal" (click)="showApplicationDetails('TRANSGENDER')">
+                                {{ transApplicationCount }}
+                            </a>
+                            </div>
+                        <div class="count-box-title">Total Trans Application Count</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" (click)="onApply()">Apply</button>
+                </div>
+            </div>
+        </div> -->
+        
+    </div>
+
+
+
+</div>

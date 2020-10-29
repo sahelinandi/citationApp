@@ -1,0 +1,8 @@
+[{
+    "APIName": "RMS",
+   "BaseUrl": "http://10.31.101.30:8001/alfresco/cmisatom",
+   "UserName": "admin",
+   "Password": "admin"   
+    
+}
+]

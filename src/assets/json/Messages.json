@@ -1,0 +1,115 @@
+[{
+    "MessageCode": "EmployeeDisabilityEdited",
+   "MessageValue": "Eurasian Collared-Dove1"
+    
+},
+{
+    "MessageCode": "EmployerMappedToMinistry",
+    "MessageValue": "Bald Eagle 1234"
+    
+},
+{
+    "MessageCode":"InvalidCaptcha",
+    "MessageValue":"Please click in checkbox to validate Captcha."
+
+},
+{
+    "MessageCode":"InvalidExamCenterSelection",
+    "MessageValue":"Please select at least one Center"
+
+},
+{
+    "MessageCode":"GetOTPMessage",
+    "MessageValue":"use OTP which you have get in Your mail as Current Password"
+
+},
+{
+    "MessageCode":"OTPSent",
+    "MessageValue":"OTP Sent"
+
+},
+
+{
+    "MessageCode":"InValidAttachmentType",
+    "MessageValue":"Please upload Mandatory Document"
+
+},
+{
+    "MessageCode":"InValidfileType",
+    "MessageValue":"Please choose valid file type "
+},
+
+{
+    "MessageCode":"InValidfileSize",
+    "MessageValue":"Please select file under "
+},
+{
+    "MessageCode":"InvalidUserRoleMAP",
+    "MessageValue":"Please select at least one Role "
+
+},
+{
+    "MessageCode": "InvalidLoginCredential",
+    "MessageValue": "The credentials provided are incorrect."
+    
+},
+{
+    "MessageCode": "AuthenticationAns",
+    "MessageValue": "The answer to the security question entered by you is incorrect."
+    
+},
+{
+    "MessageCode": "Declaration1",
+    "MessageValue": "I hereby declare that the information furnished above is true, complete and correct to the best of my knowledge and belief. I understand that in the event of my information being found false or incorrect at any stage, my candidature / appointment shall be liable to cancellation / termination without notice or any compensation in lieu thereof."
+    
+},
+{
+    "MessageCode": "Declaration2",
+    "MessageValue": "I also declare that I have informed my parent organisation regarding my application and the copy of this application will be forwarded by my parent organisation in duecourse of time and/or I will produce a NOC from my parent office, if my candidature is considered for being called for interview."
+    
+},
+{
+    "MessageCode": "LastSegmentStartDateMismatch",
+    "MessageValue": "Login Successfull"
+},
+{
+    "MessageCode": "ValMsgExamAppStartEndDate",
+    "MessageValue": "Application Start Date cannot be greater than Application End Date."
+},
+{
+    "MessageCode": "ValMsgExamAppStartExamDate",
+    "MessageValue": "Application Start Date cannot be greater than Examination Date and less than Current Date."
+},
+{
+    "MessageCode": "ValMsgExamAppEndExamDate",
+    "MessageValue": "Application End Date cannot be greater than or same as Examination Date and less than Current Date."
+},
+{
+    "MessageCode": "ValMsgExamDate",
+    "MessageValue": "Examination Date cannot be less than Current Date."
+},
+{
+    "MessageCode": "ValPasswordPolicy",
+    "MessageValue": "Please follow Password Policy while setting a new password."
+},
+{
+    "MessageCode": "ValMsgExamTime",
+    "MessageValue": "Examination reporting time cannot be greater than examination time."
+},
+{
+    "MessageCode": "PendingApplicationSaveCandidateInfoMsg",
+    "MessageValue": "Candidate Information has not been saved. Please save all the section before submitting the application."
+},
+{
+    "MessageCode": "PendingApplicationSaveCentrePrefMsg",
+    "MessageValue": "Candidate Centre Preference has not been saved. Please save all the section before submitting the application."
+},
+{
+    "MessageCode": "PendingApplicationSaveAdditionalInfofMsg",
+    "MessageValue": "Additional Information has not been saved. Please save all the section before submitting the application."
+},
+{
+    "MessageCode": "DeclarationPendingApplicationMsg",
+    "MessageValue": "Please check the declaration before submitting Examination Application."
+}
+]

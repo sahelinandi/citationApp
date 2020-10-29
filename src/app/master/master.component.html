@@ -1,0 +1,57 @@
+
+
+    <!-- start header -->
+    <header id="navigation">
+       
+        <div class="navbar navbar-expand-lg animated fadeIn main-nav" role="banner">
+            <div class="container">
+               
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
+            </button>
+           
+                <a class="navbar-brand" routerLink="/home">
+                  <h1><img class="img-fluid" src="CitationApp/assets/img/chandigarh-logo.png" alt="logo"></h1>
+                  <!--<h2>Doors</h2>-->
+                </a>
+                <div class="row">
+                    
+                  <div *ngIf="!loggedInUserName">
+                    <a [routerLink]="['/login']">Login</a>
+                  </div>
+                  <div *ngIf="loggedInUserName" >Welcome {{loggedInUserName}} | </div>
+                  <div *ngIf="loggedInUserName" >
+                    <a (click)=onLogout()> Logout</a>
+                  </div>
+                 
+                  
+                  </div>
+        
+       
+        
+  
+                 
+            </div>
+        </div>
+    </header><!--/#navigation--> 
+      <!-- end header -->
+      
+   
+      <router-outlet>
+        
+      </router-outlet>
+    
+      
+    
+      <footer id="footer" >
+        <div class="container text-center wow zoomIn" data-wow-duration="700ms" data-wow-delay="300ms">
+          <p>&copy; 2019. All rights reserved.</p>
+        </div>
+       
+          
+        
+        
+      </footer><!--/#footer--> 
+    
+          
+        

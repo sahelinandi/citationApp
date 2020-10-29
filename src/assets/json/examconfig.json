@@ -1,0 +1,168 @@
+{
+    "responsecode": "SUCCESS",
+    "responsemessage": "",
+    "transactiontype": "READ",
+    "data": [
+        {
+            "exam_parameter_config_id": 7,
+            "parameter_name": "Age Criteria",
+            "parameter_code": "AGE_CRITERIA",
+            "parameter_control_type_id": 142,
+            "parameter_control_type_code": "CONTROL_TYPE_TABLE",
+            "col_data": [
+                {
+                    "col_code": "age_criteria_caste_category",
+                    "col_value_id": 110,
+                    "col_value": "SC"
+                },
+                {
+                    "col_code": "age_criteria_gender",
+                    "col_value_id": 82,
+                    "col_value": "MALE"
+                },
+                {
+                    "col_code": "age_criteria_age",
+                    "col_value_id": null,
+                    "col_value": "12"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 1,
+            "parameter_name": "Examination Pattern",
+            "parameter_code": "EXAMINATION_PATTERN",
+            "parameter_control_type_id": 117,
+            "parameter_control_type_code": "CONTROL_TYPE_DROPDOWN",
+            "col_data": [
+                {
+                    "col_code": "exam_pattern",
+                    "col_value_id": 105,
+                    "col_value": "Multiple Choice"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 8,
+            "parameter_name": "Fee Structure",
+            "parameter_code": "FEE_STRUCTURE",
+            "parameter_control_type_id": 142,
+            "parameter_control_type_code": "CONTROL_TYPE_TABLE",
+            "col_data": [
+                {
+                    "col_code": "fee_structure_caste_category",
+                    "col_value_id": 111,
+                    "col_value": "ST"
+                },
+                {
+                    "col_code": "fee_structure_gender",
+                    "col_value_id": 83,
+                    "col_value": "FEMALE"
+                },
+                {
+                    "col_code": "fee_structure_fees",
+                    "col_value_id": null,
+                    "col_value": "12"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 5,
+            "parameter_name": "Minimum Qualification",
+            "parameter_code": "MINIMUM_QUALIFICATION",
+            "parameter_control_type_id": 117,
+            "parameter_control_type_code": "CONTROL_TYPE_DROPDOWN",
+            "col_data": [
+                {
+                    "col_code": "minimum_qualification",
+                    "col_value_id": 113,
+                    "col_value": "10th"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 2,
+            "parameter_name": "Name of the Post",
+            "parameter_code": "NAME_OF_THE_POST",
+            "parameter_control_type_id": 116,
+            "parameter_control_type_code": "CONTROL_TYPE_TEXT",
+            "col_data": [
+                {
+                    "col_code": "name_of_the_post",
+                    "col_value_id": null,
+                    "col_value": "PO"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 3,
+            "parameter_name": "No of Vacancy",
+            "parameter_code": "NO_OF_VACANCY",
+            "parameter_control_type_id": 116,
+            "parameter_control_type_code": "CONTROL_TYPE_TEXT",
+            "col_data": [
+                {
+                    "col_code": "no_of_vacancy",
+                    "col_value_id": null,
+                    "col_value": "12"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 9,
+            "parameter_name": "Number of Center Preference",
+            "parameter_code": "NUMBER_OF_CENTER_PREFERENCE",
+            "parameter_control_type_id": 116,
+            "parameter_control_type_code": "CONTROL_TYPE_TEXT",
+            "col_data": [
+                {
+                    "col_code": "no_of_centre_pref",
+                    "col_value_id": null,
+                    "col_value": "23"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 6,
+            "parameter_name": "Pay Scale",
+            "parameter_code": "PAY_SCALE",
+            "parameter_control_type_id": 142,
+            "parameter_control_type_code": "CONTROL_TYPE_TABLE",
+            "col_data": [
+                {
+                    "col_code": "pay_scale_start_range",
+                    "col_value_id": null,
+                    "col_value": "123"
+                },
+                {
+                    "col_code": "pay_scale_end_range",
+                    "col_value_id": null,
+                    "col_value": "345"
+                },
+                {
+                    "col_code": "pay_scale_grade_pay",
+                    "col_value_id": null,
+                    "col_value": "12"
+                }
+            ]
+        },
+        {
+            "exam_parameter_config_id": 4,
+            "parameter_name": "Reservation",
+            "parameter_code": "RESERVATION",
+            "parameter_control_type_id": 142,
+            "parameter_control_type_code": "CONTROL_TYPE_TABLE",
+            "col_data": [
+                {
+                    "col_code": "reservation_caste_category",
+                    "col_value_id": 111,
+                    "col_value": "ST"
+                },
+                {
+                    "col_code": "reservation_percentage",
+                    "col_value_id": null,
+                    "col_value": "12"
+                }
+            ]
+        }
+    ]
+}

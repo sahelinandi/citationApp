@@ -1,0 +1,45 @@
+<div class="container margnContain innerpageminheight">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active">
+            <h3>Application Details</h3>
+        </li>
+    </ol>
+    <div class="col-md-12">
+        <div class="alert alert-dismissible alert-danger" style="display:none;" id="divMessage">
+{{message}}
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 row-top_margin">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+            
+                            <th scope="col">Application Number</th>
+                            <!-- <th scope="col">Gender</th> -->
+                            <th scope="col">Applicant Name</th>
+                            <!-- <th scope="col">Relationship</th> -->
+                            <th scope="col">Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table" *ngFor="let a of applicationDetails">
+            
+                            <td>{{a.applicationNumber}}</td>
+                            <td>{{a.applicantName}}</td>
+                            <td>{{a.mobile}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">            
+            <a class="loginH" [routerLink]="['/dashboard']" >Back to Dashboard</a>
+
+        </div>
+    </div>
+
+
+
+</div>

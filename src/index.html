@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>EMS</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- css -->
+    
+    <link href="https://bootswatch.com/4/materia/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="assets/plugins/flexslider/flexslider.css" rel="stylesheet" media="screen" />
+  <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.8.11.min.css?ver=4.8.11" > 
+    <link href="assets/css/font-awesome.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>  
+  
+  <!-- material css Icon -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet" />
+  
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css"> -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  
+    <!--/#scripts new--> 
+    <script data-cfasync="false" src="https://demo.themeregion.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/jquery.js"></script>
+      <script src="https://demo.themeregion.com/doors/js/popper.min.js"></script>	
+      <script src="https://demo.themeregion.com/doors/js/bootstrap.min.js"></script>	
+    <script src="https://demo.themeregion.com/doors/js/jquery.prettyPhoto.js"></script>
+      <script src="https://demo.themeregion.com/doors/js/jquery.parallax.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/jquery.isotope.min.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/jquery.appear.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/jquery.inview.min.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/wow.min.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/smooth-scroll.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/canvas.js"></script>
+    <script src="https://demo.themeregion.com/doors/js/jquery.nav.js"></script>
+      <!-- <script src="https://demo.themeregion.com/doors/js/main.js"></script>	 -->
+  
+      <!--CSS-->
+      <!-- <link href="https://demo.themeregion.com/doors/css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="https://demo.themeregion.com/doors/css/animate.css" rel="stylesheet">
+      <link href="./assets/fonts/font-awesome.min.css" rel="stylesheet">
+      <link href="./assets/fonts/font.css" rel="stylesheet">
+    <link href="https://demo.themeregion.com/doors/css/prettyPhoto.css" rel="stylesheet">	
+    <link href="./assets/css/main.css" rel="stylesheet">
+     
+    <link href="https://demo.themeregion.com/doors/css/responsive.css" rel="stylesheet">	
+  
+    <!-- <script src="https://daniel-projects.firebaseapp.com/styles.b4ba073d5b7f7ebddac1.css"></script> -->
+  
+  
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"  crossorigin="anonymous"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+  
+    <script>
+        $(document).ready(function(){
+            // Add minus icon for collapse element which is open by default
+            $(".collapse.show").each(function(){
+              $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+            });
+            
+            // Toggle plus minus icon on show hide of collapse element
+            $(".collapse").on('show.bs.collapse', function(){
+              $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+            }).on('hide.bs.collapse', function(){
+              $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+            });
+        });
+    </script>
+  </head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
