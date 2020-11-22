@@ -20,6 +20,8 @@ export class SearchCitationComponent implements OnInit {
   // @ViewChild('dtpDOB', {static: false}) dtpDOB:DateTimePickerComponent;
   created_by_id: Number;
   submitted = false;
+  isSelectedProject=false;
+  selectedIndex=0;
   fgCitation: FormGroup;
   userId: Number;
   userType: string;
@@ -28,7 +30,7 @@ export class SearchCitationComponent implements OnInit {
   selectedSubSbuId;
   projectTypes = [];
   projects = [];
-
+  selProjects:any;
   currencies = [];
   regions = [];
   countries = [];
@@ -48,9 +50,15 @@ export class SearchCitationComponent implements OnInit {
 
   ngOnInit() {
     this.fgCitation = new FormGroup({
-      'projectName': new FormControl('', [Validators.required, Validators.minLength(6)])
+      'projectName': new FormControl('', [Validators.required,Validators.pattern('^[a-zA-Z \-\']+')]),
+      'clientName': new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
+      'startDate': new FormControl(''),
+      'endDate': new FormControl(''),
+      'projectValueFrom': new FormControl('', [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      'projectValueTo': new FormControl('', [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
+      'region': new FormControl('')
     });
-
+    this.getMasterData("REGION");
 
     //this.getCountry();
     //this.applicationStatus = this.getMasterData("APPLICATION_STATUS");
@@ -370,7 +378,7 @@ export class SearchCitationComponent implements OnInit {
     //console.log(documentTypeText);
 
 
-    this.fileUploadService.uploadFile(this.fileToUpload).subscribe((data) => {
+    this.fileUploadService.uploadFile(this.fileToUpload,this.fileToUpload.name).subscribe((data) => {
       console.log(data);
       this.documents.push({
         'name': this.fileToUpload.name,
@@ -386,27 +394,63 @@ export class SearchCitationComponent implements OnInit {
 
   }
 
-  downlaodFile() {
-    this.fileUploadService.downloadFile().subscribe((data) => {
+  downlaodFile(nodeid:any,docName:any) {
+    console.log("nodeid==>"+nodeid);
+    this.fileUploadService.downloadFile(nodeid).subscribe((data) => {
 
       var base64String = data.filestream;
       const linkSource = 'data:application/pdf;base64,' + base64String;
       const downloadLink = document.createElement("a");
-      const fileName = "SSO-Login-Failed.png";
+      const fileName = docName//"SSO-Login-Failed.png";
       downloadLink.href = linkSource;
       downloadLink.download = fileName;
       downloadLink.click();
     });
 
   }
+  
 
   onProjectSelect(index: number) {
-    const selectedProject = this.projects[index];
-    this.submitted = true;
-    console.log(selectedProject);
-
-
     var data = [];
+    const selectedProject = this.projects[index];
+    this.isSelectedProject = true;
+    this.selectedIndex = index;
+    this.selProjects = this.projects[index];
+    console.log(this.selProjects.projectId);
+    data.push(this.projects[index]);
+    var request = {
+      data
+    };
+
+    console.log("sel proj req==>"+request);
+
+    var strRequest = JSON.stringify(request)
+    this.applicationService.getDocuments(strRequest).subscribe(
+
+      (Data: {}) => {
+        var x = JSON.parse(JSON.stringify(Data));
+        if (x && x.SuccessStatus) {
+          this.documents = x.Documents;
+        }
+        else {
+          if (x && x.ErrorMessage) {
+            this.message = x.ErrorMessage;
+            let element = document.getElementById('divMessage')
+            element.style.display = "block";
+          }
+        }
+
+      },
+      (error: {
+      }) => {
+        var x = JSON.parse(JSON.stringify(error))
+        this.message = x;
+        let element = document.getElementById('divMessage')
+        element.style.display = "block";
+
+      }
+    );
+  /*  var data = [];
     data.push(
       { projectId: selectedProject.projectId }
 
@@ -453,7 +497,7 @@ export class SearchCitationComponent implements OnInit {
         let element = document.getElementById('divMessage')
         element.style.display = "block";
       }
-    );
+    );*/
 
 
 

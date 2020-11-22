@@ -1,5 +1,467 @@
 <div class="container margnContain innerpageminheight">
+    <div class="container-fluid">
+        <div class="card card-m-btm">
+            <div class="card-header">
+                Create Citation
+            </div>
+        
+            <div class="body">
+                <div class="form-horizontal">
+                    <div class='form-line text-right'>
+                        <div class='form-error'>
+                            Fields marked with '*' are mandatory
+                        </div>
+                    </div>
+                    <form [formGroup]="fgCitation" (submit)="onSubmit()">
+                        <div class="col-md-12 text-center">
+                            <div class="form-error" style="display:none;" id="divMessage">
+                                {{message}}
+                            </div>
+                        </div>
+                        <div class="row">
 
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                     <label>Project Name<span class="text-danger">*</span></label>
+                                      <input type="text" formControlName="projectName" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                                        <div *ngIf="submitted && cu.projectName.errors" class="invalid-feedback">
+                                            <div *ngIf="cu.projectName.errors.required">Project Name is required</div>
+                                            <div *ngIf="cu.projectName.errors.pattern">Project Name is invalid!</div>
+                                            <div *ngIf="cu.projectName.errors.minlength">Project Name. should be minimum 6 characters</div>
+                                        </div>
+                                      
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Client Name<span class="text-danger">*</span></label>
+                                    <input type="text" formControlName="clientName" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.clientName.errors }" />
+                                        <div *ngIf="submitted && cu.clientName.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.clientName.errors.required">Clinet Name is required</div>
+                                        <div *ngIf="cu.clientName.errors.pattern">Clinet Name is invalid!</div>
+                                        <div *ngIf="cu.clientName.errors.minlength">Client Name. should be minimum 6 characters</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project Start Date<span class="text-danger">*</span></label>
+                                    <input type="date" formControlName="startDate" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.startDate.errors }" />
+                                        <div *ngIf="submitted && cu.startDate.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.startDate.errors.required">Project Start Date is required</div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project End Date<span class="text-danger">*</span></label>
+                                     <input type="date" formControlName="endDate" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.endDate.errors }" />
+                                        <div *ngIf="submitted && cu.endDate.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.endDate.errors.required">Project End Date is required</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-md-6">
+                            
+                                    <div class="form-group">
+                                        <label>Valuation<span class="text-danger">*</span></label>
+
+                                
+                                            <input type="text" formControlName="projectValue" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />
+                                            <div *ngIf="submitted && cu.projectValue.errors" class="invalid-feedback">
+                                                <div *ngIf="cu.projectValue.errors.required">Valuation is required</div>
+                                                <div *ngIf="cu.projectValue.errors.pattern">Valuation is invalid!</div>
+                                                <div *ngIf="cu.projectValue.errors.minlength">Valuation should be minimum 6 digits</div>
+                                                </div>
+
+                                    </div>
+                                
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Currency<span class="text-danger">*</span></label>
+                                    <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.currency.errors }"
+                                        formControlName="currency">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let c of currencies" [value]="c.valueId">{{c.description}}
+                                        </option>
+                                    
+
+                                    </select>
+                                    <div *ngIf="submitted && cu.currency.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.currency.errors.required">Currency is required</div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Region</label>
+                                    <select class="form-control"
+                                        formControlName="region">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let r of regions" [value]="r.valueId">{{r.description}}
+                                        </option>
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select class="form-control"
+                                        formControlName="country">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let c of countries" [value]="c.countryId">{{c.name}} </option>
+
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">  
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Funding Agency</label>
+                                    <select class="form-control"
+                                    
+                                        formControlName="fundingAgency">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let f of fundingAgencies" [value]="f.fundingAgencyId">{{f.name}}
+                                        </option>
+
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <label>Is network firm oppotunity?</label>
+                                        </div>
+                                    
+                                        <div class="form-control" style="margin-left: 5%;">
+                                            <input type="checkbox"
+                                                
+                                                formControlName="isNetworkFirmOpportunity">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Sub-SBU</label>
+                                    <select class="form-control" 
+                                        formControlName="subSbu" (change)="onChangeSubSbu($event)">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let s of subSbus" [value]="s.subSBUId">{{s.name}} </option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project Type</label>
+                                    <select class="form-control"
+                                        
+                                        formControlName="projectType">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let p of projectTypes" [value]="p.projectTypeId">{{p.name}} </option>
+
+
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Lead Firm Country</label>
+                                    <select class="form-control"
+                                        
+                                        formControlName="leadFirmCountry">
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let c of countries" [value]="c.countryId">{{c.name}} </option>
+
+
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label>PwC India Value<span class="text-danger">*</span></label>
+
+                                        <input type="number" class="form-control quantity" maxlength="10" id="ContactNumber"
+                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                            formControlName="pwcIndiaValue"
+                                            [ngClass]="{ 'is-invalid': submitted && cu.pwcIndiaValue.errors }" />
+
+                                            <div *ngIf="submitted && cu.pwcIndiaValue.errors" class="invalid-feedback">
+                                                <div *ngIf="cu.pwcIndiaValue.errors.required">PwC India Value is required</div>
+                                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label>Document Type<span class="text-danger">*</span></label>
+                                    <select class="form-control" #documentType
+                                        [ngClass]="{ 'is-invalid': submitted && cu.documentType.errors }"
+                                        formControlName="documentType"  (change)="attachmentSelection($event)" >
+                                        <option value="" disabled selected hidden>Select</option>
+
+                                        <option *ngFor="let d of documentTypes; let i=index;" [value]="d.valueId">{{d.description}} </option>
+
+                                    </select>
+                                    <div *ngIf="submitted && cu.documentType.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.documentType.errors.required">Document Type is required</div>
+                                        </div>
+                                </div>
+                            </div>                              
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label>Document Name<span class="text-danger">*</span></label>
+                                    <input type="text" formControlName="documentName"  class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.documentName.errors }" />
+                                        <div *ngIf="submitted && cu.documentName.errors" class="invalid-feedback">
+                                            <div *ngIf="cu.documentName.errors.required">Document Name is required</div>
+                                            </div>
+                                </div>
+                                
+                            </div> 
+                            <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="file">Upload Docs<span class="text-danger">*</span></label>
+                                <div class="form-control">
+                               <!-- <input class="hidden"  type="file" id="file"  (change)="handleFileInput($event.target.files)" class="form-control">-->
+                                <input class="hidden" type="file"  id="file" #file (change)="handleFileInput($event.target.files);onUploadClick(seldocumentType)" multiple>
+                                <button type="button"  class="mat-button actionButton borderR" (click)="file.click();">
+                                    Add Attachments
+                                    <!-- <mat-icon>attachment</mat-icon> -->
+                                </button>
+                                </div>
+                            </div>  
+                            </div>  
+                        </div>
+                        <div class="row">  
+                            <div class="col-md-12 text-center form-error">  {{documnetErrorMsg}} </div>
+                            <!--<div class="col-md-6">
+
+                                
+                            </div>
+                           <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary button-radious" (click)=onUploadClick(documentType.value)>Upload</button>
+                                </div>
+                            </div>-->
+                            
+                        </div>
+              <!--  <div *ngIf="addcontactFlag">-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Contact Person Name</label>
+                                <input type="text" formControlName="contactPersonName"  class="form-control"/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Designation</label>
+                                <input type="text" formControlName="designation"  class="form-control"/>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Email Id</label>
+                                <input type="text" formControlName="emailId"  class="form-control"/>
+                          </div>
+                        </div>  
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Phone No</label>
+                                <input type="text" formControlName="phoneNo"  class="form-control"/>
+                          </div>
+                        </div>  
+                        <div class="col-md-4">
+                            <div class="form-group">
+                        <button type="button"  class="mat-button actionButton borderR" (click)="saveContact();">
+                           Add Contacts
+                            <!-- <mat-icon>attachment</mat-icon> -->
+                        </button>
+                        </div>
+                        </div>
+                    </div> 
+               <!-- </div>-->
+                   <div class="row" *ngIf="documents.length > 0">
+
+                            <div class="col-md-12 row-top_margin">
+                                <table class="table table-hover">
+                                    
+          
+                                    <thead>
+                                        <tr>
+                
+                                           
+                                            <th scope="col">Document Type</th>
+                                        
+                                            <th scope="col">Name</th>
+                                        
+                                            <th scope="col">Attached File Name</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table" *ngFor="let d of documents; let i = index">
+                
+                                            
+                                            <td>{{d.documentTypeText}}</td>
+                                            <td>{{d.name}}</td>
+                                            <td>{{d.fileName}}</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" (click)="onDeleteDocumentMember(i)">
+                                                    <i class="fa fa-trash-o text-PWC"></i>
+                                                </a>
+                
+                                            
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                        </div>
+
+                        <div class="row" *ngIf="clinetContacts.length > 0">
+
+                            <div class="col-md-12 row-top_margin">
+                                <table class="table table-hover">
+                                    
+          
+                                    <thead>
+                                        <tr>
+                
+                                           
+                                            <th scope="col">Contact Person Name</th>
+                                        
+                                            <th scope="col">Designation</th>
+                                        
+                                            <th scope="col">Email Id</th>
+                                            <th scope="col">Phone No</th>
+                                            <th scope="col">Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table" *ngFor="let c of clinetContacts; let i = index">
+                
+                                            
+                                            <td>{{c.contactPersonName}}</td>
+                                            <td>{{c.designation}}</td>
+                                            <td>{{c.emailId}}</td>
+                                            <td>{{c.phoneNo}}</td>
+                                            <td>
+                                                <a href="#" data-toggle="modal" (click)="onDeleteCitationMember(i)">
+                                                    <i class="fa fa-trash-o text-PWC"></i>
+                                                </a>
+                
+                                            
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                
+                        </div>
+                
+                        <div class="row">
+                            <div class="col-md-12 ">
+
+                               
+                          
+
+                                <div class="form-group text-right">
+                                   <!-- <button type="button"  class="mat-button actionButton borderR" (click)="addCotactDiv();">
+                                        Add Contact Details
+                                       
+                                    </button>
+                                    <button type="button"  class="mat-button actionButton borderR" (click)="removeCotactDiv();">
+                                        Remove Contact Details
+                                       
+                                    </button>-->
+                                    <button class="mat-button actionButton borderR">Submit</button>
+                                </div>
+                            </div>
+                    
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="container margnContain innerpageminheight">
+  
     <ol class="breadcrumb">
         <li class="breadcrumb-item active">
             <h3>Register Citation</h3>
@@ -12,7 +474,7 @@
     </div>
 
     <div class="container">
-        <div>
+        <div class="registarion_box">
             <form [formGroup]="fgCitation" (submit)="onSubmit()">
 
                 <div class="row">
@@ -20,71 +482,95 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Project Name<span class="text-danger">*</span></label>
-                            <input type="text" formControlName="projectName" maxlength="30" class="form-control"
+                            <input type="text" formControlName="projectName" class="form-control"
                                 [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                                <div *ngIf="submitted && cu.projectName.errors" class="invalid-feedback">
+                                    <div *ngIf="cu.projectName.errors.required">Project Name is required</div>
+                                    <div *ngIf="cu.projectName.errors.pattern">Project Name is invalid!</div>
+                                    <div *ngIf="cu.projectName.errors.minlength">Project Name. should be minimum 6 characters</div>
+                                 </div>
                         </div>
+
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Client Name</label>
+                            <label>Client Name<span class="text-danger">*</span></label>
                             <input type="text" formControlName="clientName" maxlength="30" class="form-control"
                                 [ngClass]="{ 'is-invalid': submitted && cu.clientName.errors }" />
-
+                                <div *ngIf="submitted && cu.clientName.errors" class="invalid-feedback">
+                                <div *ngIf="cu.clientName.errors.required">Clinet Name is required</div>
+                                <div *ngIf="cu.clientName.errors.pattern">Clinet Name is invalid!</div>
+                                <div *ngIf="cu.clientName.errors.minlength">Client Name. should be minimum 6 characters</div>
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label>Start Date</label>
+                            <label>Project Start Date<span class="text-danger">*</span></label>
                             <input type="date" formControlName="startDate" maxlength="30" class="form-control"
                                 [ngClass]="{ 'is-invalid': submitted && cu.startDate.errors }" />
+                                <div *ngIf="submitted && cu.startDate.errors" class="invalid-feedback">
+                                <div *ngIf="cu.startDate.errors.required">Project Start Date is required</div>
+                                </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label>End Date</label>
+                            <label>Project End Date<span class="text-danger">*</span></label>
                             <input type="date" formControlName="endDate" maxlength="30" class="form-control"
                                 [ngClass]="{ 'is-invalid': submitted && cu.endDate.errors }" />
+                                <div *ngIf="submitted && cu.endDate.errors" class="invalid-feedback">
+                                <div *ngIf="cu.endDate.errors.required">Project End Date is required</div>
+                                </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="row">
+                </div>
+                <div class="row"> 
+                    <div class="col-md-6">
+                       
                             <div class="form-group">
                                 <label>Valuation<span class="text-danger">*</span></label>
 
-                                <input type="number" class="form-control quantity" maxlength="12" id="ContactNumber"
-                                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                    formControlName="projectValue"
+                          
+                                    <input type="text" formControlName="projectValue" class="form-control"
                                     [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />
-
+                                    <div *ngIf="submitted && cu.projectValue.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.projectValue.errors.required">Valuation is required</div>
+                                        <div *ngIf="cu.projectValue.errors.pattern">Valuation is invalid!</div>
+                                        <div *ngIf="cu.projectValue.errors.minlength">Valuation should be minimum 6 digits</div>
+                                        </div>
 
                             </div>
-                        </div>
+                        
 
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label>Currency</label>
+                            <label>Currency<span class="text-danger">*</span></label>
                             <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.currency.errors }"
                                 formControlName="currency">
                                 <option value="" disabled selected hidden>Select</option>
 
                                 <option *ngFor="let c of currencies" [value]="c.valueId">{{c.description}}
                                 </option>
-
+                              
 
                             </select>
+                            <div *ngIf="submitted && cu.currency.errors" class="invalid-feedback">
+                                <div *ngIf="cu.currency.errors.required">Currency is required</div>
+                                </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
 
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Region</label>
-                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.region.errors }"
+                            <select class="form-control"
                                 formControlName="region">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -95,10 +581,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Country</label>
-                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.country.errors }"
+                            <select class="form-control"
                                 formControlName="country">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -109,11 +595,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                </div>
+                    <div class="row">  
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Funding Agency</label>
                             <select class="form-control"
-                                [ngClass]="{ 'is-invalid': submitted && cu.fundingAgency.errors }"
+                              
                                 formControlName="fundingAgency">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -125,7 +613,25 @@
                             </select>
                         </div>
                     </div>
+                  
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label>Is network firm oppotunity?</label>
+                                </div>
+                               
+                                <div class="form-control" style="margin-left: 5%;">
+                                    <input type="checkbox"
+                                        
+                                        formControlName="isNetworkFirmOpportunity">
+                                </div>
+                            </div>
 
+
+                        </div>
+                    </div>
                 </div>
 
 
@@ -134,7 +640,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Sub-SBU</label>
-                            <select class="form-control" [ngClass]="{ 'is-invalid': submitted && cu.subSbu.errors }"
+                            <select class="form-control" 
                                 formControlName="subSbu" (change)="onChangeSubSbu($event)">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -147,7 +653,7 @@
                         <div class="form-group">
                             <label>Project Type</label>
                             <select class="form-control"
-                                [ngClass]="{ 'is-invalid': submitted && cu.projectType.errors }"
+                                
                                 formControlName="projectType">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -162,27 +668,11 @@
 
                 <div class="row">
 
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <label>Is network firm oppotunity?</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <input type="checkbox"
-                                        [ngClass]="{ 'is-invalid': submitted && cu.isNetworkFirmOpportunity.errors }"
-                                        formControlName="isNetworkFirmOpportunity">
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label>Lead Firm Country</label>
                             <select class="form-control"
-                                [ngClass]="{ 'is-invalid': submitted && cu.leadFirmCountry.errors }"
+                                
                                 formControlName="leadFirmCountry">
                                 <option value="" disabled selected hidden>Select</option>
 
@@ -193,7 +683,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="row">
                             <div class="form-group">
                                 <label>PwC India Value<span class="text-danger">*</span></label>
@@ -203,18 +693,20 @@
                                     formControlName="pwcIndiaValue"
                                     [ngClass]="{ 'is-invalid': submitted && cu.pwcIndiaValue.errors }" />
 
-
+                                    <div *ngIf="submitted && cu.pwcIndiaValue.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.pwcIndiaValue.errors.required">PwC India Value is required</div>
+                                        </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-                <hr>
+               
                 <div class="row">
-                    <div class="col-md-4 ">
+                    <div class="col-md-6 ">
 
                         <div class="form-group">
-                            <label>Document Type</label>
+                            <label>Document Type<span class="text-danger">*</span></label>
                             <select class="form-control" #documentType
                                 [ngClass]="{ 'is-invalid': submitted && cu.documentType.errors }"
                                 formControlName="documentType">
@@ -223,19 +715,37 @@
                                 <option *ngFor="let d of documentTypes; let i=index;" [value]="d.valueId">{{d.description}} </option>
 
                             </select>
+                            <div *ngIf="submitted && cu.documentType.errors" class="invalid-feedback">
+                                <div *ngIf="cu.documentType.errors.required">Document Type is required</div>
+                                </div>
                         </div>
                     </div>
-                    <div class="col-md-4 ">
+                    <div class="col-md-6">
 
                         <div class="form-group">
-                            <label for="file">Choose File</label>
-                            <input type="file" id="file" (change)="handleFileInput($event.target.files)" class="form-control">
+                            <label>Document Name<span class="text-danger">*</span></label>
+                            <input type="text" formControlName="documentName"  class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.documentName.errors }" />
+                                <div *ngIf="submitted && cu.documentName.errors" class="invalid-feedback">
+                                    <div *ngIf="cu.documentName.errors.required">Document Name is required</div>
+                                    </div>
+                        </div>
+                        
+                    </div>     
+                </div>
+                <div class="row">  
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label for="file">Choose File<span class="text-danger">*</span></label>
+                            <input type="file" id="file"  (change)="handleFileInput($event.target.files)" class="form-control">
+                            
                         </div>
                     </div>
-                    <div class="col-md-4 ">
+                    <div class="col-md-6">
 
                         <div class="form-group">
-                            <button type="button" class="btn btn-primary" (click)=onUploadClick(documentType.value)>Upload</button>
+                            <button type="button" class="btn btn-primary button-radious" (click)=onUploadClick(documentType.value)>Upload</button>
                         </div>
                     </div>
                     
@@ -247,10 +757,11 @@
                             <thead>
                                 <tr>
         
-                                    <th scope="col">Type</th>
-                                    <!-- <th scope="col">Gender</th> -->
+                                    <th scope="col">Document Type Id</th>
+                                    <th scope="col">Document Type</th>
+                                   
                                     <th scope="col">Name</th>
-                                    <!-- <th scope="col">Relationship</th> -->
+                                
                                     
                                     <th scope="col">Delete</th>
                                 </tr>
@@ -259,13 +770,14 @@
                                 <tr class="table" *ngFor="let d of documents; let i = index">
         
                                     <td>{{d.documentType}}</td>
+                                    <td>{{d.documentTypeText}}</td>
                                     <td>{{d.name}}</td>
                                     <td>
-                                        <a href="#" data-toggle="modal" (click)="onDeleteFamilyMember()">
+                                        <a href="#" data-toggle="modal" (click)="onDeleteDocumentMember(i)">
                                             <i class="fa fa-trash-o text-PWC"></i>
                                         </a>
         
-                                        <!-- <button (click)="onDeleteFamilyMember()">Delete</button> -->
+                                       
                                     </td>
                                 </tr>
                             </tbody>
@@ -276,28 +788,30 @@
 
 
 
-                <div class="col-md-12 ">
+          
+                <div class="row">
+                    <div class="col-md-12 ">
 
-                    <div class="form-group">
-                        <label>Download</label>
-                        <button type="button" class="btn btn-primary" (click)="downlaodFile()">Download</button>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary button-radious">Submit</button>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-12 ">
-
-                    <div class="form-group pull-right">
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-
+              
+              </div>
             </form>
 
+        
 
-
+        </div>
+        <div class="row">      
+            <div class="col-md-12">
+            <div class="form-group text-center">      
+            <a class="btn btn-primary button-radious" [routerLink]="['/dashboard']" >Back to Dashboard</a>
+            </div>
+           </div>
         </div>
     </div>
 
 
 
-</div>
+</div>-->

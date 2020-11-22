@@ -19,19 +19,20 @@ export class FileUploadService {
 
   constructor(private httpClient: HttpClient) { }
 
-  uploadFile(file: File): Observable<any> {
+  uploadFile(file: File,fileName:any): Observable<any> {
     console.log(file);
     let formData: FormData = new FormData();
     formData.append('FileToUpload', file, file.name);
-       
+    //formData.append('FileToUpload', file, fileName);
 
     return this.httpClient.post<any>(this.baseUrl + '/uploadFile', formData);
   }
 
-  downloadFile(): Observable<any> {       
-
-    return this.httpClient.post<any>(this.baseUrl + '/downloadFile', '');
+  downloadFile(nodeid:any): Observable<any> {       
+    let formData: FormData = new FormData();
+    formData.append('nodeid',nodeid);
+    return this.httpClient.post<any>(this.baseUrl + '/downloadFile', formData);
   }
-
+  
 
 }

@@ -12,7 +12,7 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="registarion_box">
             <form [formGroup]="fgCitation" (submit)="onSubmit()">
 
                 <div class="row">
@@ -24,26 +24,117 @@
                                 [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
                         </div>
                     </div>
-
-                </div>
-
-
-                <div class="col-md-12 ">
-
-                    <div class="form-group pull-right">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Client Name</label>
+                            <input type="text" formControlName="clientName" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Project Date From</label>
+                            <input type="date" formControlName="startDate" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.startDate.errors }" />
+                                <div *ngIf="submitted && cu.startDate.errors" class="invalid-feedback">
+                                <div *ngIf="cu.startDate.errors.required">Project Start Date is required</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Project Date To</label>
+                            <input type="date" formControlName="endDate" maxlength="30" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.endDate.errors }" />
+                                <div *ngIf="submitted && cu.endDate.errors" class="invalid-feedback">
+                                <div *ngIf="cu.endDate.errors.required">Project End Date is required</div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                        <div class="form-group">
+                            <label>Valuation From</label>
+
+                           <!-- <input type="number" class="form-control quantity"  fromControlName="projectValue"
+                                [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />-->
+                                <input type="text" formControlName="projectValueFrom" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && cu.projectValueFrom.errors }" />
+                                <div *ngIf="submitted && cu.projectValueFrom.errors" class="invalid-feedback">
+                                    <div *ngIf="cu.projectValueFrom.errors.required">Valuation is required</div>
+                                    <div *ngIf="cu.projectValueFrom.errors.pattern">Valuation is invalid!</div>
+                                    <div *ngIf="cu.projectValueFrom.errors.minlength">Valuation should be minimum 6 digits</div>
+                                    </div>
+
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        
+                            <div class="form-group">
+                                <label>Valuation To</label>
+    
+                               <!-- <input type="number" class="form-control quantity"  fromControlName="projectValue"
+                                    [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />-->
+                                    <input type="text" formControlName="projectValueTo" class="form-control"
+                                    [ngClass]="{ 'is-invalid': submitted && cu.projectValueTo.errors }" />
+                                    <div *ngIf="submitted && cu.projectValueTo.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.projectValueTo.errors.required">Valuation is required</div>
+                                        <div *ngIf="cu.projectValueTo.errors.pattern">Valuation is invalid!</div>
+                                        <div *ngIf="cu.projectValueTo.errors.minlength">Valuation should be minimum 6 digits</div>
+                                        </div>
+    
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Region</label>
+                            <select class="form-control"
+                                formControlName="region">
+                                <option value="" disabled selected hidden>Select</option>
+
+                                <option *ngFor="let r of regions" [value]="r.valueId">{{r.description}}
+                                </option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary button-radious">Search</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+              
 
             </form>
 
+            <form *ngIf="projects.length>0">
+            <div class="row">   
+                <div class="col-md-3"><b>Prject Name</b> </div>
+                <div class="col-md-3"><b>Client Name</b> </div>
+                <div class="col-md-2"><b>Project Start Date</b> </div>
+                <div class="col-md-2"><b>Project End Date</b> </div>
+                <div class="col-md-2"><b>Valuation </b></div>
+             </div>
 
 
-
-
-        </div>
-        <div class="row">
-            <a style="cursor: pointer;" class="list-group-item clearfix" *ngFor="let p of projects; let i=index" (click)="onProjectSelect(i)">
+       <div *ngFor="let p of projects; let i=index">
+       
+            <a style="cursor: pointer;" class="list-group-item clearfix"  (click)="onProjectSelect(i)">
+                
                 <div class="row">
                     <div class="col-md-3">
                         {{p.projectName}}
@@ -51,19 +142,184 @@
                     <div class="col-md-3">
                         {{p.clientName}}
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         {{p.projectStartDate}}
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         {{p.projectEndDate}}
                     </div>
+                    
+                    <div class="col-md-2">
+                        {{p.projectValue}}
+                    </div>
+                    
                 </div>
             </a>
+            <div *ngIf="isSelectedProject && selectedIndex == i">
+                <div class="view-dtls">
+                <div class="row"> 
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Project Type :  </b></label>
+                           {{selProjects.projectType}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Currency :  </b></label>
+                            {{selProjects.currency}}
+                          </div>
+                    </div>
+                   
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label><b>Country :  </b></label>
+                            {{selProjects.country}}
+                        </div>
+                    </div>
+                </div>
+                
+               <div class="row">  
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Funding Agency :  </b></label>
+                            {{selProjects.funding_agency}}
+                        </div>
+                    </div>
+                  
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                                    <label><b>Is network firm oppotunity :  </b></label>
+                              
+                                  {{selProjects.isNetworkFirmOpportunity}}
+                               
+                            </div>
+    
+    
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Sub-SBU :  </b></label>
+                            {{selProjects.subSbuName}}
+                        </div>
+                    </div>
+                  
+                </div>
+    
+    
+              
+    
+                <div class="row">
+    
+                    <div class="col-md-4">
+                      
+                            <div class="form-group">
+                                <label><b>PwC India Value :  </b></label>
+    
+                               {{selProjects.pwcIndiaValue}}
+                            </div>
+                      
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Region :  </b></label>
+                            {{selProjects.region}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Lead Firm Country</label>
+                            {{selProjects.region}}
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="row">
+    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><b>Document Details  :  </b></label>
+                            </div>
+                        </div>
+                </div>       
+              <!--  <div *ngFor="let d of documents; let j=index">
+    
+                        <div class="row">  
+                            
+                            <div class="col-md-4">
+    
+                                <div class="form-group">
+                                    <label><b>Document Type :  </b></label>
+                                    {{d.documentType}}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+            
+                                <div class="form-group">
+                                    <label><b>Document Name :  </b></label>
+                                    {{d.documentName}}
+                                </div>
+                                
+                            </div>   
+                            <div class="col-md-4">
+    
+                                <div class="form-group download-docbtn">
+                                    <a class="btn btn-primary button-radious" (click)=downlaodFile(d.nodeId,d.documentName)>Download Document</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                </div>
+            -->
+            <div class="row" *ngIf="documents.length > 0">
 
+                <div class="col-md-12 row-top_margin">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+    
+                                <th scope="col">Document Type</th>
+                                <!-- <th scope="col">Gender</th> -->
+                                <th scope="col">Document Name</th>
+                                <!-- <th scope="col">Relationship</th> -->
+                                
+                                <th scope="col">Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table" *ngFor="let d of documents; let i = index">
+    
+                               <!-- <td>{{d.documentType}}</td>-->
+                                <td>{{d.documentType}}</td>
+                                <td>{{d.documentName}}</td>
+                                <td>
+                                    <a href="#" data-toggle="modal" (click)=downlaodFile(d.nodeId,d.documentName)>
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                    </a>
+    
+                                    <!-- <button (click)="onDeleteFamilyMember()">Delete</button> -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+            </div>
+            </div>
+        </div>
 
         </div>
-    </div>
-
-
+       
+            </form>
+            <div class="row">      
+                <div class="col-md-12">
+                <div class="form-group text-center">      
+                <a class="btn btn-primary button-radious" [routerLink]="['/dashboard']" >Back to Dashboard</a>
+                </div>
+               </div>
+            </div>
+</div>
+</div>
 
 </div>

@@ -22,7 +22,8 @@
     "ng2-datepicker": "^3.1.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "@angular/material": "^10.1.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.0",

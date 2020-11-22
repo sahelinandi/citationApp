@@ -603,7 +603,7 @@ header ul.nav li ul li.dropdown-submenu li a {
 /* flexslider */
 .main-slider.flexslider { margin: 26px 0 18px; background: transparent; border: 10px solid #0C2046;
 -webkit-border-radius: 0; -moz-border-radius: 0; -o-border-radius: 0; border-radius: 0; -webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.24);
--moz-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.24);
+-moz-box-shadow: 0px 0px 12px 2px rgba(219, 46, 46, 0.24);
 box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.24);
 }
 
@@ -3435,4 +3435,254 @@ th {
 ul.dropdown-menu.show {
     min-width: 180px!important;
     padding-left: 5px;
+}
+.button-radious{
+	border-radius: 29px!important;
+}
+.registarion_box{
+	max-width: 1000;
+    width: 1000px;
+    align-content: center;
+    margin-left: 116px;
+    /* margin-right: 50px; */
+    margin-left: 70px;
+	border-color: #b36a00;
+	border: #a21318;
+	border-width:2rem;
+    border-radius: 10px;
+}
+.view-dtls
+{
+border-radius: 25px;
+padding: 20px;
+background-color: #e0e0e0;
+padding: 20px;
+}
+.download-docbtn{
+	margin-top: -25px !important;
+	margin-bottom: 15px!important;
+}
+.registarion_box form{
+    /* color: #e06e0d!important; */
+    border-radius: 50px;
+    margin-bottom: 15px;
+    background: #fff;
+    /* box-shadow: 0px 0px 1px 1px#FFC111; */
+    box-shadow: 0px 0px 1px 1px rgba(225, 40, 39, 0.85);
+	padding: 20px;
+	
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(31,45,65,.5);
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(31,45,65,.125);
+    border-radius: .35rem;
+    padding: 0;
+}
+.card .card-header:first-child {
+    border-radius: .35rem .35rem 0 0;
+}
+.card:not([class*=bg-]) .card-header {
+   /* color: #0061f2;*/
+   color: rgb(240, 108, 0);
+}
+.card .card-header {
+    padding: .5rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(31,45,65,.03);
+    border-bottom: 1px solid rgba(31,45,65,.125);
+    font-weight: 800;
+	font-size: 1.4rem;
+    margin-top: 2px;
+}
+
+.card .body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: .1rem 1.35rem .3rem;
+}
+.form-horizontal .form-line {
+    width: 100%;
+    margin-bottom: .4rem;
+}
+.text-right {
+    text-align: right!important;
+}
+/*.form-horizontal .form-error {
+    color: #e0301e;
+    margin-bottom: 2px;
+    font-size: 12px;
+}*/
+.form-horizontal {
+    background-color: #fff;
+    padding: 20px 0
+}
+
+.form-horizontal .form-line {
+    width: 100%;
+    margin-bottom: .4rem
+}
+
+.form-horizontal .form-line .form-label {
+    line-height: .875em
+}
+
+.form-horizontal .form-error {
+    color: #e0301e;
+    margin-bottom: 2px;
+    font-size: 12px
+}
+
+.form-control, .ngx-timepicker-field-example {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1rem + 2px);
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #687281;
+    background-color: rgba(247, 135, 7, 0);
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 1px solid #6d6d6d;
+    border-radius: .35rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.actionButton[_ngcontent-tbu-c107] {
+    margin: 10px!important;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+}
+.mat-button, .mat-icon-button, .mat-stroked-button {
+    color: #fff;
+    background: #eeab32;
+}
+.mat-focus-indicator, .mat-mdc-focus-indicator {
+    position: relative;
+}
+.mat-button, .mat-fab, .mat-flat-button, .mat-icon-button, .mat-mini-fab, .mat-raised-button, .mat-stroked-button {
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+.borderR {
+    border-radius: 0 20px!important;
+    background-color: #e68c12!important;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+.hidden {
+    display: none!important;
+}
+
+
+
+
+.table-bordered {
+    border: 1px solid #e3e6ec;
+}
+.table-bordered, .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: rgba(0,0,0,0);
+}
+table {
+    border-collapse: collapse;
+}
+.table thead th {
+    vertical-align: bottom!important;
+    border-bottom: 2px solid #e3e6ec!important;
+    font-weight: 600!important;
+    font-size: 14px!important;
+}
+.table-bordered thead td, .table-bordered thead th {
+    border-bottom-width: 2px!important;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #e3e6ec!important;
+    font-size: .85rem!important;
+}
+.table-bordered, .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.tableDataList {
+    width: 100%;
+} 
+.table .thead tr, .table thead tr {
+    background-color: #ffa501!important;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid #e3e6ec!important;
+    font-size: .85rem!important;
+}
+.table-bordered, .table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e6;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.form-horizontal .form-error {
+    color: red;
+    margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: bold;
+}
+label {
+    color:black;
+    font-size: 1.1rem!important;
+    margin-top: 0;
+    font-weight: 700;
 }

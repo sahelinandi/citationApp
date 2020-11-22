@@ -7,6 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
 import { MasterdataService } from '../masterdata.service';
 import { FileUploadService } from '../file-upload.service';
+import { IfStmt } from '@angular/compiler';
 /* import {DateTimePickerComponent} from '../date-time-picker/date-time-picker.component'; */
 
 
@@ -20,6 +21,7 @@ export class RegisterCitationComponent implements OnInit {
   // @ViewChild('dtpDOB', {static: false}) dtpDOB:DateTimePickerComponent;
   created_by_id: Number;
   submitted = false;
+  addcontactFlag = false;
   fgCitation: FormGroup;
   userId: Number;
   userType: string;
@@ -32,12 +34,15 @@ export class RegisterCitationComponent implements OnInit {
   regions= [];
   countries= [];
   fundingAgencies= [];
-  documentTypes= [];
+  documentTypes= [];  
   documents = [];
+  clinetContacts = [];
   message = "";
   fileToUpload: File = null;
-
+  seldocumentType:any;
+  documnetErrorMsg:any;
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private applicationService: ApplicationService,
     private masterdataService: MasterdataService,
@@ -46,22 +51,37 @@ export class RegisterCitationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fgCitation = new FormGroup({
-      'projectName': new FormControl('', [Validators.required, Validators.minLength(6)]),
-      'clientName': new FormControl('', Validators.required),
+    //this.fgCitation = new FormGroup({
+      this.fgCitation = this.formBuilder.group({
+      'projectName': new FormControl('', [Validators.required,Validators.pattern('^[a-zA-Z \-\']+'), Validators.minLength(6)]),
+      'clientName': new FormControl('', [Validators.required,Validators.pattern('^[a-zA-Z \-\']+'), Validators.minLength(6)]),
       'startDate': new FormControl('', Validators.required),
       'endDate': new FormControl('', Validators.required),
-      'projectValue': new FormControl('', [Validators.required, Validators.min(100000000000), Validators.max(999999999999)]),
+      'projectValue': new FormControl('', [Validators.required,  Validators.pattern(/^-?(0|[1-9]\d*)?$/),Validators.minLength(6)]),
       'currency': new FormControl('', Validators.required),
-      'region': new FormControl('', Validators.required),
+     /* 'region': new FormControl('', Validators.required),
       'country': new FormControl('', Validators.required),
       'fundingAgency': new FormControl('', Validators.required),
       'subSbu': new FormControl('', Validators.required),
       'projectType': new FormControl('', Validators.required),
       'isNetworkFirmOpportunity': new FormControl('',),
-      'leadFirmCountry': new FormControl('', Validators.required),
+      'leadFirmCountry': new FormControl('', Validators.required),*/
+      'region': new FormControl(''),
+      'country': new FormControl(''),
+      'fundingAgency': new FormControl(''),
+      'subSbu': new FormControl(''),
+      'projectType': new FormControl(''),
+      'isNetworkFirmOpportunity': new FormControl('',),
+      'leadFirmCountry': new FormControl(''),
       'pwcIndiaValue': new FormControl('', Validators.required),
-      'documentType': new FormControl('', Validators.required)
+      'documentType': new FormControl('', Validators.required),
+      'documentName': new FormControl('', Validators.required),
+       'contactPersonName': new FormControl('',Validators.pattern('^[a-zA-Z \-\']+')),
+       'designation': new FormControl('',Validators.pattern('^[a-zA-Z \-\']+')),
+       'emailId': new FormControl(''),
+       'phoneNo' :  new FormControl('')
+
+      //'file': new FormControl('', Validators.required)
     });
 
 
@@ -80,8 +100,26 @@ export class RegisterCitationComponent implements OnInit {
   get cu() {
     return this.fgCitation.controls;
   }
-
-
+  addCotactDiv()
+  {
+    this.addcontactFlag = true;
+    console.log("add contact::"+ this.addcontactFlag);//(this.fgCitation.get('contactPersonName').value);
+  }
+  removeCotactDiv(){
+    this.addcontactFlag = false;
+  }
+  saveContact()
+  {
+    this.clinetContacts.push({
+      //  'name': this.fileToUpload.name,
+         'contactPersonName': this.fgCitation.get("contactPersonName").value,
+        'designation': this.fgCitation.get("designation").value,
+        //'documentType': documentTypeId
+        'emailId':this.fgCitation.get("emailId").value,
+        'phoneNo': this.fgCitation.get("phoneNo").value
+      }
+      );
+  }
   onSubmit() {
 
     this.submitted = true;
@@ -134,6 +172,7 @@ export class RegisterCitationComponent implements OnInit {
     );
 
     data[0].documents = { documentsData: this.documents };
+    data[0].clinetContacts = {clinetContactsData : this.clinetContacts}
 
     var request = {
       data
@@ -155,6 +194,11 @@ export class RegisterCitationComponent implements OnInit {
         else {
           if (x && x.ErrorMessage) {
             this.message = x.ErrorMessage;
+            if(  this.message.includes("duplicate key value violates unique constraint"))
+            {
+              this.message = "Same project name and client name is already exists!";
+            }
+            
             let element = document.getElementById('divMessage')
             element.style.display = "block";
           }
@@ -368,35 +412,117 @@ export class RegisterCitationComponent implements OnInit {
 
   }
 
+  attachmentSelection(event) {
+    console.log("sel doc type::"+event);
+    this.seldocumentType=Number((<HTMLSelectElement>event.srcElement).value)
+    console.log("sel doc type value::"+this.seldocumentType);
+      
+  }
+  validateFiles(file, docTypeId) {
+    // each mulitplication by 1024 converts to kb, mb, gb, etc.
+    // currently at Mb
+    
+    const fileunit = 1024 * 1024
+   // const maxsize = 2 * fileunit
+   let maxsize; 
+    // list of allowed extensions should be added here
+    if(docTypeId == "6")
+    {
+      maxsize  = 20 * fileunit
+   // var allowedExtensions = /(\.doc|\.docx|\.pdf|\.ppt|\.pptx)$/i;
+    var allowedExtensions = ['application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                              'application/msword', 'application/pdf', 'application/vnd.ms-powerpoint',
+                            'application/vnd.openxmlformats-officedocument.presentationml.presentation']
+    if (allowedExtensions.includes(file.type))
+      if (file.size > 0 && file.size <= maxsize)
+        return { allowed: true, err: "" }
+      else
+        return { allowed: false, err: "File size greater than 20MB" }
+    else
+      return { allowed: false, err: "Invalid file type!" }
+    }else if(docTypeId == "5"){
+      maxsize  = 1 * fileunit
+     // var allowedExtensions = /(\.doc|\.docx)$/i;
+     var allowedExtensions = ['application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+     'application/msword']
+      if (allowedExtensions.includes(file.type))
+        if (file.size > 0 && file.size <= maxsize)
+          return { allowed: true, err: "" }
+        else
+          return { allowed: false, err: "File size greater than 1MB" }
+      else
+        return { allowed: false, err: "Invalid file type!" }
+    }else if(docTypeId == "7"){
+      maxsize  = 1 * fileunit
+     // var allowedExtensions = /(\.ppt|\.pptx)$/i;
+     var allowedExtensions = [ 'application/vnd.ms-powerpoint',
+   'application/vnd.openxmlformats-officedocument.presentationml.presentation']
+      if (allowedExtensions.includes(file.type))
+        if (file.size > 0 && file.size <= maxsize)
+          return { allowed: true, err: "" }
+        else
+          return { allowed: false, err: "File size greater than 1MB" }
+      else
+        return { allowed: false, err: "Invalid file type!" }
+    }
+    else{
+      maxsize = 1 * fileunit
+     // var allowedExtensions = /(\.doc|\.docx|\.pdf|\.ppt|\.pptx)$/i;
+     var allowedExtensions = ['application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+     'application/msword', 'application/pdf', 'application/vnd.ms-powerpoint',
+   'application/vnd.openxmlformats-officedocument.presentationml.presentation']
+      if (allowedExtensions.includes(file.type))
+        if (file.size > 0 && file.size <= maxsize)
+          return { allowed: true, err: "" }
+        else
+          return { allowed: false, err: "File size greater than 1MB" }
+      else
+        return { allowed: false, err: "Invalid file type!" }
+    }
+  }
   onUploadClick(documentTypeId: number) {
 
-    console.log(documentTypeId);
-
-    console.log(this.documentTypes);
-
-    //let documentTypeText = this.documentTypes.find(i=>i.valueId = documentTypeId).description;
-
-    //console.log(documentTypeText);
+    console.log("documentTypeId :: "+this.documentTypes);
 
 
-    this.fileUploadService.uploadFile(this.fileToUpload).subscribe((data) => {
+    let documentTypeText ;//= this.documentTypes.find(i=>i.valueId = this.fgCitation.get('documentType').value).description;
+    this.documentTypes.forEach( (element) => {
+      if(element.valueId ==  this.fgCitation.get('documentType').value)
+      {
+        documentTypeText = element.description;
+      }
+  });
+
+    console.log("File Type==>"+  this.fileToUpload.type);
+     this.fileToUpload.type
+    let validfile = this.validateFiles(this.fileToUpload, documentTypeId)
+    if (validfile.allowed) {
+      this.documnetErrorMsg = "";
+    this.fileUploadService.uploadFile(this.fileToUpload,this.fgCitation.get("documentName").value).subscribe((data) => {
       console.log(data);
       this.documents.push({
-        'name': this.fileToUpload.name,
+      //  'name': this.fileToUpload.name,
+         'name': this.fgCitation.get("documentName").value,
         'dmsNodeId': data.DMSNodeId,
-        'documentType': documentTypeId
-        //'documentTypeText': documentTypeText
+        //'documentType': documentTypeId
+        'documentType': documentTypeId,
+        'documentTypeText': documentTypeText,
+        'fileName' : this.fileToUpload.name
       }
       );
       console.log(this.documents);
 
     });
 
+  }else{
+          this.documnetErrorMsg = validfile.err; 
+  }
+
 
   }
 
-  downlaodFile() {
-    this.fileUploadService.downloadFile().subscribe((data) => {
+  downlaodFile(nodeid:any) {
+    this.fileUploadService.downloadFile(nodeid).subscribe((data) => {
 
       var base64String = data.filestream;
       const linkSource = 'data:application/pdf;base64,' + base64String;
@@ -409,6 +535,15 @@ export class RegisterCitationComponent implements OnInit {
 
   }
 
+  onDeleteDocumentMember(i:any)
+  {
+    console.log(i);
+    this.documents.splice(i, 1);
+  }
 
+  onDeleteCitationMember(i:any)
+  {
+    this.clinetContacts.splice(i, 1);
+  }
 }
 

@@ -71,6 +71,8 @@ getApplicationCount(param:string):Observable<any>{
 getApplicationDetails(param:string):Observable<any>{ 
   return this.httpClient.post(this.baseUrl+'/getApplicationDetails',param,this.headers)
 }
-
+getDocuments(projectId:String):Observable<any>{
+  return this.httpClient.post<any>(this.baseUrl + '/getDocuments', projectId,this.headers);
+ }
 
 }
