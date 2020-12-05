@@ -3686,3 +3686,18 @@ label {
     margin-top: 0;
     font-weight: 700;
 }
+.label-alignment{
+    margin-left: 16px!important;
+}
+.form-date{
+	float: right;
+    margin-top: -40px!important;
+}
+.button-mergin{
+  margin-top: 10px!important;
+}
+.tableDataList {
+    width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,14 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+  import { Component, OnInit, ViewChild } from '@angular/core';
 
 
-import { FormBuilder, FormGroup, Validators, PatternValidator, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, PatternValidator, FormControl,FormArray } from '@angular/forms';
 import { Observable, from } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
 import { MasterdataService } from '../masterdata.service';
 import { FileUploadService } from '../file-upload.service';
-
-
+import{environment} from '../../environments/environment';
+import{MatDialogConfig, MatDialog} from '@angular/material/dialog';
+import{TrackcitationmodalComponent} from '../track-citation-modal/trackcitationmodal/trackcitationmodal.component'
+import {Sort} from '@angular/material/sort';
 @Component({
   selector: 'app-search-citation',
   templateUrl: './search-citation.component.html',
@@ -39,27 +41,52 @@ export class SearchCitationComponent implements OnInit {
   documents = [];
   message = "";
   fileToUpload: File = null;
-
+  inboxPage:Number = 1;
+  sortedData:any=[];  
+  inboxSelectedValue: number;    
+  inboxStart : number;
+  inboxEnd : number;   
+  paginationArrayData: any []= environment.pageSizeOptions;
+  searchFileFlag:string;
+  dataFlag : boolean = false;
+  noRecoedFlag : boolean = false;
+  inboxDataShow:any;
+  filesCount: number;
+  technologies:any;
+  selTechnologies=[];
+  domainnames:any;
+  selDomainnames=[];
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
+    private formBuilderSearch: FormBuilder,
     private applicationService: ApplicationService,
     private masterdataService: MasterdataService,
-    private fileUploadService: FileUploadService
+    private fileUploadService: FileUploadService,
+    private dialog: MatDialog,private fb: FormBuilder
 
-  ) { }
+  ) {this.inboxStart = 1;
+    this.inboxEnd = this.paginationArrayData[0].index;
+    this.inboxSelectedValue = this.paginationArrayData[0].index; }
 
   ngOnInit() {
-    this.fgCitation = new FormGroup({
+    this.fgCitation = this.fb.group({
       'projectName': new FormControl('', [Validators.required,Validators.pattern('^[a-zA-Z \-\']+')]),
       'clientName': new FormControl('', [Validators.pattern('^[a-zA-Z \-\']+')]),
       'startDate': new FormControl(''),
       'endDate': new FormControl(''),
       'projectValueFrom': new FormControl('', [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
       'projectValueTo': new FormControl('', [Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-      'region': new FormControl('')
+      'region': new FormControl(''),
+      'architechtureType': new FormControl(''),
+      technologies: this.formBuilder.array([])  ,
+      domainnames:  this.formBuilder.array([])  ,
+      'inboxSelectedValue': this.inboxSelectedValue
+
     });
     this.getMasterData("REGION");
-
+    this.getMasterData("TECHNOLOGY");
+    this.getMasterData("DOMAIN_NAME");
     //this.getCountry();
     //this.applicationStatus = this.getMasterData("APPLICATION_STATUS");
     //this.relationship = this.getMasterData("RELATIONSHIP");
@@ -75,7 +102,13 @@ export class SearchCitationComponent implements OnInit {
   get cu() {
     return this.fgCitation.controls;
   }
+  formatLabel(value: number) {
+    if (value >= 1000) {
+      return Math.round(value / 1000) + 'k';
+    }
 
+    return value;
+  }
 
   onSubmit() {
 
@@ -95,37 +128,7 @@ export class SearchCitationComponent implements OnInit {
     data.push(
       this.fgCitation.value
 
-      /* userName: sessionStorage.getItem("userName"),
-      applicantFirstName: this.fgCitation.value.firstName,
-      applicantMiddleName: this.fgCitation.value.middleName,
-      applicantLastName: this.fgCitation.value.lastName,
-      mobile: JSON.stringify(this.fgCitation.value.contactNumber),
-      gender: this.fgCitation.value.gender,
-      dob: this.fgCitation.value.dob,
-      district: this.fgCitation.value.district,
-      block: this.fgCitation.value.block,
-      aadhaar: JSON.stringify(this.fgCitation.value.aadhaar),
-      house: JSON.stringify(this.fgCitation.value.house),
-      ward: JSON.stringify(this.fgCitation.value.ward),
-      town: this.fgCitation.value.town,
-      street: this.fgCitation.value.street,
-      policeStation: this.fgCitation.value.policeStation,
-      pincode: this.fgCitation.value.pincode,
-      location: this.fgCitation.value.location,
-      bankIfsc: this.fgCitation.value.bankIfsc,
-      bankName: this.fgCitation.value.bankName,
-      bankBranch: this.fgCitation.value.bankBranch,
-      bankAccountNum: JSON.stringify(this.fgCitation.value.bankAccountNum),
-      pdsNum: JSON.stringify(this.fgCitation.value.pdsNum),
-      mgnregsNum: JSON.stringify(this.fgCitation.value.mgnregsNum),
-      aaycNum: JSON.stringify(this.fgCitation.value.aaycNum),
-      annualFamilyIncome: JSON.stringify(this.fgCitation.value.annualFamilyIncome),
-      formNumber: this.fgCitation.value.formNumber,
-      submissionDate: this.fgCitation.value.submissionDate,
-      applicationStatus: this.fgCitation.value.applicationStatus,
-      appliedOn: this.fgCitation.value.appliedOn,
-      approvedByDistrict: this.fgCitation.value.approvedByDistrict,
-      recommendedBy: this.fgCitation.value.recommendedBy */
+     
     );
 
     //data[0].documents = { documentsData: this.documents };
@@ -145,11 +148,27 @@ export class SearchCitationComponent implements OnInit {
 
         if (x && x.SuccessStatus) {
 
-          console.log(x.ProjectData);
+          console.log("prject data==>"+x.ProjectData);
 
           this.projects = x.ProjectData;
 
           //this.router.navigate(['/acknowledgement']);
+          if(this.projects.length === 0){
+            this.noRecoedFlag = false;
+           
+          }else{
+            this.dataFlag = true;
+            this.noRecoedFlag = true;
+    
+          }
+          this.filesCount=this.projects.length;                
+          this.sortedData = this.projects.slice();                    
+       //console.log("Serach List==>"+this.sortedData);
+       
+     
+
+
+
         }
         else {
           if (x && x.ErrorMessage) {
@@ -171,7 +190,11 @@ export class SearchCitationComponent implements OnInit {
       }
     );
 
-
+    if(this.filesCount < this.inboxEnd){      
+      this.inboxDataShow = this.projects.length;
+     }else{
+      this.inboxDataShow = this.inboxEnd;
+     }
 
   }
 
@@ -271,6 +294,14 @@ export class SearchCitationComponent implements OnInit {
             case "DOCUMENT_TYPE":
               console.log(x.MasterData);
               this.documentTypes = x.MasterData;
+              break;
+            case "TECHNOLOGY":  
+              console.log(x.MasterData);
+              this.technologies = x.MasterData;
+              break;
+            case "DOMAIN_NAME":
+              console.log(x.MasterData);
+              this.domainnames = x.MasterData;
               break;
           }
         }
@@ -450,6 +481,7 @@ export class SearchCitationComponent implements OnInit {
 
       }
     );
+    
   /*  var data = [];
     data.push(
       { projectId: selectedProject.projectId }
@@ -504,8 +536,123 @@ export class SearchCitationComponent implements OnInit {
 
   }
 
-
-
+  onChangeTechnology(event) {
+    const technologies = <FormArray>this.fgCitation.get('technologies') as FormArray;
+  
+    if(event.checked) {
+      technologies.push(new FormControl(event.source.value))
+      this.selTechnologies.push({'valueId' : event.source.value});
+    } else {
+      const i = technologies.controls.findIndex(x => x.value === event.source.value);
+      technologies.removeAt(i);
+      const j = this.selTechnologies.findIndex(y => y.value === event.source.value);
+      this.selTechnologies.splice(j);
+    }
+  }
+  onChangeDomain(event) {
+    const domainnames = <FormArray>this.fgCitation.get('domainnames') as FormArray;
+  
+    if(event.checked) {
+      domainnames.push(new FormControl(event.source.value))
+      this.selDomainnames.push({'valueId' : event.source.value});
+    } else {
+      const i = domainnames.controls.findIndex(x => x.value === event.source.value);
+      domainnames.removeAt(i);
+      const j = this.selDomainnames.findIndex(y => y.value === event.source.value);
+      this.selDomainnames.splice(j);
+    }
+  }
+  onPageSizeChangeInboxDropDown(ob) {      
+    this.inboxEnd = this.inboxSelectedValue;  
+    this.inboxStart =  1;    
+    this.onSubmit();
+    this.inboxPage = 1;
+  }
+  
+  onPageChangeInboxPagination(ob) {        
+    this.inboxStart = (ob - 1) * this.inboxSelectedValue + 1;
+    this.inboxEnd = ob * this.inboxSelectedValue;
+    // console.log(this.inboxStart );
+    // console.log(this.inboxEnd );
+     this.onSubmit();
+     this.inboxPage = ob;
+  
+     if(this.filesCount< this.inboxEnd){      
+      this.inboxDataShow = this.projects.length;
+     }else{
+      this.inboxDataShow = this.inboxEnd;
+     }
+  }
+  
+  sortData(sort: Sort) {    
+    const data = this.projects.slice();
+    if (!sort.active || sort.direction == '') {
+      this.sortedData = data;
+      return;
+    }
+  
+    this.sortedData = data.sort((a, b) => {
+      let isAsc = sort.direction == 'asc';
+      switch (sort.active) {
+        case 'rnum': return compare(a.rnum, b.rnum, isAsc);     
+        case 'fileName': return compare(a.fileName, b.fileName, isAsc);     
+        case 'fileSubject': return compare(a.fileSubject, b.fileSubject, isAsc);  
+        case 'createdBy': return compare(a.createdBy, b.createdBy, isAsc);  
+        case 'dateOfCreation': return compare(a.dateOfCreation, b.dateOfCreation, isAsc);  
+        case 'fileTrack': return compare(a.fileTrack, b.fileTrack, isAsc);  
+        case 'fileAction': return compare(a.fileAction, b.fileAction, isAsc);  
+        case 'fileStatus': return compare(a.fileStatus, b.fileStatus, isAsc);  
+       
+        default: return 0;
+        
+      }
+    });
+    
+  }
+  
+  showReferenceOptions(file:any){
+    console.log("Track dtls==>"+file);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '200px';
+    dialogConfig.height = '50%';
+    dialogConfig.data=file;
+    
+    const dialogRef = this.dialog.open(TrackcitationmodalComponent,dialogConfig);
+    dialogRef.afterClosed().subscribe(
+        // val => console.log("Dialog output:", val)
+    );  
+  }
+  
+  showReferenceOptionsSearch(user: any, section_name:any) {
+      // console.log(section_name);
+      let data = {
+        taskId: user.taskId,
+        fileName: user.fileName,
+        section_name: section_name
+      }
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = false;
+      dialogConfig.autoFocus = true;
+      dialogConfig.maxHeight = '95vw';
+      dialogConfig.width = '20px';
+      dialogConfig.height = '10px';
+      //dialogConfig.data=user.taskId;
+      dialogConfig.data = data;
+  
+    /*  const dialogRef = this.dialog.open(FileDetailsModalComponent, dialogConfig);
+      dialogRef.afterClosed().subscribe(
+        val =>{
+          // this.getInboxList('');
+          // this.getDraftsList('');
+          // this.getSentList('');
+        }
+      );*/
+    }
 
 }
 
+function compare(a, b, isAsc) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}

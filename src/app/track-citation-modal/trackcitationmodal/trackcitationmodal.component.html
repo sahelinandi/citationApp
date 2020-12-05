@@ -1,0 +1,228 @@
+<mat-dialog-content  class="serachForm modal"  >
+    <div class="close_preview" (click)="close()">
+        <i class="material-icons close">close</i>
+    </div>
+    <div class="header"><h3>Track Details </h3>
+        <!-- <hr> -->
+    </div>
+
+
+    
+
+
+
+<div class="body">
+    <div class="row"> 
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><b>Project Name :  </b></label>
+               {{selProjects[0].projectName}}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><b>Client Name :  </b></label>
+                {{selProjects[0].clientName}}
+              </div>
+        </div>
+       
+        
+    </div>
+
+    <div class="row"> 
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Project Satrt Date :  </b></label>
+               {{selProjects[0].projectStartDate}}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Project End Date :  </b></label>
+                {{selProjects[0].projectEndDate}}
+              </div>
+        </div>
+       
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Valuation :  </b></label>
+                {{selProjects[0].projectValue}}
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row"> 
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Project Type :  </b></label>
+               {{selProjects[0].projectType}}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Currency :  </b></label>
+                {{selProjects[0].currency}}
+              </div>
+        </div>
+       
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Country :  </b></label>
+                {{selProjects[0].country}}
+            </div>
+        </div>
+    </div>
+    
+   <div class="row">  
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Funding Agency :  </b></label>
+                {{selProjects[0].funding_agency}}
+            </div>
+        </div>
+      
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label><b>Is network firm oppotunity :  </b></label>
+                  
+                      {{selProjects[0].isNetworkFirmOpportunity}}
+                   
+                </div>
+
+
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Sub-SBU :  </b></label>
+                {{selProjects[0].subSbuName}}
+            </div>
+        </div>
+      
+    </div>
+
+
+  
+
+    <div class="row">
+
+        <div class="col-md-4">
+          
+                <div class="form-group">
+                    <label><b>PwC India Value :  </b></label>
+
+                   {{selProjects[0].pwcIndiaValue}}
+                </div>
+          
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label><b>Region :  </b></label>
+                {{selProjects[0].region}}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Architecture Type : </label>
+                {{selProjects[0].architectureType}}
+            </div>
+        </div>
+      
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"  *ngIf="technologies.length > 0">
+            <div class="form-group">
+                <label><b>Technology  :  </b></label>
+                <a *ngFor="let d of technologies; let i = index">
+                    {{d.description}},
+                </a>
+
+             </div>
+         </div>   
+         <div class="col-md-4" *ngIf="domainNames.length > 0">
+            <div class="form-group">
+                <label><b>Domain  :  </b></label>
+                <a *ngFor="let d of domainNames; let i = index">
+                    {{d.description}},
+                </a>
+
+             </div>
+         </div>  
+    </div>
+  
+
+<div class="row" *ngIf="documents.length > 0">
+ 
+    <div class="col-md-12 row-top_margin">
+        <div class="form-group">
+            <label><b>Document Details  :  </b></label>
+         </div>
+      
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th scope="col">Document Type</th>
+                    <th scope="col">Document Name</th>
+                    
+                    
+                    <th scope="col">Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table" *ngFor="let d of documents; let i = index">
+
+                   
+                    <td>{{d.documentType}}</td>
+                    <td>{{d.documentName}}</td>
+                    <td>
+                        <a href="#" data-toggle="modal" (click)=downlaodFile(d.nodeId,d.documentName)>
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                        </a>
+
+                       
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<div class="row" *ngIf="clientContacts.length > 0">
+    
+      
+    
+    <div class="col-md-12 row-top_margin">
+        <div class="form-group">
+            <label><b>Client Contact Details  :  </b></label>
+         </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+
+                    <th scope="col">Contact Person Name</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email Id</th>                    
+                    <th scope="col">Phone No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table" *ngFor="let d of clientContacts; let i = index">
+
+                   
+                    <td>{{d.personName}}</td>
+                    <td>{{d.designation}}</td>
+                    <td>{{d.emailid}}</td>         
+                    <td>{{d.phoneno}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</div>
+
+
+</mat-dialog-content>

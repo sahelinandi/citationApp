@@ -1,21 +1,28 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Inject } from '@angular/core';
 
 
-import { FormBuilder, FormGroup, Validators, PatternValidator, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, PatternValidator, FormControl,FormArray } from '@angular/forms';
 import { Observable, from } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
 import { MasterdataService } from '../masterdata.service';
 import { FileUploadService } from '../file-upload.service';
-import { IfStmt } from '@angular/compiler';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import{ContactDetailsComponent} from '../contact-details/contact-details.component';
 /* import {DateTimePickerComponent} from '../date-time-picker/date-time-picker.component'; */
+export interface DialogData {
+  contactPersonName: string;
+  designation: string;
+  emailId: string;
+  phoneNo: string
+}
 
 
 @Component({
   selector: 'app-register-citation',
   templateUrl: './register-citation.component.html',
   styleUrls: ['./register-citation.component.css']
-})
+})  
 export class RegisterCitationComponent implements OnInit {
 
   // @ViewChild('dtpDOB', {static: false}) dtpDOB:DateTimePickerComponent;
@@ -29,7 +36,10 @@ export class RegisterCitationComponent implements OnInit {
   subSbus = [];
   selectedSubSbuId;
   projectTypes = [];
-
+  technologies:any;
+  selTechnologies=[];
+  domainnames:any;
+  selDomainnames=[];
   currencies= [];
   regions= [];
   countries= [];
@@ -37,16 +47,22 @@ export class RegisterCitationComponent implements OnInit {
   documentTypes= [];  
   documents = [];
   clinetContacts = [];
+  contacts = [];
   message = "";
   fileToUpload: File = null;
   seldocumentType:any;
   documnetErrorMsg:any;
+  contactPersonName: string;
+  designation: string;
+  emailId: string;
+  phoneNo: string;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private applicationService: ApplicationService,
     private masterdataService: MasterdataService,
-    private fileUploadService: FileUploadService
+    private fileUploadService: FileUploadService,
+    public dialog: MatDialog
 
   ) { }
 
@@ -74,13 +90,15 @@ export class RegisterCitationComponent implements OnInit {
       'isNetworkFirmOpportunity': new FormControl('',),
       'leadFirmCountry': new FormControl(''),
       'pwcIndiaValue': new FormControl('', Validators.required),
+      'architechtureType': new FormControl('', Validators.required),
       'documentType': new FormControl('', Validators.required),
       'documentName': new FormControl('', Validators.required),
        'contactPersonName': new FormControl('',Validators.pattern('^[a-zA-Z \-\']+')),
        'designation': new FormControl('',Validators.pattern('^[a-zA-Z \-\']+')),
        'emailId': new FormControl(''),
-       'phoneNo' :  new FormControl('')
-
+       'phoneNo' :  new FormControl(''),
+        technologies: this.formBuilder.array([])  ,
+        domainnames:  this.formBuilder.array([])  
       //'file': new FormControl('', Validators.required)
     });
 
@@ -92,6 +110,8 @@ export class RegisterCitationComponent implements OnInit {
     this.getMasterData("REGION");
     this.getMasterData("CURRENCY");
     this.getMasterData("DOCUMENT_TYPE");
+    this.getMasterData("TECHNOLOGY");
+    this.getMasterData("DOMAIN_NAME");
     this.getCountry();
     this.getSubSBU();
     this.getFundingAgency();
@@ -172,13 +192,15 @@ export class RegisterCitationComponent implements OnInit {
     );
 
     data[0].documents = { documentsData: this.documents };
-    data[0].clinetContacts = {clinetContactsData : this.clinetContacts}
-
+    data[0].clinetContacts = {clinetContactsData : this.clinetContacts};
+    data[0].technologies = {technlologyData : this.selTechnologies};
+    data[0].domainnames = {domainData: this.selDomainnames};
+    
     var request = {
       data
     };
 
-    console.log(request);
+    console.log("request form obj==>"+request);
 
     var strRequest = JSON.stringify(request);
 
@@ -317,6 +339,14 @@ export class RegisterCitationComponent implements OnInit {
               console.log(x.MasterData);
               this.documentTypes = x.MasterData;
               break;
+            case "TECHNOLOGY":  
+            console.log(x.MasterData);
+            this.technologies = x.MasterData;
+            break;
+            case "DOMAIN_NAME":
+            console.log(x.MasterData);
+            this.domainnames = x.MasterData;
+            break;
           }
         }
         else {
@@ -545,5 +575,54 @@ export class RegisterCitationComponent implements OnInit {
   {
     this.clinetContacts.splice(i, 1);
   }
+  change()
+  {
+    console.log(this.fgCitation.value);
+  }
+  onChangeTechnology(event) {
+    const technologies = <FormArray>this.fgCitation.get('technologies') as FormArray;
+  
+    if(event.checked) {
+      technologies.push(new FormControl(event.source.value))
+      this.selTechnologies.push({'valueId' : event.source.value});
+    } else {
+      const i = technologies.controls.findIndex(x => x.value === event.source.value);
+      technologies.removeAt(i);
+      const j = this.selTechnologies.findIndex(y => y.value === event.source.value);
+      this.selTechnologies.splice(j);
+    }
+  }
+  onChangeDomain(event) {
+    const domainnames = <FormArray>this.fgCitation.get('domainnames') as FormArray;
+  
+    if(event.checked) {
+      domainnames.push(new FormControl(event.source.value))
+      this.selDomainnames.push({'valueId' : event.source.value});
+    } else {
+      const i = domainnames.controls.findIndex(x => x.value === event.source.value);
+      domainnames.removeAt(i);
+      const j = this.selDomainnames.findIndex(y => y.value === event.source.value);
+      this.selDomainnames.splice(j);
+    }
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ContactDetailsComponent, {
+      width: '200px',
+      data: {contactPersonName: this.contactPersonName, designation: this.designation,emailId:this.emailId, phoneNo: this.phoneNo}
+      
+    });
+    this.contacts =  dialogRef.componentInstance.contacts;
+   
+  
+    dialogRef.afterClosed().subscribe(result => {
+     this.clinetContacts.push({
+         'contactPersonName':dialogRef.componentInstance.contacts[0].contactPersonName,
+        'designation': dialogRef.componentInstance.contacts[0].designation,
+        //'documentType': documentTypeId
+        'emailId':dialogRef.componentInstance.contacts[0].emailId,
+        'phoneNo': dialogRef.componentInstance.contacts[0].phoneNo
+      }
+      );
+    });
+  }
 }
-

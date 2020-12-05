@@ -1,4 +1,262 @@
+
 <div class="container margnContain innerpageminheight">
+    <div class="container-fluid">
+        <div class="card card-m-btm">
+            <div class="card-header">
+                Search Citation
+            </div>
+            <div class="body">
+                <div class="form-horizontal">
+                    <div class='form-line text-right'>
+                        <div class='form-error'>
+                            Fields marked with '*' are mandatory
+                        </div>
+                    </div>
+                    <form [formGroup]="fgCitation" (submit)="onSubmit()">
+
+                        <div class="row">
+        
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project Name<span class="text-danger">*</span></label>
+                                    <input type="text" formControlName="projectName" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Client Name</label>
+                                    <input type="text" formControlName="clientName" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.projectName.errors }" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project Date From</label>
+                                   <!-- <input type="date" formControlName="startDate" maxlength="30" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.startDate.errors }" />
+                                        <div *ngIf="submitted && cu.startDate.errors" class="invalid-feedback">
+                                        <div *ngIf="cu.startDate.errors.required">Project Start Date is required</div>
+                                        </div>-->
+                                        
+                                        <input class="form-control" [matDatepicker]="picker" formControlName="startDate"/>
+                                        <mat-datepicker-toggle matSuffix [for]="picker" class="form-date"></mat-datepicker-toggle>
+                                        <mat-datepicker touchUi #picker></mat-datepicker>
+                                        <div *ngIf="submitted && cu.startDate.errors" class="invalid-feedback">
+                                            <div *ngIf="cu.startDate.errors.required">Project Date From is required</div>
+                                            </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Project Date To</label>
+                                     
+                                    <input class="form-control" [matDatepicker]="picker1" formControlName="endDate"  [ngClass]="{ 'is-invalid': submitted && cu.endDate.errors }" />
+                                    <mat-datepicker-toggle matSuffix [for]="picker1" class="form-date"></mat-datepicker-toggle>
+                                    <mat-datepicker touchUi #picker1></mat-datepicker>
+                                       <div *ngIf="submitted && cu.endDate.errors" class="invalid-feedback">
+                                       <div *ngIf="cu.endDate.errors.required">Project Date to is required</div>
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                
+                                <div class="form-group">
+                                    <label>Valuation From</label>
+        
+                                   
+                                      <!--  <input type="text" formControlName="projectValueFrom" class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && cu.projectValueFrom.errors }" />-->
+                                        <mat-slider formControlName="projectValueFrom" thumbLabel  [displayWith]="formatLabel"  tickInterval="1000"  min="10000"  max="1000000"></mat-slider>
+                                        <div *ngIf="submitted && cu.projectValueFrom.errors" class="invalid-feedback">
+                                            <div *ngIf="cu.projectValueFrom.errors.required">Valuation is required</div>
+                                            <div *ngIf="cu.projectValueFrom.errors.pattern">Valuation is invalid!</div>
+                                            <div *ngIf="cu.projectValueFrom.errors.minlength">Valuation should be minimum 6 digits</div>
+                                            </div>
+        
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                
+                                    <div class="form-group">
+                                        <label>Valuation To</label>
+            
+                                      
+                                           <!--<input type="text" formControlName="projectValueTo" class="form-control"
+                                            [ngClass]="{ 'is-invalid': submitted && cu.projectValueTo.errors }" />-->
+                                            <mat-slider  formControlName="projectValueTo" thumbLabel  [displayWith]="formatLabel"  tickInterval="1000"  min="10000"  max="1000000"></mat-slider>
+                                            <div *ngIf="submitted && cu.projectValueTo.errors" class="invalid-feedback">
+                                                <div *ngIf="cu.projectValueTo.errors.required">Valuation is required</div>
+                                                <div *ngIf="cu.projectValueTo.errors.pattern">Valuation is invalid!</div>
+                                                <div *ngIf="cu.projectValueTo.errors.minlength">Valuation should be minimum 6 digits</div>
+                                                </div>
+            
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Region</label>
+                                    <select class="form-control"
+                                        formControlName="region">
+                                        <option value="" disabled selected hidden>Select</option>
+        
+                                        <option *ngFor="let r of regions" [value]="r.valueId">{{r.description}}
+                                        </option>
+        
+        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Architechture Type</label>
+                                    <input type="text" formControlName="architechtureType"  class="form-control"/>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Technology</label>
+                                    <div *ngFor="let technology of technologies" >
+                                        <mat-checkbox class="example-margin" 
+                                        (change)="onChangeTechnology($event)" [value]="technology.valueId">{{technology.description}}</mat-checkbox>
+                                    </div>
+                               </div>
+                            
+                             </div>
+                             <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Domain Name</label>
+                                    <div *ngFor="let domain of domainnames" >
+                                        <mat-checkbox class="example-margin" 
+                                        (change)="onChangeDomain($event)" [value]="domain.valueId">{{domain.description}}</mat-checkbox>
+                                    </div>
+                               </div>
+                              
+                             </div>
+                           
+                              
+                        </div>
+                            <div class="row button-mergin">
+                            <div class="col-md-12">
+        
+                                <div class="form-group text-left">
+                                    <button type="submit" class="mat-button actionButton borderR">Search</button>
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div *ngIf="projects.length>0" class="body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="label"> <label>Select Range</label>  &nbsp;&nbsp;
+                                        <mat-form-field style="width: 74px;">
+                                           
+                                            <mat-select formControlName="inboxSelectedValue" name="index" (ngModelChange)="onPageSizeChangeInboxDropDown($event)">
+                                                <mat-option *ngFor="let index of paginationArrayData" [value]="index.index">
+                                                    {{index.index}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>  
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--div class="search">
+                                        <label>Search: &nbsp; &nbsp; &nbsp;</label>
+                                        <input class="form-control" type="text" #inbox_search name="inbox_search" (keyup)="getInboxList(inbox_search.value)">
+                                    </div-->
+                                </div>
+                            </div>
+                            <div class="tableDataList">
+                            <table matSort (matSortChange)="sortData($event)" class="table table-hover table-bordered">
+                                <!-- <thead style="background-color: #099ab6"> -->
+                                <thead>
+                                    <tr>
+                                       
+                                        <th mat-sort-header="fileName">Project Name</th>
+                                        <th mat-sort-header="fileSubject">Client Name</th>
+                                        <th mat-sort-header="createdBy">Project start Date</th>
+                                        <th mat-sort-header="dateOfCreation"> Project end Date</th>
+                                        <th mat-sort-header="fileStatus">Valuation</th>
+                                        <th mat-sort-header="fileTrack">Track</th>
+                                        <!-- <th mat-sort-header="fileAction"> Edit</th> -->
+                                       
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                    <!-- <tr *ngFor="let a of sortedData"> -->
+                                    <ng-container *ngIf="sortedData.length >0 ;else norecords">
+                                        <tr *ngFor="let a of sortedData | paginate: {id: 'inbox_listing_pagination2',
+                                                    itemsPerPage: inboxSelectedValue,
+                                                    currentPage: inboxPage,
+                                                    totalItems: projects.length }">
+    
+                                            
+                                            <td >{{a.projectName}}</td>
+                                            <td>
+                                                <div matTooltipClass="tooltip-action" matTooltip="{{a.clientName}}">
+                                                    <div class="ellipsisclass">{{a.clientName}}</div>
+                                                </div>    
+                                            </td>
+                                            <td>{{a.projectStartDate}}</td>
+                                            <td>{{a.projectEndDate}}</td>
+                                            <td>
+                                                {{a.projectValue}}
+                                            </td>
+                                            <td> <i style="color:brown;" matTooltipClass="tooltip-action" matTooltip="Track Status" class="material-icons table_action" (click)="showReferenceOptions(a)">find_in_page</i> </td>
+                                            <!-- <td (click)="showReferenceOptions(user)"><a href="javascript:void(0)">{{user.fileName}}</a></td> -->
+                                            <!-- <td><i style="color:#00b7f3;" *ngIf="a.fileAction" class="material-icons edit" matTooltipClass="tooltip-action" matTooltip="{{a.fileAction}}">edit</i></td> -->
+                                            
+                                        </tr>
+                                    </ng-container>
+                                    <ng-template #norecords>
+                                        <tr>
+                                            <td colspan="8">No record found!</td>
+                                        </tr>
+                                    </ng-template>
+                                </tbody>
+    
+                            </table> 
+                            </div>
+                                <div class="row" *ngIf="noRecoedFlag">                                
+                                    <div class="col-md-3" *ngIf="sortedData && sortedData.length >1">
+                                        <!-- <div class=""> -->
+                                            <label >Showing {{inboxStart}} to {{inboxDataShow}} of {{filesCount}} entries</label>
+                                        <!-- </div> -->
+                                    </div>
+                                    <!-- <div class="col-md-3" *ngIf="noRecoedFlag">                                   
+                                            <label >No record found...</label>                                   
+                                    </div> -->
+                                    <div class="col-md-9" *ngIf="sortedData && sortedData.length >1">
+                                        <div class="float-right">
+                                            <pagination-controls id="inbox_listing_pagination2" maxSize="10" directionLinks="true" (pageChange)="onPageChangeInboxPagination($event)">
+                                            </pagination-controls>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+    
+                        </div>
+                      
+        
+                    </form>
+                </div>
+            </div>        
+        </div>
+    </div>
+</div>    
+
+<!--div class="container margnContain innerpageminheight">
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item active">
@@ -60,8 +318,7 @@
                         <div class="form-group">
                             <label>Valuation From</label>
 
-                           <!-- <input type="number" class="form-control quantity"  fromControlName="projectValue"
-                                [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />-->
+                           
                                 <input type="text" formControlName="projectValueFrom" class="form-control"
                                 [ngClass]="{ 'is-invalid': submitted && cu.projectValueFrom.errors }" />
                                 <div *ngIf="submitted && cu.projectValueFrom.errors" class="invalid-feedback">
@@ -77,8 +334,7 @@
                             <div class="form-group">
                                 <label>Valuation To</label>
     
-                               <!-- <input type="number" class="form-control quantity"  fromControlName="projectValue"
-                                    [ngClass]="{ 'is-invalid': submitted && cu.projectValue.errors }" />-->
+                              
                                     <input type="text" formControlName="projectValueTo" class="form-control"
                                     [ngClass]="{ 'is-invalid': submitted && cu.projectValueTo.errors }" />
                                     <div *ngIf="submitted && cu.projectValueTo.errors" class="invalid-feedback">
@@ -243,35 +499,7 @@
                             </div>
                         </div>
                 </div>       
-              <!--  <div *ngFor="let d of documents; let j=index">
-    
-                        <div class="row">  
-                            
-                            <div class="col-md-4">
-    
-                                <div class="form-group">
-                                    <label><b>Document Type :  </b></label>
-                                    {{d.documentType}}
-                                </div>
-                            </div>
-                            <div class="col-md-4">
             
-                                <div class="form-group">
-                                    <label><b>Document Name :  </b></label>
-                                    {{d.documentName}}
-                                </div>
-                                
-                            </div>   
-                            <div class="col-md-4">
-    
-                                <div class="form-group download-docbtn">
-                                    <a class="btn btn-primary button-radious" (click)=downlaodFile(d.nodeId,d.documentName)>Download Document</a>
-                                </div>
-                            </div>
-                            
-                        </div>
-                </div>
-            -->
             <div class="row" *ngIf="documents.length > 0">
 
                 <div class="col-md-12 row-top_margin">
@@ -280,9 +508,8 @@
                             <tr>
     
                                 <th scope="col">Document Type</th>
-                                <!-- <th scope="col">Gender</th> -->
                                 <th scope="col">Document Name</th>
-                                <!-- <th scope="col">Relationship</th> -->
+                                
                                 
                                 <th scope="col">Download</th>
                             </tr>
@@ -290,7 +517,7 @@
                         <tbody>
                             <tr class="table" *ngFor="let d of documents; let i = index">
     
-                               <!-- <td>{{d.documentType}}</td>-->
+                               
                                 <td>{{d.documentType}}</td>
                                 <td>{{d.documentName}}</td>
                                 <td>
@@ -298,7 +525,7 @@
                                         <i class="fa fa-download" aria-hidden="true"></i>
                                     </a>
     
-                                    <!-- <button (click)="onDeleteFamilyMember()">Delete</button> -->
+                                   
                                 </td>
                             </tr>
                         </tbody>
@@ -322,4 +549,4 @@
 </div>
 </div>
 
-</div>
+</div>-->

@@ -1,0 +1,101 @@
+
+<mat-dialog-content  class="serachForm modal"  >
+    <div class="close_preview" (click)="close()">
+        <i class="material-icons close">close</i>
+    </div>
+    <div class="header"><h3>Contact Details</h3>
+        <!-- <hr> -->
+    </div>
+    <section >
+        <div >                
+                    <div style="width: 100%">
+                    <div >                        
+                        <div class="body">
+                            <form [formGroup]="contactFormModal" class="row form-horizontal" (ngSubmit)="onSubmit()">
+                                <div class="container-fluid">
+                                    <div class="row">                                 
+                                        <div class="col-md-6">
+                                            <div class="form-line">
+                                                <div class="form-label ">
+                                                    <label for="fileHeader">Contact Person Name </label>
+                                                </div>                                                
+                                                <div class="form-input ">                                                                         
+                                                    <input type="text" formControlName="contactPersonName"  [ngClass]="{ 'is-invalid': submitted && f.contactPersonName.errors }" [(ngModel)]="data.contactPersonName" class="form-control" maxlength="150"/>
+                                                    <div *ngIf="submitted && f.designation.errors" class="form-error">
+                                                        &nbsp;<span *ngIf="f.designation.errors.pattern">Contact person name is invalid!</span>
+                                                        &nbsp;<span *ngIf="f.designation.errors">Maximum length should be 30 characters!</span>
+                                                    </div>                              
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-line">
+                                                <div class="form-label ">
+                                                    <label for="fileHeader">Designation<sup class="text-danger">*</sup></label>
+                                                </div>                                                
+                                                <div class="form-input ">                                                                         
+                                                    <input type="text" formControlName="designation" [ngClass]="{ 'is-invalid': submitted && f.designation.errors }"  [(ngModel)]="data.designation" class="form-control" maxlength="150"/>
+                                                    <div *ngIf="submitted && f.designation.errors" class="form-error">
+                                                        &nbsp;<span *ngIf="f.designation.errors.pattern">Designaion is invalid!</span>
+                                                        &nbsp;<span *ngIf="f.designation.errors">Maximum length should be 25 characters!</span>
+                                                    </div>                                       
+                                                </div> 
+                                            </div>
+                                        </div>                                                                                                          
+                                    </div>
+    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-line">
+                                                <div class="form-label ">
+                                                    <label for="fileHeader">Email Id </label>
+                                                </div>
+                                                <div class="form-input ">                                                                                                                            
+                                                    <div class="form-input ">                                                                         
+                                                        <input type="text" formControlName="emailId"  [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }"  [(ngModel)]="data.emailId" class="form-control" maxlength="150"/>
+                                                        <!-- <div class="form-error">
+                                                            &nbsp;<span *ngIf="isFieldInvalid('mdaDesModal')">* Ministry description is required</span>
+                                                        </div>                                    -->
+                                                      
+                                                        <div *ngIf="submitted && f.emailId.errors" class="form-error">
+                                                            &nbsp;<span *ngIf="f.emailId.errors.pattern">Email id is invalid!</span>
+                                                        </div>      
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-line">
+                                                <div class="form-label ">
+                                                    <label for="fileHeader">Phone No </label>
+                                                </div>
+                                                <div class="form-input ">                                                                                                                            
+                                                    <div class="form-input ">                                                                         
+                                                        <input type="text" formControlName="phoneNo"  [ngClass]="{ 'is-invalid': submitted && f.phoneNo.errors }" [(ngModel)]="data.phoneNo" class="form-control" maxlength="150"/>
+                                                         <div *ngIf="submitted && f.phoneNo.errors" class="form-error">
+                                                            &nbsp;<span *ngIf="f.phoneNo.errors.pattern">Phone No is invalid!</span>
+                                                        </div>                                    
+                                                    </div>                                   
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div>
+    
+                                    <div class="row">                                       
+                                            <button type="button" mat-button class="actionButton mat-focus-indicator actionButton borderR mat-button mat-button-base" (click)="onSubmit()" >Save</button>
+                                            <button type="button" mat-button class="actionButton mat-focus-indicator actionButton borderR mat-button mat-button-base" (click)="close()">Cancel</button>                                        
+                                    </div>                                                                                                                                                                                                                 
+                                </div>                                                                             
+                                <div>                                                             
+                            </div>                        
+                            </form>                                                  
+                        </div>  
+                    </div>
+                </div>        
+        </div>
+      </section>
+</mat-dialog-content>
+<mat-dialog-actions>
+
+</mat-dialog-actions>

@@ -74,5 +74,13 @@ getApplicationDetails(param:string):Observable<any>{
 getDocuments(projectId:String):Observable<any>{
   return this.httpClient.post<any>(this.baseUrl + '/getDocuments', projectId,this.headers);
  }
-
+ getClientContacts(projectId:String):Observable<any>{
+  return this.httpClient.post<any>(this.baseUrl + '/getClientContacts', projectId,this.headers);
+ }
+ getTechnologies(projectId:String):Observable<any>{
+  return this.httpClient.post<any>(this.baseUrl + '/getTechnologies', projectId,this.headers);
+ }
+ getDomains(projectId:String):Observable<any>{
+  return this.httpClient.post<any>(this.baseUrl + '/getDomains', projectId,this.headers);
+ }
 }
