@@ -10,29 +10,36 @@
                 <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
             </button>
            
-                <a class="navbar-brand" routerLink="/home">
-                  <h1><img class="img-fluid" src="CitationApp/assets/img/chandigarh-logo.png" alt="logo"></h1>
-                  <!--<h2>Doors</h2>-->
-                </a>
-                <div class="row">
-                    
+           <img class="img-fluid" src="../assets/img/chandigarh-logo.png" alt="logo">
+              <!--<h2>Doors</h2>-->
+              <h1 class="headermsg text-center">Welcome To The Ctitation Application</h1>
+               
+               
+              <div class="row"></div>
+          
                   <div *ngIf="!loggedInUserName">
-                    <a [routerLink]="['/login']">Login</a>
+                    <a [routerLink]="['/dashboard']">Login</a>
                   </div>
-                  <div *ngIf="loggedInUserName" >Welcome {{loggedInUserName}} | </div>
-                  <div *ngIf="loggedInUserName" >
-                    <a (click)=onLogout()> Logout</a>
-                  </div>
-                 
                   
-                  </div>
-        
-       
-        
-  
+                  <div class="row header-text-color" *ngIf="loggedInUserName">
+                    <a class="header-text-color" routerLink="/registercitation">
+                      Create Citation  &nbsp; &nbsp; |  &nbsp; &nbsp;
+                  </a>
+                  <a class="header-text-color" routerLink="/searchcitation">
+                    Search Citation  &nbsp; &nbsp; | &nbsp;&nbsp;
+                   </a>
+                        Welcome {{loggedInUserName}} | &nbsp;&nbsp;
                  
-            </div>
+                    <a (click)=onLogout()  routerLink="/login"> Logout</a>     
+
+                   
+                    
+
+                  </div>
+                 
+</div>
         </div>
+      
     </header><!--/#navigation--> 
       <!-- end header -->
       

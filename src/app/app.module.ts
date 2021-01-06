@@ -42,6 +42,7 @@ import { SafehtmlpipePipe } from './pipes/safehtmlpipe.pipe';
 import { UniquePipe } from './pipes/unique.pipe';
 import { TrackcitationmodalComponent } from './track-citation-modal/trackcitationmodal/trackcitationmodal.component';
 import { LoginComponent } from './login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,

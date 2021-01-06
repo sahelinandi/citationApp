@@ -19,7 +19,7 @@ show:boolean;
          this.ref= params.ref;
      });
      console.log("msg");
-     const token  = this.authService.getAccessToken();
+  /*   const token  = this.authService.getAccessToken();
      if(token != undefined && token !=null)
      {
         this.show = true;
@@ -41,7 +41,7 @@ show:boolean;
          window.location.href=environment.LoginURL+"?response_type="+environment.response_type
          +"&client_id="+environment.client_id+"&redirect_uri="+environment.redirect_uri+"&scope="+environment.scope   
         }
-     }
+     }*/
 
   }
 getAccessToken(Code:string)

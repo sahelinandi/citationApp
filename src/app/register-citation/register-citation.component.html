@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Client Name<span class="text-danger">*</span></label>
-                                    <input type="text" formControlName="clientName" maxlength="30" class="form-control"
+                                    <input type="text" formControlName="clientName" maxlength="60" class="form-control"
                                         [ngClass]="{ 'is-invalid': submitted && cu.clientName.errors }" />
                                         <div *ngIf="submitted && cu.clientName.errors" class="invalid-feedback">
                                         <div *ngIf="cu.clientName.errors.required">Clinet Name is required</div>
@@ -254,7 +254,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Architechture Type</label>
+                                    <label>Architecture Type</label>
                                     <input type="text" formControlName="architechtureType"  class="form-control"/>
                                      
                                </div>
@@ -265,7 +265,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Technology</label>
-                                    <div *ngFor="let technology of technologies" >
+                                    <div class="label_checkbox" *ngFor="let technology of technologies" >
                                         <mat-checkbox class="example-margin" 
                                         (change)="onChangeTechnology($event)" [value]="technology.valueId">{{technology.description}}</mat-checkbox>
                                     </div>
@@ -444,6 +444,7 @@
                                     </button>-->
                                     
                                     <button class="mat-button actionButton borderR">Submit</button>
+                                   <!-- <a class="mat-button actionButton borderR" [routerLink]="['/dashboard']" >Back to Dashboard</a>-->
                                 </div>
                             </div>
                     
@@ -451,7 +452,7 @@
                     <div class="row button-mergin">      
                         <div class="col-md-12">
                         <div class="form-group text-right">      
-                        <a class="mat-button actionButton borderR" [routerLink]="['/dashboard']" >Back to Dashboard</a>
+                       
                         </div>
                        </div>
                     </div>

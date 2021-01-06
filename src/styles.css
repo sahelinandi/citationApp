@@ -3408,7 +3408,8 @@ th {
 
   .innerpageminheight
   {
-	  min-height: 242px !important;
+	/* min-height: 242px !important;*/
+	min-height: 300px !important;
   }
   .innerpageminheightS
   {
@@ -3698,6 +3699,9 @@ label {
 }
 .tableDataList {
     width: 100%;
+}
+.label_checkbox{
+   font-weight: 0!important;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

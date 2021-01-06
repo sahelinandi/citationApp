@@ -9,6 +9,7 @@ import { MasterdataService } from '../masterdata.service';
 import { FileUploadService } from '../file-upload.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import{ContactDetailsComponent} from '../contact-details/contact-details.component';
+import { AuthService } from '../auth.service';
 /* import {DateTimePickerComponent} from '../date-time-picker/date-time-picker.component'; */
 export interface DialogData {
   contactPersonName: string;
@@ -62,7 +63,8 @@ export class RegisterCitationComponent implements OnInit {
     private applicationService: ApplicationService,
     private masterdataService: MasterdataService,
     private fileUploadService: FileUploadService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public authSurvice: AuthService
 
   ) { }
 
@@ -158,44 +160,14 @@ export class RegisterCitationComponent implements OnInit {
     data.push(
       this.fgCitation.value
 
-      /* userName: sessionStorage.getItem("userName"),
-      applicantFirstName: this.fgCitation.value.firstName,
-      applicantMiddleName: this.fgCitation.value.middleName,
-      applicantLastName: this.fgCitation.value.lastName,
-      mobile: JSON.stringify(this.fgCitation.value.contactNumber),
-      gender: this.fgCitation.value.gender,
-      dob: this.fgCitation.value.dob,
-      district: this.fgCitation.value.district,
-      block: this.fgCitation.value.block,
-      aadhaar: JSON.stringify(this.fgCitation.value.aadhaar),
-      house: JSON.stringify(this.fgCitation.value.house),
-      ward: JSON.stringify(this.fgCitation.value.ward),
-      town: this.fgCitation.value.town,
-      street: this.fgCitation.value.street,
-      policeStation: this.fgCitation.value.policeStation,
-      pincode: this.fgCitation.value.pincode,
-      location: this.fgCitation.value.location,
-      bankIfsc: this.fgCitation.value.bankIfsc,
-      bankName: this.fgCitation.value.bankName,
-      bankBranch: this.fgCitation.value.bankBranch,
-      bankAccountNum: JSON.stringify(this.fgCitation.value.bankAccountNum),
-      pdsNum: JSON.stringify(this.fgCitation.value.pdsNum),
-      mgnregsNum: JSON.stringify(this.fgCitation.value.mgnregsNum),
-      aaycNum: JSON.stringify(this.fgCitation.value.aaycNum),
-      annualFamilyIncome: JSON.stringify(this.fgCitation.value.annualFamilyIncome),
-      formNumber: this.fgCitation.value.formNumber,
-      submissionDate: this.fgCitation.value.submissionDate,
-      applicationStatus: this.fgCitation.value.applicationStatus,
-      appliedOn: this.fgCitation.value.appliedOn,
-      approvedByDistrict: this.fgCitation.value.approvedByDistrict,
-      recommendedBy: this.fgCitation.value.recommendedBy */
+      
     );
 
     data[0].documents = { documentsData: this.documents };
     data[0].clinetContacts = {clinetContactsData : this.clinetContacts};
     data[0].technologies = {technlologyData : this.selTechnologies};
     data[0].domainnames = {domainData: this.selDomainnames};
-    
+    data[0].userId = this.authSurvice.getUserId();
     var request = {
       data
     };

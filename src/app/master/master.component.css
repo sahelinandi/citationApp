@@ -1,0 +1,15 @@
+.headermsg{
+    color: #db1820;
+    margin-top:20px ;
+    font: bold;
+    font-style: inherit;
+    float: left;
+    margin-left: 50px;
+    text-align: left;
+}
+
+.header-text-color{
+    color : rgb(241, 4, 4)!important;
+    font: bold!important;
+    font-style: inherit!important;
+}

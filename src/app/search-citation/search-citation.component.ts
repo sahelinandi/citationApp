@@ -14,7 +14,7 @@ import {Sort} from '@angular/material/sort';
 @Component({
   selector: 'app-search-citation',
   templateUrl: './search-citation.component.html',
-  styleUrls: ['./search-citation.component.css']
+  styleUrls: ['./search-citation.component.scss']
 })
 export class SearchCitationComponent implements OnInit {
 
@@ -103,9 +103,9 @@ export class SearchCitationComponent implements OnInit {
     return this.fgCitation.controls;
   }
   formatLabel(value: number) {
-    if (value >= 1000) {
+   /* if (value >= 1000) {
       return Math.round(value / 1000) + 'k';
-    }
+    }*/
 
     return value;
   }

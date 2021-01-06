@@ -144,7 +144,22 @@ export class TrackcitationmodalComponent implements OnInit {
 
 
   }
+  downlaodFile(nodeid:any,docName:any) {
+    console.log("nodeid==>"+nodeid);
+    this.fileUploadService.downloadFile(nodeid).subscribe((data) => {
 
+      var base64String = data.filestream;
+      var fileName = data.filename;
+      console.log("base64String name"+fileName);
+      const linkSource = 'data:application/pdf;base64,' + base64String;
+      const downloadLink = document.createElement("a");
+     // const fileName = docName//"SSO-Login-Failed.png";
+      downloadLink.href = linkSource;
+      downloadLink.download = fileName;
+      downloadLink.click();
+    });
+
+  }
   close() {
     this.modal.close();
   }

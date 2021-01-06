@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-master',
@@ -12,7 +13,8 @@ export class MasterComponent implements OnInit {
 
   constructor(
     private _sharedService:SharedService,
-    private router: Router
+    private router: Router,
+    private authService:AuthService
 
   ) { 
     this._sharedService.postLoginChangeEmitted$.subscribe(
@@ -24,14 +26,18 @@ export class MasterComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.loggedInUserName = sessionStorage.getItem("userName");
+    this.loggedInUserName = this.authService.getUserName();
+  }
+  ngOnchange():void {
+    
+    this.loggedInUserName = this.authService.getUserName();
   }
 
   onLogout(){
     
     sessionStorage.clear();
     this.loggedInUserName="";
-    this.router.navigate(['/login']);    
+   // this.router.navigate(['/login']);    
   }
 
 }

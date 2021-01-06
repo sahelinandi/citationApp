@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationService } from '../application.service';
-import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { AuthService } from '../auth.service';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -16,23 +17,20 @@ export class DashboardComponent implements OnInit {
   femaleApplicationCount = 0;
   transApplicationCount = 0;
   message = "";
-
-
+  userInfo : any;
+  loggedInUserName="";
   constructor(
     private router: Router,
     private _applicationService: ApplicationService,
-    private http:HttpClient
+    private http:HttpClient,
+    private authService: AuthService
 
   ) {
 
   }
 
   ngOnInit()  {
-    /* this.userName = sessionStorage.getItem('userName');
-    this.getApplicationCount("");
-    this.getApplicationCount("MALE");
-    this.getApplicationCount("FEMALE");
-    this.getApplicationCount("TRANSGENDER"); */
+   
     if(window.location.href !="" && window.location.href.indexOf("code") >=0 )
     {
        const code =new URL(window.location.href).searchParams.get("code");
@@ -43,6 +41,13 @@ export class DashboardComponent implements OnInit {
       window.location.href=environment.LoginURL+"?response_type="+environment.response_type
       +"&client_id="+environment.client_id+"&redirect_uri="+environment.redirect_uri+"&scope="+environment.scope   
      }
+     this.loggedInUserName = this.authService.getUserName();
+     console.log("loggedInUserName==>"+this.loggedInUserName);
+  }
+  ngOnchange()
+  {
+    this.loggedInUserName = this.authService.getUserName();
+    console.log("loggedInUserName==>"+this.loggedInUserName);
   }
   getAccessToken(Code:string)
   {
@@ -64,6 +69,24 @@ export class DashboardComponent implements OnInit {
   getUserInfo(accesscode:any){
      var accessToken = accesscode.access_token;
      console.log("accessToken::::"+accessToken);
+   
+     
+     const body= new HttpParams()
+     .set('redirect_uri',environment.redirect_uri)
+     let headers = new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded;charset=utf-8',                    
+                                     'Authorization': 'Bearer ' +accessToken
+                                   });
+    
+     return this.http.post(environment.user_info,body.toString(),{headers:headers}).subscribe(
+       userInfo =>{
+         this.userInfo = userInfo;
+         this.authService.setUserId(this.userInfo.uid);
+         this.authService.setUserName(this.userInfo.name);
+         console.log("userId::"+ this.authService.getUserId());
+       },
+       err => console.log(err)
+     );
+
   }
   onApply() {
     this.router.navigate(['/Citationapplication']);
